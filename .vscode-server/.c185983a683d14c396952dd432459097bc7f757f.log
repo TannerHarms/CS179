@@ -1,0 +1,38 @@
+
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+Extension host agent listening on 35553
+
+[11:28:10] Extension host agent started.
+[11:28:11] [127.0.0.1][718a1ca7][ManagementConnection] New connection established.
+[11:28:11] [127.0.0.1][52700082][ExtensionHostConnection] New connection established.
+bash: cannot set terminal process group (-1): Inappropriate ioctl for device
+bash: no job control in this shell
+[IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
+[11:28:11] [127.0.0.1][52700082][ExtensionHostConnection] <26965> Launched Extension Host Process.
+[11:35:35] [127.0.0.1][718a1ca7][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[11:35:36] [127.0.0.1][52700082][ExtensionHostConnection] <26965> Extension Host Process exited with code: 0, signal: null.
+Last EH closed, waiting before shutting down
+[11:35:36] Last EH closed, waiting before shutting down
+[11:35:37] [127.0.0.1][9b4117d2][ManagementConnection] New connection established.
+[IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
+[11:35:37] [127.0.0.1][dbfc53aa][ExtensionHostConnection] New connection established.
+[11:35:37] [127.0.0.1][dbfc53aa][ExtensionHostConnection] <27715> Launched Extension Host Process.
+New EH opened, aborting shutdown
+[11:40:36] New EH opened, aborting shutdown
+[12:28:26] [127.0.0.1][9b4117d2][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/out/bootstrap.js:1:370)
+    at process.emit (events.js:315:20)
+[15:28:17] [127.0.0.1][dbfc53aa][ExtensionHostConnection] <27715> Extension Host Process exited with code: 0, signal: null.
+Last EH closed, waiting before shutting down
+[15:28:17] Last EH closed, waiting before shutting down
+[15:28:26] [127.0.0.1][9b4117d2][ManagementConnection] The reconnection grace time of 3h has expired, so the connection will be disposed.
+Last EH closed, shutting down
+[15:33:17] Last EH closed, shutting down
