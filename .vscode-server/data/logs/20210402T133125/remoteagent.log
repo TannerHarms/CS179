@@ -1,0 +1,32 @@
+[2021-04-02 13:31:25.710] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2021-04-02 13:31:25.710] [remoteagent] [info] Extension host agent started.
+[2021-04-02 13:31:25.822] [remoteagent] [info] [127.0.0.1][82b84112][ManagementConnection] New connection established.
+[2021-04-02 13:31:25.881] [remoteagent] [info] [127.0.0.1][d2339532][ExtensionHostConnection] New connection established.
+[2021-04-02 13:31:25.958] [remoteagent] [info] [127.0.0.1][d2339532][ExtensionHostConnection] <21905> Launched Extension Host Process.
+[2021-04-02 15:28:26.536] [remoteagent] [info] Installing extension: llvm-vs-code-extensions.vscode-clangd
+[2021-04-02 15:28:27.010] [remoteagent] [info] Downloaded extension: llvm-vs-code-extensions.vscode-clangd undefined
+[2021-04-02 15:28:27.508] [remoteagent] [info] Extracted extension to /home/tharms/.vscode-server/extensions/.2e24b9f9-846e-436c-a793-21f3c2b546aa: llvm-vs-code-extensions.vscode-clangd
+[2021-04-02 15:28:27.517] [remoteagent] [info] Renamed to /home/tharms/.vscode-server/extensions/llvm-vs-code-extensions.vscode-clangd-0.1.11
+[2021-04-02 15:28:27.518] [remoteagent] [info] Installation completed. llvm-vs-code-extensions.vscode-clangd
+[2021-04-02 15:28:27.521] [remoteagent] [info] Extensions installed successfully: llvm-vs-code-extensions.vscode-clangd
+[2021-04-02 16:25:46.258] [remoteagent] [info] [127.0.0.1][82b84112][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2021-04-02 16:30:32.289] [remoteagent] [info] [127.0.0.1][82b84112][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[2021-04-02 16:30:32.289] [remoteagent] [info] [127.0.0.1][8810c393][ManagementConnection] New connection established.
+[2021-04-02 16:30:32.295] [remoteagent] [info] [127.0.0.1][3bb96f28][ExtensionHostConnection] New connection established.
+[2021-04-02 16:30:32.304] [remoteagent] [info] [127.0.0.1][3bb96f28][ExtensionHostConnection] <30994> Launched Extension Host Process.
+[2021-04-02 16:35:32.290] [remoteagent] [info] [127.0.0.1][82b84112][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.
+[2021-04-02 16:35:33.322] [remoteagent] [info] [127.0.0.1][d2339532][ExtensionHostConnection] <21905> Extension Host Process exited with code: 0, signal: null.
+[2021-04-02 18:03:31.500] [remoteagent] [info] [127.0.0.1][8810c393][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+[2021-04-02 21:03:23.997] [remoteagent] [info] [127.0.0.1][3bb96f28][ExtensionHostConnection] <30994> Extension Host Process exited with code: 0, signal: null.
+[2021-04-02 21:03:23.997] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2021-04-02 21:03:31.501] [remoteagent] [info] [127.0.0.1][8810c393][ManagementConnection] The reconnection grace time of 3h has expired, so the connection will be disposed.
+[2021-04-02 21:08:23.998] [remoteagent] [info] Last EH closed, shutting down

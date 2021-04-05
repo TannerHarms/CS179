@@ -9,37 +9,92 @@ Question 1: Common Errors (20 points)
 --------------------------------------------------------------------------------
 1.1
 --------------------------------------------------------------------------------
-Issue: 
+Issue: The issue here is that the variable *a is created as a pointer, which 
+    means that the value it represents is an address that is pointed at.  If we 
+    want to update a value at the address being pointed at, we need another 
+    integer variable to be constructed first.  For example:
 
-Fix:
+Fix:  
+    void test1() {
+        int a = 3;            \\ Creates an integer and allots 3 as the value
+        int *pa = &a;         \\ Creates a pointer to the variable a.
+        *pa = *pa + 2;
+        printf("%d\n", *pa);
+    }
 
 --------------------------------------------------------------------------------
 1.2
 --------------------------------------------------------------------------------
-Issue:
+Issue:  The issue with this is that *a is an integer and b is an integer, but 
+    *b is not defined.  To fix this, one of two solutions could be used.
 
 Fix:
+    1.)  The first fix would be to define *b in the same manner as *a.  Thus, 
+    line 1  becomes:
+        --- int *a, *b; ---
+    Which reads *a and *b are both integers, or, a and b point to integers.  
+
+    2.)  Both a and b could be initialized using a pointer declaration:
+        --- int* a, b; ---
+    This would be identical to the first solution, only both a and b are defined
+    as pointers to integers by their declaration type rather than their 
+    individual declaration.  
+
+    To me, the first solution is clearer than the second.  I would implement it 
+    that way.
 
 --------------------------------------------------------------------------------
 1.3
 --------------------------------------------------------------------------------
-Issue: 
+Issue:  In this case the for loop incrementation would be very slow as i becomes
+    large.  Each time the loop iterates, the computer would have to add i to a 
+    and dereference.  
 
-Fix:
+Fix:  Perhaps a better way to do this would be to increment *a by 1 every 
+    iteration.
+
+    void test3() {
+        int i, *a = (int *) malloc(1000);
+        ...
+
+        for (i = 0; i < 1000; i++)
+            *a = i;     \\ indicated value = i
+            a++;        \\ increments the address of a within its allocated 
+                        \\ space.  
+    }
 
 --------------------------------------------------------------------------------
 1.4
 --------------------------------------------------------------------------------
-Issue: 
+Issue: The memory for the array of pointers is allocated, but the memory for 
+    each row of pointers is not.  Therefore, we need to add a for loop in the 
+    second dimension and allocate space along the way.  
 
 Fix:
+    void test4() {
+        int i, **a = (int **) malloc(3 * sizeof (int *));
+        for (i = 0; i < 100; i++)
+            a[i] = (int *)malloc(c * sizeof(int));
+        
+        
+        \\ keeping in mind that a[i][j] == *(*(a+i)+j)
+        a[1][1] = 5;
+    }
 
 --------------------------------------------------------------------------------
 1.5
 --------------------------------------------------------------------------------
-Issue:
-
-Fix:
+Issue: First, scanf is setting the address of a to an input rather than the 
+    value of a.  Then, the if statement is checking the address as well rather 
+    than the indicated value.
+    
+Fix:  Assign the value being pointed to rather than the address value.
+    void test5() {
+        int *a = (int *) malloc(sizeof (int));
+        scanf("%d", *a);
+        if (!(*a))
+            printf("Value is 0\n");
+    }
 
 ================================================================================
 Question 2: Parallelization (30 points)
@@ -49,9 +104,33 @@ Question 2: Parallelization (30 points)
 2.1
 --------------------------------------------------------------------------------
 
+The first of these signals, y_1, will perform much better on a GPU than y_2.  
+This is because y_1 relies solely on the signal x[n] to be defined, where x is 
+already fully known.  y_2, on the other hand, is self-referential in definition,
+and therefore needs to be updated sequentially.  For example, y_2[100] cannot be 
+computed unless y_2[1...99] are already known, whereas y_1[100] only requires 
+that x[99,100,101] be known in advance, which is true.  Thus, y_1[100] can be 
+computed at the same time as y_1[1].  
+
 --------------------------------------------------------------------------------
 2.2
 --------------------------------------------------------------------------------
+
+Let's start by expanding our expression for EMA.  
+
+y[1] = c x[1] + (1-c) y[0]
+y[2] = c x[2] + (1-c) y[1]
+     = c x[2] + c (1-c) x[1] + (1-c)^2 y[0]
+...
+y[n] = sum_{j = 0}^{n - } c (1 - c)^(n - (n - j)) x[n - j] + (1 - c)^(n) y[0]
+
+From this we see that the contribution of the terms y[n-k] to y[n] becomes 
+negligible quickly if c is large.  For example, if c = 0.95 and (1-c) = 0.05,
+then 
+
+y[3] = 0.95 x[3] + 0.0475 x[2] + 0.002375 x[1] + 0.000125 y[0].
+
+**** Finish this ****
 
 ================================================================================
 Question 3: Small-Kernel Convolution (50 points)

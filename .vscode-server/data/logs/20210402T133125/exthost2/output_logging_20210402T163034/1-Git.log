@@ -1,0 +1,43 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --git-dir
+Open repository: /home/tharms
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :lab1/lab1.txt
+> git show --textconv :lab1/README
+> git ls-files --stage -- /home/tharms/lab1/lab1.txt
+> git ls-files --stage -- /home/tharms/lab1/README
+> git cat-file -s f3255fd6af674c17812d328ee628bd29d5b1d1bc
+> git cat-file -s 4621852f37473cf9cd0a05e79903fc42cc932b77
+> git show --textconv :lab1/src/blur.cuh
+> git ls-files --stage -- /home/tharms/lab1/src/blur.cuh
+> git cat-file -s baf967672ca64774fcadf2065cd8075d5d2dfea2
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/tharms/lab1/src/blur.cuh
+> git check-ignore -v -z --stdin
+> git show --textconv :lab1/src/blur.cu
+> git ls-files --stage -- /home/tharms/lab1/src/blur.cu
+> git cat-file -s 9f5e4ad1374be45100893bfea7e33c9f037a1f25
+> git show --textconv :lab1/src/blur.cuh
+> git ls-files --stage -- /home/tharms/lab1/src/blur.cuh
+> git cat-file -s baf967672ca64774fcadf2065cd8075d5d2dfea2
+> git show --textconv :lab1/src/blur.cu
+> git ls-files --stage -- /home/tharms/lab1/src/blur.cu
+> git cat-file -s 9f5e4ad1374be45100893bfea7e33c9f037a1f25
+> git show --textconv :lab1/src/blur.cu
+> git ls-files --stage -- /home/tharms/lab1/src/blur.cu
+> git cat-file -s 9f5e4ad1374be45100893bfea7e33c9f037a1f25
+> git show --textconv :lab1/src/blur.cuh
+> git ls-files --stage -- /home/tharms/lab1/src/blur.cuh
+> git cat-file -s baf967672ca64774fcadf2065cd8075d5d2dfea2
+> git show --textconv :lab1/src/blur.cu
+> git ls-files --stage -- /home/tharms/lab1/src/blur.cu
+> git cat-file -s 9f5e4ad1374be45100893bfea7e33c9f037a1f25
+> git show --textconv :lab1/src/blur.cuh
+> git ls-files --stage -- /home/tharms/lab1/src/blur.cuh
+> git cat-file -s baf967672ca64774fcadf2065cd8075d5d2dfea2
