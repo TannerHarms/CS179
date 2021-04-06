@@ -184,9 +184,9 @@ int large_gauss_test(int argc, char **argv) {
 
         // Use the CUDA machinery for recording time
         cudaEvent_t start_cpu, stop_cpu;
-        cudaEventCreate(&start_cpu);
-        cudaEventCreate(&stop_cpu);
-        cudaEventRecord(start_cpu);
+        gpu_errchk( cudaEventCreate(&start_cpu) );
+        gpu_errchk( cudaEventCreate(&stop_cpu) );
+        gpu_errchk( cudaEventRecord(start_cpu) );
         	
         // (For scoping)
         {
@@ -201,8 +201,8 @@ int large_gauss_test(int argc, char **argv) {
         }
 
         // Stop timer
-        cudaEventRecord(stop_cpu);
-        cudaEventSynchronize(stop_cpu);
+        gpu_errchk( cudaEventRecord(stop_cpu) );
+        gpu_errchk( cudaEventSynchronize(stop_cpu) );
 
         // GPU blurring
         cout << "GPU blurring..." << endl;
@@ -231,12 +231,9 @@ int large_gauss_test(int argc, char **argv) {
             #endif
             }
             else {
-            
                 success = false;
-                #if 0
                 cerr << "Incorrect output at index " << i << ": " <<
                     output_data_host[i] << ", "  << output_data[i] << endl;
-                #endif
             }
         }
 
@@ -244,7 +241,7 @@ int large_gauss_test(int argc, char **argv) {
             cout << endl << "Successful output" << endl;
 
         float cpu_time_milliseconds;
-        cudaEventElapsedTime(&cpu_time_milliseconds, start_cpu, stop_cpu);
+        gpu_errchk( cudaEventElapsedTime(&cpu_time_milliseconds, start_cpu, stop_cpu) );
 
         cout << endl;
         cout << "CPU time: " << cpu_time_milliseconds << " milliseconds" << endl;

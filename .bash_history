@@ -80,3 +80,34 @@ make all
 ./noaudio-blur 512 200
 ./audio-blur 512 200 AUDIO_ON
 
+git add -A
+git commit -m 'lab1 is working now'
+git push origin main
+make all
+make all
+./noaudio-blur 512 200
+make all
+make all
+make all
+make all
+./noaudio-blur 512 200
+./noaudio-blur 512 300
+./noaudio-blur 512 500
+./noaudio-blur 512 100
+./noaudio-blur 1024 200
+./noaudio-blur 2048 200
+./noaudio-blur 4096 200
+make all
+./noaudio-blur 4096 200
+make all
+./noaudio-blur 4096 200
+make all
+./noaudio-blur 4096 200
+make all
+./noaudio-blur 4096 200
+make all
+./noaudio-blur 4096 200
+git pull origin main
+make all
+git pull origin main
+./noaudio-blur 4096 200

@@ -12,6 +12,16 @@
 
 #include "cuda_header.cuh"
 
+#define gpu_errchk(ans) { gpu_assert((ans), __FILE__, __LINE__); }
+inline void gpu_assert(cudaError_t code, const char *file, int line,
+                       bool abort = true) {
+    if (code != cudaSuccess) {
+        fprintf(stderr, "gpu_assert: %s %s %d\n",
+                cudaGetErrorString(code), file, line);
+        exit(code);
+    }
+}
+
 CUDA_CALLABLE 
 void cuda_blur_kernel_convolution(uint thread_index, const float* gpu_raw_data,
                                   const float* gpu_blur_v, float* gpu_out_data,
@@ -23,29 +33,6 @@ void cuda_blur_kernel_convolution(uint thread_index, const float* gpu_raw_data,
     // Done
 
     int i = (int) thread_index;
-
-    #if 0
-    // If by the leading edge.
-    if (thread_index < blur_v_size) {
-        for (uint j = thread_index - blur_v_size - 1; j < blur_v_size; j++)
-            gpu_out_data[thread_index] += gpu_raw_data[thread_index - j] * gpu_blur_v[j];
-    }
-    // If by the trailing edge.
-    else if (thread_index + blur_v_size > n_frames - 1) {
-        for (int j = 0; j < n_frames - 1 - thread_index; j++)
-            gpu_out_data[thread_index] += gpu_raw_data[thread_index - j] * gpu_blur_v[j];
-    }
-    // The general case:
-    else {
-        for (int j = 0; j < blur_v_size; j++)
-            gpu_out_data[thread_index] += gpu_raw_data[thread_index - j] * gpu_blur_v[j];
-    }
-    #endif
-
-    #if 0
-    for (int j = 0; j < blur_v_size; j++)
-        gpu_out_data[i] += gpu_raw_data[i - j] * gpu_blur_v[j];
-    #endif
 
     if (i < blur_v_size) {
         for (int j = 0; j <= i; j++)
@@ -87,9 +74,9 @@ float cuda_call_blur_kernel(const unsigned int blocks,
     // Use the CUDA machinery for recording time
     cudaEvent_t start_gpu, stop_gpu;
     float time_milli = -1;
-    cudaEventCreate(&start_gpu);
-    cudaEventCreate(&stop_gpu);
-    cudaEventRecord(start_gpu);
+    gpu_errchk( cudaEventCreate(&start_gpu) );
+    gpu_errchk( cudaEventCreate(&stop_gpu) );
+    gpu_errchk( cudaEventRecord(start_gpu) );
 
     // TODO: Allocate GPU memory for the raw input data (either audio file
     //       data or randomly generated data. The data is of type float and
@@ -98,9 +85,9 @@ float cuda_call_blur_kernel(const unsigned int blocks,
     // Define the raw-data variable.
     float* gpu_raw_data;
     // Allocate space for it
-    cudaMalloc((void**) &gpu_raw_data, n_frames * sizeof(float));
+    gpu_errchk( cudaMalloc((void**) &gpu_raw_data, n_frames * sizeof(float)) );
     // Copy the raw data into the allocated memory
-    cudaMemcpy(gpu_raw_data, raw_data, n_frames * sizeof(float), cudaMemcpyHostToDevice);
+    gpu_errchk( cudaMemcpy(gpu_raw_data, raw_data, n_frames * sizeof(float), cudaMemcpyHostToDevice) );
 
     // TODO: Allocate GPU memory for the impulse signal (for now global GPU
     //       memory is fine. The data is of type float and has blur_v_size
@@ -109,9 +96,9 @@ float cuda_call_blur_kernel(const unsigned int blocks,
     // Define the impulse signal varialbe variable.
     float* gpu_blur_v;
     // Allocate space for it
-    cudaMalloc((void**) &gpu_blur_v, blur_v_size * sizeof(float));
+    gpu_errchk( cudaMalloc((void**) &gpu_blur_v, blur_v_size * sizeof(float)) );
     // Copy the blur_v data into the allocated memory
-    cudaMemcpy(gpu_blur_v, blur_v, blur_v_size * sizeof(float), cudaMemcpyHostToDevice);
+    gpu_errchk( cudaMemcpy(gpu_blur_v, blur_v, blur_v_size * sizeof(float), cudaMemcpyHostToDevice) );
 
     // TODO: Allocate GPU memory to store the output audio signal after the
     //       convolution. The data is of type float and has n_frames elements.
@@ -119,7 +106,7 @@ float cuda_call_blur_kernel(const unsigned int blocks,
     // Define the output data variable.
     float* gpu_out_data;
     // Allocate space for it
-    cudaMalloc((void**) &gpu_out_data, n_frames * sizeof(float));
+    gpu_errchk( cudaMalloc((void**) &gpu_out_data, n_frames * sizeof(float)) );
         
     // TODO: Appropriately call the kernel function.
     cuda_blur_kernel<<<blocks, threads_per_block>>>(gpu_raw_data, gpu_blur_v, gpu_out_data, n_frames, blur_v_size);
@@ -135,17 +122,17 @@ float cuda_call_blur_kernel(const unsigned int blocks,
     //       back from the GPU to host memory. (We store this channel's result
     //       in out_data on the host.)  Done.
     // Copy the out_data into the allocated memory
-    cudaMemcpy(out_data, gpu_out_data, n_frames * sizeof(float), cudaMemcpyDeviceToHost);
+    gpu_errchk( cudaMemcpy(out_data, gpu_out_data, n_frames * sizeof(float), cudaMemcpyDeviceToHost) );
 
     // TODO: Now that we have finished our computations on the GPU, free the
     //       GPU resources.  Done.  
-    cudaFree(gpu_raw_data);
-    cudaFree(gpu_blur_v);
-    cudaFree(gpu_out_data);
+    gpu_errchk( cudaFree(gpu_raw_data) );
+    gpu_errchk( cudaFree(gpu_blur_v) );
+    gpu_errchk( cudaFree(gpu_out_data) );
 
     // Stop the recording timer and return the computation time
-    cudaEventRecord(stop_gpu);
-    cudaEventSynchronize(stop_gpu);
-    cudaEventElapsedTime(&time_milli, start_gpu, stop_gpu);
+    gpu_errchk( cudaEventRecord(stop_gpu) );
+    gpu_errchk( cudaEventSynchronize(stop_gpu) );
+    gpu_errchk( cudaEventElapsedTime(&time_milli, start_gpu, stop_gpu) );
     return time_milli;
 }

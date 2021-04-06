@@ -17,3 +17,13 @@ bash: cannot set terminal process group (-1): Inappropriate ioctl for device
 bash: no job control in this shell
 [IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
 [21:24:37] [127.0.0.1][d562ef5a][ExtensionHostConnection] <10964> Launched Extension Host Process.
+[21:51:37] [127.0.0.1][00d0cf22][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[21:51:38] [127.0.0.1][d562ef5a][ExtensionHostConnection] <10964> Extension Host Process exited with code: 0, signal: null.
+Last EH closed, waiting before shutting down
+[21:51:38] Last EH closed, waiting before shutting down
+[21:51:41] [127.0.0.1][63cd1314][ManagementConnection] New connection established.
+[21:51:41] [127.0.0.1][3b70f5c9][ExtensionHostConnection] New connection established.
+[21:51:41] [127.0.0.1][3b70f5c9][ExtensionHostConnection] <19718> Launched Extension Host Process.
+[IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
+New EH opened, aborting shutdown
+[21:56:38] New EH opened, aborting shutdown
