@@ -122,6 +122,14 @@ y[1] = c x[1] + (1-c) y[0]
 y[2] = c x[2] + (1-c) y[1]
      = c x[2] + c (1-c) x[1] + (1-c)^2 y[0]
 ...
+y[n] = sum_{j = 0}^{n - } c (1 - c)^(n - (n - j)) x[n - j] + (1 - c)^(n) y[0]
+
+From this we see that the contribution of the terms y[n-k] to y[n] becomes 
+negligible quickly if c is large.  For example, if c = 0.95 and (1-c) = 0.05,
+then 
+
+y[3] = 0.95 x[3] + 0.0475 x[2] + 0.002375 x[1] + 0.000125 y[0].
+
 y[n] = sum_{j = 0}^{n - 1} c (1 - c)^(n - (n - j)) x[n - j] + (1 - c)^(n) y[0]
 
 From this we see that the contribution of the terms y[n-k] to y[n] becomes 
