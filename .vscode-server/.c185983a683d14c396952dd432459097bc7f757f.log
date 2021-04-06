@@ -7,19 +7,13 @@
 * as described in the license https://aka.ms/vscode-remote/license
 *
 
-Extension host agent listening on 44195
+Extension host agent listening on 44355
 
-[10:35:59] Extension host agent started.
-[10:35:59] [127.0.0.1][9fd8b660][ManagementConnection] New connection established.
-[10:35:59] [127.0.0.1][e0e91d92][ExtensionHostConnection] New connection established.
+[21:24:32] Extension host agent started.
+[21:24:32] [127.0.0.1][9fd8b660][ManagementConnection] Unknown reconnection token.
+[21:24:37] [127.0.0.1][00d0cf22][ManagementConnection] New connection established.
+[21:24:37] [127.0.0.1][d562ef5a][ExtensionHostConnection] New connection established.
 bash: cannot set terminal process group (-1): Inappropriate ioctl for device
 bash: no job control in this shell
-[10:35:59] [127.0.0.1][e0e91d92][ExtensionHostConnection] <8789> Launched Extension Host Process.
 [IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
-[12:45:37] [127.0.0.1][9fd8b660][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/out/bootstrap.js:1:370)
-    at process.emit (events.js:315:20)
-[13:26:12] [127.0.0.1][9fd8b660][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[13:26:12] [127.0.0.1][9fd8b660][ManagementConnection] The client has reconnected.
-[13:26:12] [127.0.0.1][e0e91d92][ExtensionHostConnection] The client has reconnected.
+[21:24:37] [127.0.0.1][d562ef5a][ExtensionHostConnection] <10964> Launched Extension Host Process.

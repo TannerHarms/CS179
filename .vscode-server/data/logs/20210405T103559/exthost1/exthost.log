@@ -31,3 +31,14 @@
 [2021-04-05 13:30:00.975] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 802
 [2021-04-05 13:30:09.994] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 802
 [2021-04-05 13:39:03.330] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 802
+[2021-04-05 13:45:25.541] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 802
+[2021-04-05 13:45:30.652] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 802
+[2021-04-05 13:45:54.204] [exthost] [warning] [Decorations] CAPPING events from decorations provider vscode.git 802
+[2021-04-05 16:29:17.891] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"extensionId":{"value":"vscode.configuration-editing","_lower":"vscode.configuration-editing"},"activationEvent":"onLanguage:jsonc"}
+[2021-04-05 16:29:17.891] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/extensions/configuration-editing/dist/configurationEditingMain
+[2021-04-05 16:29:17.908] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"extensionId":{"value":"vscode.json-language-features","_lower":"vscode.json-language-features"},"activationEvent":"onLanguage:jsonc"}
+[2021-04-05 16:29:17.908] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/extensions/json-language-features/client/dist/node/jsonClientMain
+[2021-04-05 16:29:17.957] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"extensionId":{"value":"vscode.typescript-language-features","_lower":"vscode.typescript-language-features"},"activationEvent":"onLanguage:jsonc"}
+[2021-04-05 16:29:17.957] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/extensions/typescript-language-features/dist/extension
+[2021-04-05 20:32:53.074] [exthost] [info] extension host terminating: renderer disconnected for too long (1)
+[2021-04-05 20:32:54.092] [exthost] [info] exiting with code 0

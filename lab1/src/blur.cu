@@ -12,7 +12,7 @@
 
 #include "cuda_header.cuh"
 
-CUDA_CALLABLE
+CUDA_CALLABLE 
 void cuda_blur_kernel_convolution(uint thread_index, const float* gpu_raw_data,
                                   const float* gpu_blur_v, float* gpu_out_data,
                                   const unsigned int n_frames,
@@ -22,17 +22,44 @@ void cuda_blur_kernel_convolution(uint thread_index, const float* gpu_raw_data,
     //       blur.cpp as a reference.
     // Done
 
-    for (int i = 0; i < blur_v_size; i++) { 
+    int i = (int) thread_index;
+
+    #if 0
+    // If by the leading edge.
+    if (thread_index < blur_v_size) {
+        for (uint j = thread_index - blur_v_size - 1; j < blur_v_size; j++)
+            gpu_out_data[thread_index] += gpu_raw_data[thread_index - j] * gpu_blur_v[j];
+    }
+    // If by the trailing edge.
+    else if (thread_index + blur_v_size > n_frames - 1) {
+        for (int j = 0; j < n_frames - 1 - thread_index; j++)
+            gpu_out_data[thread_index] += gpu_raw_data[thread_index - j] * gpu_blur_v[j];
+    }
+    // The general case:
+    else {
+        for (int j = 0; j < blur_v_size; j++)
+            gpu_out_data[thread_index] += gpu_raw_data[thread_index - j] * gpu_blur_v[j];
+    }
+    #endif
+
+    #if 0
+    for (int j = 0; j < blur_v_size; j++)
+        gpu_out_data[i] += gpu_raw_data[i - j] * gpu_blur_v[j];
+    #endif
+
+    if (i < blur_v_size) {
         for (int j = 0; j <= i; j++)
             gpu_out_data[i] += gpu_raw_data[i - j] * gpu_blur_v[j];
     }
-    for (int i = blur_v_size; i < n_frames; i++) {
+    if (i >= blur_v_size) {
         for (int j = 0; j < blur_v_size; j++)
             gpu_out_data[i] += gpu_raw_data[i - j] * gpu_blur_v[j];
     }
+
 }
 
-__global__ void cuda_blur_kernel(const float *gpu_raw_data, const float *gpu_blur_v,
+__global__
+void cuda_blur_kernel(const float *gpu_raw_data, const float *gpu_blur_v,
                       float *gpu_out_data, int n_frames, int blur_v_size) {
     // TODO: Compute the current thread index. Done
     uint thread_index = blockIdx.x * blockDim.x + threadIdx.x;
@@ -95,7 +122,7 @@ float cuda_call_blur_kernel(const unsigned int blocks,
     cudaMalloc((void**) &gpu_out_data, n_frames * sizeof(float));
         
     // TODO: Appropriately call the kernel function.
-    cuda_blur_kernel(gpu_raw_data, gpu_blur_v, gpu_out_data, n_frames, blur_v_size);
+    cuda_blur_kernel<<<blocks, threads_per_block>>>(gpu_raw_data, gpu_blur_v, gpu_out_data, n_frames, blur_v_size);
 
     // Check for errors on kernel call
     cudaError err = cudaGetLastError();
@@ -108,7 +135,7 @@ float cuda_call_blur_kernel(const unsigned int blocks,
     //       back from the GPU to host memory. (We store this channel's result
     //       in out_data on the host.)  Done.
     // Copy the out_data into the allocated memory
-    cudaMemcpy(gpu_out_data, out_data, n_frames * sizeof(float), cudaMemcpyHostToDevice);
+    cudaMemcpy(out_data, gpu_out_data, n_frames * sizeof(float), cudaMemcpyDeviceToHost);
 
     // TODO: Now that we have finished our computations on the GPU, free the
     //       GPU resources.  Done.  

@@ -28,3 +28,55 @@ git remote add origin https://github.com/TannerHarms/CS179.git
 git push -u origin main
 git branch -M main
 git push -u origin main
+make all
+make all
+make all
+make all
+nvcc --version
+make all
+git add -A
+git commit -m 'add: filled in all of the TODO: blocks.  Getting __global__ undefined error.'
+git push origin main
+make all
+make
+make all
+make all
+make all
+make all
+make all
+make all
+./noaudio-blur
+512 200
+<512> <200>
+./noaudio-blur
+<512> <200>
+./noaudio-blur
+./noaudio-blur 512 200
+make all
+./noaudio 512 200
+./noaudio-blur 512 200
+make all
+./noaudio-blur 512 200
+make all
+./noaudio-blur 512 200
+make all
+make all
+./noaudio-blur 512 200
+make all
+./noaudio-blur 512 200
+make all
+./noaudio-blur 512 200
+make all
+./noaudio-blur 512 200
+make all
+./noaudio-blur 512 200
+make all
+./noaudio-blur 512 200
+make all
+make all
+make all
+make
+make all
+./noaudio-blur 512 200
+./audio-blur 512 200 AUDIO_ON
+
