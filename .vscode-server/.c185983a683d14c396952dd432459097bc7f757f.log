@@ -7,55 +7,26 @@
 * as described in the license https://aka.ms/vscode-remote/license
 *
 
-Extension host agent listening on 44355
+Extension host agent listening on 37249
 
-[21:24:32] Extension host agent started.
-[21:24:32] [127.0.0.1][9fd8b660][ManagementConnection] Unknown reconnection token.
-[21:24:37] [127.0.0.1][00d0cf22][ManagementConnection] New connection established.
-[21:24:37] [127.0.0.1][d562ef5a][ExtensionHostConnection] New connection established.
+[08:05:10] Extension host agent started.
+[08:05:10] [127.0.0.1][0d84bc3d][ExtensionHostConnection] New connection established.
+[08:05:10] [127.0.0.1][204743e2][ManagementConnection] New connection established.
 bash: cannot set terminal process group (-1): Inappropriate ioctl for device
 bash: no job control in this shell
 [IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
-[21:24:37] [127.0.0.1][d562ef5a][ExtensionHostConnection] <10964> Launched Extension Host Process.
-[21:51:37] [127.0.0.1][00d0cf22][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
-[21:51:38] [127.0.0.1][d562ef5a][ExtensionHostConnection] <10964> Extension Host Process exited with code: 0, signal: null.
-Last EH closed, waiting before shutting down
-[21:51:38] Last EH closed, waiting before shutting down
-[21:51:41] [127.0.0.1][63cd1314][ManagementConnection] New connection established.
-[21:51:41] [127.0.0.1][3b70f5c9][ExtensionHostConnection] New connection established.
-[21:51:41] [127.0.0.1][3b70f5c9][ExtensionHostConnection] <19718> Launched Extension Host Process.
-[IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
-New EH opened, aborting shutdown
-[21:56:38] New EH opened, aborting shutdown
-[IPC Library: File Watcher (nsfw)] Unhandled Promise Rejection:  Error: Path must be a valid path to a file or a directory.
-    at buildNSFW (/home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/node_modules/nsfw/js/src/index.js:73:11)
-[22:08:59] [127.0.0.1][63cd1314][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
-[22:09:00] [127.0.0.1][3b70f5c9][ExtensionHostConnection] <19718> Extension Host Process exited with code: 0, signal: null.
-Last EH closed, waiting before shutting down
-[22:09:00] Last EH closed, waiting before shutting down
-[22:09:01] [127.0.0.1][e01bd5bf][ManagementConnection] New connection established.
-[IPC Library: Pty Host]  INFO Listing 1 persistent terminals, 1 total terminals
-[22:09:01] [127.0.0.1][598b102e][ExtensionHostConnection] New connection established.
-[22:09:01] [127.0.0.1][598b102e][ExtensionHostConnection] <30191> Launched Extension Host Process.
-[IPC Library: File Watcher (nsfw)] Unhandled Promise Rejection:  Error: Path must be a valid path to a file or a directory.
-    at buildNSFW (/home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/node_modules/nsfw/js/src/index.js:73:11)
-[22:09:11] [127.0.0.1][e01bd5bf][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
-[22:09:12] [127.0.0.1][598b102e][ExtensionHostConnection] <30191> Extension Host Process exited with code: 0, signal: null.
-Cancelling previous shutdown timeout
-[22:09:12] Cancelling previous shutdown timeout
-Last EH closed, waiting before shutting down
-[22:09:12] Last EH closed, waiting before shutting down
-[22:09:13] [127.0.0.1][b2f48896][ManagementConnection] New connection established.
-[22:09:13] [127.0.0.1][fd1555d3][ExtensionHostConnection] New connection established.
-[22:09:13] [127.0.0.1][fd1555d3][ExtensionHostConnection] <30374> Launched Extension Host Process.
-[IPC Library: Pty Host]  INFO Listing 2 persistent terminals, 2 total terminals
-New EH opened, aborting shutdown
-[22:14:12] New EH opened, aborting shutdown
-[22:23:16] [127.0.0.1][b2f48896][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
-[22:23:17] [127.0.0.1][fd1555d3][ExtensionHostConnection] <30374> Extension Host Process exited with code: 0, signal: null.
-Last EH closed, waiting before shutting down
-[22:23:17] Last EH closed, waiting before shutting down
-[22:23:18] [127.0.0.1][0f581720][ManagementConnection] New connection established.
-[22:23:18] [127.0.0.1][f635ede2][ExtensionHostConnection] New connection established.
-[22:23:18] [127.0.0.1][f635ede2][ExtensionHostConnection] <6135> Launched Extension Host Process.
-[IPC Library: Pty Host]  INFO Listing 3 persistent terminals, 3 total terminals
+[08:05:10] [127.0.0.1][0d84bc3d][ExtensionHostConnection] <7495> Launched Extension Host Process.
+[13:12:31] [127.0.0.1][204743e2][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/out/bootstrap.js:1:370)
+    at process.emit (events.js:315:20)
+[15:31:57] [127.0.0.1][204743e2][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[15:31:57] [127.0.0.1][204743e2][ManagementConnection] The client has reconnected.
+[15:31:57] [127.0.0.1][0d84bc3d][ExtensionHostConnection] The client has reconnected.
+[16:09:01] [127.0.0.1][204743e2][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/out/bootstrap.js:1:370)
+    at process.emit (events.js:315:20)
+[18:19:14] [127.0.0.1][204743e2][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
+[18:19:14] [127.0.0.1][204743e2][ManagementConnection] The client has reconnected.
+[18:19:31] [127.0.0.1][0d84bc3d][ExtensionHostConnection] The client has reconnected.

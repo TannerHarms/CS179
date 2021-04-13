@@ -111,3 +111,106 @@ git pull origin main
 make all
 git pull origin main
 ./noaudio-blur 4096 200
+git add -A
+git commit -m 'moved folders'
+git branch NewFileSys
+git push origin NewFileSys
+cd //
+cd ..
+cd 
+cd Cs179_labs/lab1
+cd CS179_labs/lab1
+cd .
+cd .
+cd ..
+cd ./lab1
+ls
+make all
+./noaudio-blur 512 200
+make clean
+make all
+./noaudio-blur 512 200
+make clean
+zip -r lab1_2021_submission.zip
+zip --version
+cd ..
+cd ..
+zip -r /CS179_labs/lab1/
+zip -r /CS179_labs/lab1
+zip -r lab1_2021_submissions /CS179_labs/lab1/
+zip -r lab1_2021_submissions . -i /CS179_labs/lab1/
+ls
+make all
+./noaudio-blur 4096 200
+make all
+./noaudio-blur 4096 200
+./noaudio-blur 512 200
+./noaudio-blur 2048 200
+./noaudio-blur 1024 200
+./noaudio-blur 1024 200
+make all
+./noaudio-blur 1024 200
+cd ..
+mkdir CS179_labs
+ls
+git add -A
+cd lab1
+git add -A
+git commit -m 'All working - submit this now'
+git push origin main
+..
+ls
+..
+cd ..
+ls
+mvdir lab1 CS179_labs
+mv lab1/ CS179_labs/
+cd ..
+cd ..
+ls
+chmod 777 lab1_2021_submissions.zip
+zmore lab1_2021_submissions.zip
+zcat lab1_2021_submissions.zip
+zip -sf lab1_2021_submissions.zip
+ls
+rm lab1_2021_submissions.zip
+ls
+cd CS179_labs
+ls
+cd lab1
+ls
+ls
+zip -r lab1_2021_submission.zip lab1.txt Makefile README resources src
+ls
+mv lab1_2021_submission ../../
+mv lab1_2021_submission.zip ../../
+ls
+../../
+..
+..
+/..
+cd ../../
+ls
+zip -sf lab1_2021_submission.zip
+cd ..
+cd ..
+wget http://courses.cms.caltech.edu/cs179/2021_labs/lab2/lab2.zip
+ls
+unzip lab2.zip -d /CS179_labs
+unzip lab2.zip -d /CS179_labs/lab2
+sudo unzip lab2.zip -d /CS179_labs
+unzip lab2.zip
+ls
+cd CS179_labs
+ls
+cd ..
+mv lab2 CS179_labs
+/CS179_labs
+CS179_labs
+cd CS179_labs
+ls
+cd lab2
+ls
+make all
+make
+make all

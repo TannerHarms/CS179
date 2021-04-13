@@ -27,3 +27,5 @@
 	at b.makeCancelError (/home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/extensions/json-language-features/client/dist/node/jsonClientMain.js:1:64501)
 	at b.handleFailedRequest (/home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/extensions/json-language-features/client/dist/node/jsonClientMain.js:1:64352)
 	at /home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/extensions/json-language-features/client/dist/node/jsonClientMain.js:1:308553
+[2021-04-05 22:25:23.147] [exthost] [info] extension host terminating: received terminate message from renderer
+[2021-04-05 22:25:24.166] [exthost] [info] exiting with code 0

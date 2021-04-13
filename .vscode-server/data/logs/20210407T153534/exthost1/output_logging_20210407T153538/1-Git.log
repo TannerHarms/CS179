@@ -1,0 +1,54 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --git-dir
+Open repository: /home/tharms
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/lab1/Makefile
+> git show --textconv :CS179_labs/lab1/README
+> git ls-files --stage -- /home/tharms/CS179_labs/lab1/Makefile
+> git ls-files --stage -- /home/tharms/CS179_labs/lab1/README
+> git cat-file -s 69a6d439128388f53d0b7d372aa66f96eb0788c5
+> git cat-file -s d2950aea24496997832be5aca7fab72d26c1d1b2
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :CS179_labs/lab2/lab2.txt
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/lab2.txt
+> git show --textconv :CS179_labs/lab2/transpose_host.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_host.cpp
+> git show --textconv :CS179_labs/lab2/transpose_device.cu
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_device.cu
+> git show --textconv :CS179_labs/lab2/transpose_host.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_host.cpp
+> git show --textconv :CS179_labs/lab2/transpose_device.cuh
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_device.cuh
+> git show --textconv :CS179_labs/lab2/transpose_device.cu
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_device.cu
+> git show --textconv :CS179_labs/lab2/transpose_device.cuh
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_device.cuh
+> git show --textconv :CS179_labs/lab2/transpose_host.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_host.cpp
+> git show --textconv :CS179_labs/lab2/transpose_device.cuh
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_device.cuh
+> git show --textconv :CS179_labs/lab2/transpose_host.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_host.cpp
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/tharms/CS179_labs/lab2/transpose_host.cpp
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n41 -- /home/tharms/CS179_labs/lab2/transpose_host.cpp
+> git show --textconv :CS179_labs/lab2/transpose_host.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_host.cpp
+> git show --textconv :CS179_labs/lab2/transpose_device.cuh
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_device.cuh
+> git show --textconv :CS179_labs/lab2/transpose_device.cu
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_device.cu
+> git show --textconv :CS179_labs/lab2/transpose_device.cuh
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_device.cuh
