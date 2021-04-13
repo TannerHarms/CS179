@@ -37,10 +37,19 @@ __global__
 void naiveTransposeKernel(const float *input, float *output, int n) {
     // TODO: do not modify code, just comment on suboptimal accesses
 
+    // This is slow because it requires that the GPU communicate more frequently with
+    // the global memory.  Using the shared memory in the next section allows for 
+    // speed increases by putting the data in a faster location.  As the output is 
+    // computed here, it must pull the input directly from global and put it out 
+    // directly to global.  Fixing this, as we do in the next segment, affords a 
+    // large speed boost.
+
     const int i = threadIdx.x + 64 * blockIdx.x;
     int j = 4 * threadIdx.y + 64 * blockIdx.y;
     const int end_j = j + 4;
 
+    // Though it is barely a consideration, loop unrolling may add a tiny speed
+    // boost...
     for (; j < end_j; j++)
         output[j + n * i] = input[i + n * j];
 }
@@ -52,14 +61,44 @@ void shmemTransposeKernel(const float *input, float *output, int n) {
     // memory bank conflicts (0 bank conflicts should be possible using
     // padding). Again, comment on all sub-optimal accesses.
 
-    // __shared__ float data[???];
+    // Store the 64x64 sub-matrix in shared memory for easy access with padding.
+    __shared__ float data[64 * 65];  // This could lead to suboptimality if 
+                                     // padding is not allowed in the range.  
 
-    const int i = threadIdx.x + 64 * blockIdx.x;
-    int j = 4 * threadIdx.y + 64 * blockIdx.y;
+    // Indexing 64 by 64 blocks.
+    // Assign each thread a constant index according to the row.
+    const int i = threadIdx.x + 64 * blockIdx.x;  // Get the row index of the input
+    const int ii = threadIdx.x;  // Get the row index of the sub-matrix
+    const int iii = threadIdx.x + 64 * blockIdx.y; // transpose the blocks
+    
+    // Allow j to be a variable that iterates rows in the input and columns in the 
+    // output.  Do four column indices at a time.  
+    int j = 4 * threadIdx.y + 64 * blockIdx.y;  // Get the column index of the input
+    int jj = 4 * threadIdx.y;  // Get the column index of the sub-matrix
+    int jjj = 4 * threadIdx.y + 64 * blockIdx.x; // transpose the blocks
     const int end_j = j + 4;
 
-    for (; j < end_j; j++)
-        output[j + n * i] = input[i + n * j];
+    for (; j < end_j; j++){
+        data[ii + 65 * jj] = input[i + n * j];
+        jj++;
+    }
+    
+    // Reset j and jj
+    j = 4 * threadIdx.y + 64 * blockIdx.y;  
+    jj = 4 * threadIdx.y;  
+
+    // synchronize the threads here
+    __syncthreads();    // We have to wait for threads to sync, which slows us down a 
+                        // little.  
+
+    // Perform the transpose and save the data to the output
+    for (; j < end_j; j++) {
+        output[iii + n * jjj] = data[jj + 65 * ii]; // Here data is accessed again,
+                                                    // which leads to sub-optimality.
+        jj++;
+        jjj++;
+    }
+
 }
 
 __global__
@@ -67,13 +106,40 @@ void optimalTransposeKernel(const float *input, float *output, int n) {
     // TODO: This should be based off of your shmemTransposeKernel.
     // Use any optimization tricks discussed so far to improve performance.
     // Consider ILP and loop unrolling.
+    // Store the 64x64 sub-matrix in shared memory for easy access with padding.
+    __shared__ float data[64 * 65];
 
-    const int i = threadIdx.x + 64 * blockIdx.x;
-    int j = 4 * threadIdx.y + 64 * blockIdx.y;
-    const int end_j = j + 4;
+    // Indexing 64 by 64 blocks.
+    // Assign each thread a constant index according to the row.
+    const int i = threadIdx.x + 64 * blockIdx.x;  // Get the row index of the input
+    const int ii = threadIdx.x;  // Get the row index of the sub-matrix
+    const int iii = threadIdx.x + 64 * blockIdx.y; // transpose the blocks
+    
+    // Allow j to be a variable that iterates rows in the input and columns in the 
+    // output.  Do four column indices at a time.  
+    int j = 4 * threadIdx.y + 64 * blockIdx.y;  // Get the column index of the input
+    int jj = 4 * threadIdx.y;  // Get the column index of the sub-matrix
+    int jjj = 4 * threadIdx.y + 64 * blockIdx.x; // transpose the blocks
 
-    for (; j < end_j; j++)
-        output[j + n * i] = input[i + n * j];
+    // Unroll the loops
+    data[ii + 65 * (jj)] = input[i + n * (j)];
+    data[ii + 65 * (jj + 1)] = input[i + n * (j + 1)];
+    data[ii + 65 * (jj + 2)] = input[i + n * (j + 2)];
+    data[ii + 65 * (jj + 3)] = input[i + n * (j + 3)];
+    
+    // reset j and jj
+    j = 4 * threadIdx.y + 64 * blockIdx.y;  
+    jj = 4 * threadIdx.y;  
+
+    // synchronize the threads here
+    __syncthreads();
+
+    // Perform the transpose and save the data to the output
+    output[iii + n * (jjj)] = data[(jj) + 65 * ii];
+    output[iii + n * (jjj + 1)] = data[(jj + 1) + 65 * ii];
+    output[iii + n * (jjj + 2)] = data[(jj + 2) + 65 * ii];
+    output[iii + n * (jjj + 3)] = data[(jj + 3) + 65 * ii];    
+
 }
 
 void cudaTranspose(
