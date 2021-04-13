@@ -214,3 +214,123 @@ ls
 make all
 make
 make all
+make all
+make all
+make
+./transpose
+./transpose
+make
+./transpose
+make all
+./transpose
+make all
+./transpose
+./transpose
+./transpose
+make all
+make all
+make all
+./transpose
+make all
+./transpose
+make all
+make all
+./transpose
+./transpose
+make all
+./transpose
+./transpose
+make all
+./transpose
+./transpose
+./transpose
+./transpose
+./transpose
+make all
+./transpose
+make all
+./transpose
+make all
+./transpose
+./transpose
+make all
+./transpose
+./transpose
+make all
+./transpose
+make
+./transpose
+make
+./transpose
+./transpose
+./transpose
+make
+make
+./transpose
+./transpose
+make
+make
+./transpose
+make
+./transpose
+./transpose
+./transpose
+make
+./transpose
+make
+./transpose
+make
+make
+make
+./transpose
+./transpose
+./transpose
+./transpose
+make
+./transpose
+make
+./transpose
+./transpose
+make
+./transpose
+make
+./transpose
+./transpose
+make
+make
+./transpose
+cd ..
+git add -A
+git commit -m 'Could turn it in now, but will play with 2 c a bit longer '
+git push origin main
+cd lab2
+./transpose
+./transpose
+make
+./transpose
+make all
+make all
+make all
+cd ..
+git add -A
+git commit -m 'Lab 2 first commit'
+git push origin main
+./transpose
+./transpose
+cd/lab2
+ls
+cd lab2
+./transpose
+make all
+make all
+make all
+make all
+./transpose
+make all
+make
+make 
+./transpose
+make all
+./transpose
+./transpose
+./transpose

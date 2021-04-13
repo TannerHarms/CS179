@@ -62,7 +62,7 @@ void shmemTransposeKernel(const float *input, float *output, int n) {
     // padding). Again, comment on all sub-optimal accesses.
 
     // Store the 64x64 sub-matrix in shared memory for easy access with padding.
-    __shared__ float data[64 * 65];  // This could lead to suboptimality if 
+    __shared__ float data[64 * 65];  // This could lead to bank conflicts, if 
                                      // padding is not allowed in the range.  
 
     // Indexing 64 by 64 blocks.

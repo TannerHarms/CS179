@@ -93,3 +93,12 @@ dependencies in the following way:
 Part e:
 Loop unrolling could be applied here.  Either all 128 instances could be unrolled, or 
 the increment size in the for loop could be made larger.  
+
+
+Additional:  Time spent on assignment
+-------------------------------------------------------------------------------------
+All together: ~15 hours
+Part 1: ~ 7 hours
+Part 2: ~ 8 hours
+*** The TA's (I worked with Ivy) were very helpful with this assignment.  If not for 
+    time in office hours, these numbers would have been much larger.  Thanks!

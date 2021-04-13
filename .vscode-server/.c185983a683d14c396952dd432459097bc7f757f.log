@@ -7,42 +7,12 @@
 * as described in the license https://aka.ms/vscode-remote/license
 *
 
-Extension host agent listening on 37249
+Extension host agent listening on 44609
 
-[08:05:10] Extension host agent started.
-[08:05:10] [127.0.0.1][0d84bc3d][ExtensionHostConnection] New connection established.
-[08:05:10] [127.0.0.1][204743e2][ManagementConnection] New connection established.
+[09:14:28] Extension host agent started.
+[09:14:28] [127.0.0.1][225134eb][ManagementConnection] New connection established.
+[IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
+[09:14:28] [127.0.0.1][03ca7d2a][ExtensionHostConnection] New connection established.
 bash: cannot set terminal process group (-1): Inappropriate ioctl for device
 bash: no job control in this shell
-[IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
-[08:05:10] [127.0.0.1][0d84bc3d][ExtensionHostConnection] <7495> Launched Extension Host Process.
-[13:12:31] [127.0.0.1][204743e2][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/out/bootstrap.js:1:370)
-    at process.emit (events.js:315:20)
-[15:31:57] [127.0.0.1][204743e2][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[15:31:57] [127.0.0.1][204743e2][ManagementConnection] The client has reconnected.
-[15:31:57] [127.0.0.1][0d84bc3d][ExtensionHostConnection] The client has reconnected.
-[16:09:01] [127.0.0.1][204743e2][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/out/bootstrap.js:1:370)
-    at process.emit (events.js:315:20)
-[18:19:14] [127.0.0.1][204743e2][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[18:19:14] [127.0.0.1][204743e2][ManagementConnection] The client has reconnected.
-[18:19:31] [127.0.0.1][0d84bc3d][ExtensionHostConnection] The client has reconnected.
-[20:13:32] [127.0.0.1][204743e2][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/out/bootstrap.js:1:370)
-    at process.emit (events.js:315:20)
-[20:26:50] [127.0.0.1][204743e2][ManagementConnection] Another client has connected, will shorten the wait for reconnection 5m before disposing...
-[20:26:50] [127.0.0.1][9e72e084][ManagementConnection] New connection established.
-[20:26:50] [127.0.0.1][738dcd19][ExtensionHostConnection] New connection established.
-[20:26:50] [127.0.0.1][738dcd19][ExtensionHostConnection] <20075> Launched Extension Host Process.
-[IPC Library: Pty Host]  INFO Listing 1 persistent terminals, 1 total terminals
-[IPC Library: Pty Host]  INFO Persistent process "2": Replaying 206825 chars and 13 size events
-[20:31:50] [127.0.0.1][204743e2][ManagementConnection] The reconnection short grace time of 5m has expired, so the connection will be disposed.
-[20:31:51] [127.0.0.1][0d84bc3d][ExtensionHostConnection] <7495> Extension Host Process exited with code: 0, signal: null.
-[21:02:07] [127.0.0.1][9e72e084][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
-Error: Unexpected SIGPIPE
-    at process.<anonymous> (/home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/out/bootstrap.js:1:370)
-    at process.emit (events.js:315:20)
+[09:14:28] [127.0.0.1][03ca7d2a][ExtensionHostConnection] <23850> Launched Extension Host Process.
