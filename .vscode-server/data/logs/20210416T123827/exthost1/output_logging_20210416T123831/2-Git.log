@@ -1,0 +1,52 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --git-dir
+Open repository: /home/tharms
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/lab2/transpose_device.cu
+> git show --textconv :CS179_labs/lab2/example.cu
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_device.cu
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/example.cu
+> git cat-file -s 3eaf12b261c6479a220053fe0ebab6562671ad94
+> git cat-file -s 0f327507eb81255e61c4648c0f29ba7f0209bc73
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :CS179_labs/lab2/transpose_host.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_host.cpp
+> git cat-file -s 094fa9d96e78009e0354bb1670096b67ff3e0201
+> git show --textconv :CS179_labs/lab2/transpose_device.cu
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_device.cu
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/tharms/CS179_labs/lab2/transpose_host.cpp
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n41 -- /home/tharms/CS179_labs/lab2/transpose_host.cpp
+> git cat-file -s 3eaf12b261c6479a220053fe0ebab6562671ad94
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/tharms/CS179_labs/lab2/transpose_device.cu
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n41 -- /home/tharms/CS179_labs/lab2/transpose_device.cu
+> git show --textconv :CS179_labs/lab2/README.txt
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/README.txt
+> git cat-file -s b57461129335892296ae7e383578897c66f387b0
+> git show --textconv :CS179_labs/lab2/transpose_device.cuh
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_device.cuh
+> git cat-file -s 23f2f66ba52767bffb8ded52c40e5c2452fb37a0
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cpp
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cpp
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n41 -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cpp
+> git show --textconv :CS179_labs/lab2/transpose_device.cu
+> git ls-files --stage -- /home/tharms/CS179_labs/lab2/transpose_device.cu
+> git cat-file -s 3eaf12b261c6479a220053fe0ebab6562671ad94
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cu
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cu
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cpp

@@ -1,0 +1,86 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --git-dir
+Open repository: /home/tharms
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git check-ignore -v -z --stdin
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show --textconv :CS179_labs/lab3/Makefile
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/Makefile
+> git show --textconv :CS179_labs/lab3/lab3.txt
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/lab3.txt
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cpp
+> git show --textconv :CS179_labs/lab3/Makefile
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/Makefile
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cpp
+> git show --textconv :CS179_labs/lab3/lab3.txt
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/lab3.txt
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cpp
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/tharms/CS179_labs/lab3/resources/example_testfile_alt2.wav
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cpp
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cuh
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cuh
+> git show --textconv :CS179_labs/lab3/src/ta_utilities.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/ta_utilities.hpp
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cpp
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cuh
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cuh
+> git show --textconv :CS179_labs/lab3/src/ta_utilities.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/ta_utilities.hpp
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cpp
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cu
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cu
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cuh
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cuh
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cpp
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template

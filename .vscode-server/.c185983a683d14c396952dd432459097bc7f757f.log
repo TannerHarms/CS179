@@ -7,12 +7,12 @@
 * as described in the license https://aka.ms/vscode-remote/license
 *
 
-Extension host agent listening on 44609
+Extension host agent listening on 37271
 
-[09:14:28] Extension host agent started.
-[09:14:28] [127.0.0.1][225134eb][ManagementConnection] New connection established.
-[IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
-[09:14:28] [127.0.0.1][03ca7d2a][ExtensionHostConnection] New connection established.
+[12:38:27] Extension host agent started.
+[12:38:27] [127.0.0.1][3b614868][ManagementConnection] New connection established.
+[12:38:27] [127.0.0.1][26abb8b6][ExtensionHostConnection] New connection established.
 bash: cannot set terminal process group (-1): Inappropriate ioctl for device
 bash: no job control in this shell
-[09:14:28] [127.0.0.1][03ca7d2a][ExtensionHostConnection] <23850> Launched Extension Host Process.
+[IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
+[12:38:27] [127.0.0.1][26abb8b6][ExtensionHostConnection] <25070> Launched Extension Host Process.

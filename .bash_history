@@ -334,3 +334,38 @@ make all
 ./transpose
 ./transpose
 ./transpose
+make clean
+make
+./transpose
+make clean
+make 
+make clean
+cd ../..
+ls
+cd tharms_assignments
+ls
+ls
+cd ..
+zip -r lab2_2021_submission.zip CS179_labs/lab2
+zip -sf lab2_2021_submission
+rm lab2_2021_submission
+rm lab2_2021_submission.zip
+sf
+ls
+zip -r lab2_2021_submission.zip CS179_labs/lab2
+zip -sf lab2_2021_submission
+git add -A
+git commit -m 'Lab2 is now turned in'
+git push origin main
+cd ../..
+ls
+cd ..
+wget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgz
+wget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgz
+wget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgtharmsz
+wget http://courses.cms.caltech.edu/cs179/2021_labs/lab3/lab3.tgz
+wget http://courses.cms.caltech.edu/cs179/2021_labs/lab3/lab3.zip
+ls
+rm lab1.tgz lab1.tgz.1 lab1.tgz.2
+ls
+unzip lab3.zip -d CS179_labs
