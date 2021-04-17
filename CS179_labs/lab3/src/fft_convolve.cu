@@ -36,9 +36,27 @@ __device__ static float atomicMax(float* address, float val)
 __global__
 void
 cudaProdScaleKernel(const cufftComplex *raw_data, const cufftComplex *impulse_v, 
-    cufftComplex *out_data,
-    int padded_length) {
+    cufftComplex *out_data, int padded_length) {
+    
+    // It makes sense to just use one dimension here.  Also, problem oriented this way
+    uint thread_index = blockIdx.x * blockDim.x + threadIdx.x;
 
+    while (thread_index < padded_length) {
+        // Do complex multiplication
+        // Store temporary variables
+        float in_x = raw_data[thread_index].x;
+        float in_y = raw_data[thread_index].y;
+        float imp_x = impulse_v[thread_index].x;
+        float imp_y = impulse_v[thread_index].y;
+
+        // Update the output
+        out_data[thread_index].x = (in_x * imp_x) - (in_y * imp_y);
+        out_data[thread_index].y = (in_x * imp_y) + (in_y * imp_x);
+
+        // IUpdate the grid stride index
+        thread_index += blockDim.x * gridDim.x;
+
+    }
 
     /* TODO: Implement the point-wise multiplication and scaling for the
     FFT'd input and impulse response. 
@@ -107,6 +125,9 @@ void cudaCallProdScaleKernel(const unsigned int blocks,
         const unsigned int padded_length) {
         
     /* TODO: Call the element-wise product and scaling kernel. */
+
+    cudaProdScaleKernel<<<blocks, threadsPerBlock>>>(raw_data, impulse_v, out_data, padded_length);
+
 }
 
 void cudaCallMaximumKernel(const unsigned int blocks,

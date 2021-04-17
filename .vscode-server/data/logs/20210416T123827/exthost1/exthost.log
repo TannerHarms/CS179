@@ -22,3 +22,5 @@
 [2021-04-16 12:38:45.318] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/extensions/json-language-features/client/dist/node/jsonClientMain
 [2021-04-16 12:38:45.366] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"extensionId":{"value":"vscode.typescript-language-features","_lower":"vscode.typescript-language-features"},"activationEvent":"onLanguage:jsonc"}
 [2021-04-16 12:38:45.366] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/tharms/.vscode-server/bin/c185983a683d14c396952dd432459097bc7f757f/extensions/typescript-language-features/dist/extension
+[2021-04-16 16:04:48.634] [exthost] [info] extension host terminating: renderer disconnected for too long (2)
+[2021-04-16 16:04:49.655] [exthost] [info] exiting with code 0

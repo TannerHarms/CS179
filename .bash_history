@@ -369,3 +369,14 @@ ls
 rm lab1.tgz lab1.tgz.1 lab1.tgz.2
 ls
 unzip lab3.zip -d CS179_labs
+cd..
+cd ..
+git add -A
+git commit -m 'Lab 3 has been uploaded and read over'
+cd lab3
+make
+make
+make
+make
+make
+make
