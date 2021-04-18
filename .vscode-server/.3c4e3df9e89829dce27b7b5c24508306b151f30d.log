@@ -7,32 +7,18 @@
 * as described in the license https://aka.ms/vscode-remote/license
 *
 
-Extension host agent listening on 39395
+Extension host agent listening on 43753
 
-[20:51:16] Extension host agent started.
-[20:51:17] [127.0.0.1][409e1816][ManagementConnection] New connection established.
-[20:51:17] [127.0.0.1][7fa3a0d5][ExtensionHostConnection] New connection established.
+[12:08:14] Extension host agent started.
+[12:08:15] [127.0.0.1][a0b4ecf7][ManagementConnection] New connection established.
+[12:08:15] [127.0.0.1][5be4918f][ExtensionHostConnection] New connection established.
 bash: cannot set terminal process group (-1): Inappropriate ioctl for device
 bash: no job control in this shell
 [IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
-[20:51:17] [127.0.0.1][7fa3a0d5][ExtensionHostConnection] <3877> Launched Extension Host Process.
-[20:53:19] [127.0.0.1][409e1816][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
-[20:53:21] [127.0.0.1][7fa3a0d5][ExtensionHostConnection] <3877> Extension Host Process exited with code: 0, signal: null.
+[12:08:15] [127.0.0.1][5be4918f][ExtensionHostConnection] <734> Launched Extension Host Process.
+[17:25:33] [127.0.0.1][a0b4ecf7][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[17:25:34] [127.0.0.1][5be4918f][ExtensionHostConnection] <734> Extension Host Process exited with code: 0, signal: null.
 Last EH closed, waiting before shutting down
-[20:53:21] Last EH closed, waiting before shutting down
-Got delay-shutdown request while in shutdown timeout, delaying
-[20:53:32] Got delay-shutdown request while in shutdown timeout, delaying
-Cancelling previous shutdown timeout
-[20:53:32] Cancelling previous shutdown timeout
-[20:53:33] [127.0.0.1][25aeca4d][ManagementConnection] New connection established.
-[20:53:33] [127.0.0.1][2371fa55][ExtensionHostConnection] New connection established.
-[20:53:33] [127.0.0.1][2371fa55][ExtensionHostConnection] <4799> Launched Extension Host Process.
-[IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
-New EH opened, aborting shutdown
-[20:58:32] New EH opened, aborting shutdown
-[21:47:25] [127.0.0.1][25aeca4d][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
-[21:47:26] [127.0.0.1][2371fa55][ExtensionHostConnection] <4799> Extension Host Process exited with code: 0, signal: null.
-Last EH closed, waiting before shutting down
-[21:47:26] Last EH closed, waiting before shutting down
+[17:25:34] Last EH closed, waiting before shutting down
 Last EH closed, shutting down
-[21:52:26] Last EH closed, shutting down
+[17:30:34] Last EH closed, shutting down

@@ -21,3 +21,51 @@ Open repository: /home/tharms
 > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
 > git remote --verbose
 > git config --get commit.template
+> git status -z -u
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cu
+> git ls-files --stage -- /home/tharms/CS179_labs/lab1/src/blur.cu
+> git symbolic-ref --short HEAD
+> git cat-file -s ff512599eb7ff14fc9480c964bf0cd30dca90106
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git cat-file -s c35ceaca6405ce2ae30cbf916c52c9c97145efdd
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cu
+> git show --textconv :CS179_labs/lab1/src/blur.cu
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cu
+> git ls-files --stage -- /home/tharms/CS179_labs/lab1/src/blur.cu
+> git cat-file -s ff512599eb7ff14fc9480c964bf0cd30dca90106
+> git cat-file -s c35ceaca6405ce2ae30cbf916c52c9c97145efdd
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cu
+> git show --textconv :CS179_labs/lab1/src/blur.cu
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cu
+> git ls-files --stage -- /home/tharms/CS179_labs/lab1/src/blur.cu
+> git cat-file -s ff512599eb7ff14fc9480c964bf0cd30dca90106
+> git cat-file -s c35ceaca6405ce2ae30cbf916c52c9c97145efdd
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cu
+> git show --textconv :CS179_labs/lab1/src/blur.cu
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template

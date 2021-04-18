@@ -155,7 +155,7 @@ int large_gauss_test(int argc, char **argv){
     parameter to control how many trials we run. */
 
     int nChannels = 2;      // Can set as the number of trials
-    int N = 1e7;        // Can set how many data points arbitrarily
+    int N = 1e5;        // Can set how many data points arbitrarily
     int impulse_length = GAUSSIAN_SIZE;
 
 #endif
@@ -379,11 +379,11 @@ int large_gauss_test(int argc, char **argv){
         */
 
         // set cuda input data leftover size to zeros
-        gpuErrchk( cudaMemset((void**)&dev_input_data + (N + 1), 0, 
+        gpuErrchk( cudaMemset((void**)&dev_input_data[N], 0, 
             (impulse_length - 1) * sizeof(cufftComplex)));
 
         // set cuda impulse data leftover size to zeros
-        gpuErrchk( cudaMemset((void**)&dev_impulse_v + (impulse_length + 1), 0, 
+        gpuErrchk( cudaMemset((void**)&dev_impulse_v[impulse_length], 0, 
             (N - 1) * sizeof(cufftComplex)));
 
         /* TODO: Create a cuFFT plan for the forward and inverse transforms. 
@@ -427,7 +427,8 @@ int large_gauss_test(int argc, char **argv){
 
         // Destroy the cufft plan
         cufftDestroy(plan);
-
+        
+        // cout << "test2..." << endl;
         // For testing and timing-control purposes only
         gpuErrchk(cudaMemcpy(output_data_testarr, dev_out_data, padded_length * sizeof(cufftComplex),
             cudaMemcpyDeviceToHost));
@@ -522,10 +523,11 @@ int large_gauss_test(int argc, char **argv){
 
         /* TODO 2: Allocate memory to store the maximum magnitude found. 
         (You only need enough space for one floating-point number.) */
+        gpuErrchk( cudaMalloc((void**)&dev_max_abs_val, 1 * sizeof(float)));
 
         /* TODO 2: Set it to 0 in preparation for running. 
         (Recommend using cudaMemset) */
-
+        gpuErrchk( cudaMemset(dev_max_abs_val, 0, 1 * sizeof(float)));
 
         /* NOTE: This is a function in the fft_convolve_cuda.cu file,
         where you'll fill in the kernel call for finding the maximum
@@ -540,6 +542,12 @@ int large_gauss_test(int argc, char **argv){
         } else {
                 cerr << "No kernel error detected" << endl;
         }
+
+        float test_abs_val;
+        gpuErrchk( cudaMemcpy(&test_abs_val, 
+            dev_max_abs_val, 1 * sizeof(float), cudaMemcpyDeviceToHost) );
+        cout << "initial max abs val = " << test_abs_val << endl;
+
 
 
         /* NOTE: This is a function in the fft_convolve_cuda.cu file,
@@ -557,7 +565,7 @@ int large_gauss_test(int argc, char **argv){
         }
 
 
-
+        cout << "testing  " << gpu_time_ms_norm << endl;
         STOP_RECORD_TIMER(gpu_time_ms_norm);
 
         // For testing purposes only
@@ -573,6 +581,11 @@ int large_gauss_test(int argc, char **argv){
         Note that we have a padded-length signal, so be careful of the
         size of the memory copy. */
 
+        // ***** I thought we would only store the first N values here, but it looks like
+        // the rest of the code stores padded_length values with the output.  I am not
+        // sure what to make of this... *****
+        gpuErrchk( cudaMemcpy(output_data, dev_out_data, padded_length * sizeof(cufftComplex),
+            cudaMemcpyDeviceToHost));
 
         cout << endl;
         cout << "CPU normalization constant: " << max_abs_val << endl;
