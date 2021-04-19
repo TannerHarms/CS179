@@ -108,10 +108,9 @@ cudaMaximumKernel(cufftComplex *out_data, float *max_abs_val,
 
     */
 
-    // Here I will just implement the vanilla Interleaved Addressing reduction 
-    // as a baseline.  I am referencing M. Harris' slides
+    // I am referencing M. Harris' slides
     // https://developer.download.nvidia.com/assets/cuda/files/reduction.pdf
-    // If I have time, I will try to write an optimized version of this.  
+    // If I have time, I will try to write a better optimized version of this.  
 
     // Set up shared data
     extern __shared__ float sdata[];
