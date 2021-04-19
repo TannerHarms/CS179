@@ -7,18 +7,26 @@
 * as described in the license https://aka.ms/vscode-remote/license
 *
 
-Extension host agent listening on 43753
+Extension host agent listening on 33475
 
-[12:08:14] Extension host agent started.
-[12:08:15] [127.0.0.1][a0b4ecf7][ManagementConnection] New connection established.
-[12:08:15] [127.0.0.1][5be4918f][ExtensionHostConnection] New connection established.
+[20:56:21] Extension host agent started.
+[20:56:37] [127.0.0.1][1451722b][ManagementConnection] New connection established.
+[20:56:37] [127.0.0.1][fdea96c4][ExtensionHostConnection] New connection established.
 bash: cannot set terminal process group (-1): Inappropriate ioctl for device
 bash: no job control in this shell
 [IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
-[12:08:15] [127.0.0.1][5be4918f][ExtensionHostConnection] <734> Launched Extension Host Process.
-[17:25:33] [127.0.0.1][a0b4ecf7][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
-[17:25:34] [127.0.0.1][5be4918f][ExtensionHostConnection] <734> Extension Host Process exited with code: 0, signal: null.
+[20:56:37] [127.0.0.1][fdea96c4][ExtensionHostConnection] <7715> Launched Extension Host Process.
+[20:56:53] [127.0.0.1][1451722b][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[20:56:54] [127.0.0.1][fdea96c4][ExtensionHostConnection] <7715> Extension Host Process exited with code: 0, signal: null.
 Last EH closed, waiting before shutting down
-[17:25:34] Last EH closed, waiting before shutting down
-Last EH closed, shutting down
-[17:30:34] Last EH closed, shutting down
+[20:56:54] Last EH closed, waiting before shutting down
+Got delay-shutdown request while in shutdown timeout, delaying
+[20:57:08] Got delay-shutdown request while in shutdown timeout, delaying
+Cancelling previous shutdown timeout
+[20:57:08] Cancelling previous shutdown timeout
+[20:57:08] [127.0.0.1][78a0dc63][ManagementConnection] New connection established.
+[20:57:09] [127.0.0.1][d0639d77][ExtensionHostConnection] New connection established.
+[IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
+[20:57:09] [127.0.0.1][d0639d77][ExtensionHostConnection] <8278> Launched Extension Host Process.
+New EH opened, aborting shutdown
+[21:02:08] New EH opened, aborting shutdown

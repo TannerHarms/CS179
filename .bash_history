@@ -380,3 +380,118 @@ make
 make
 make
 make
+make clean
+git add -A
+git commit -m 'lab3 routine save'
+git push origin main
+make all
+make all
+make all
+make all
+make
+make
+make
+make all
+./noaudio-fft
+./noaudio-fft 512 256
+make
+./noaudio-fft 512 256
+make
+./noaudio-fft 512 256
+make
+./noaudio-fft 512 256
+make
+make
+make
+make
+make
+./noaudio-fft 512 256
+./noaudio-fft 256 256
+make
+./noaudio-fft 256 256
+make
+make
+./noaudio-fft 256 256
+make
+make
+make
+make
+./noaudio-fft 256 256
+make
+./noaudio-fft 256 256
+./noaudio-fft 256 256
+make
+make
+./noaudio-fft 256 256
+make
+./noaudio-fft 256 256
+make all
+./noaudio-fft 256 256
+make
+./noaudio-fft 256 256
+make all
+./noaudio-fft 512 256
+make
+./noaudio-fft 512 256
+make
+./noaudio-fft 512 256
+make
+./noaudio-fft 512 256
+make
+make
+./noaudio-fft 512 256
+make
+./noaudio-fft 512 256
+make all
+./noaudio-fft 512 256
+make
+./noaudio-fft 512 256
+git add -A
+git commit -m 'Part1 is working'
+git push origin main
+make
+./noaudio-fft 512 256
+cudamemcheck cuda-memcheck --leak-check full ./noaudio-fft 256 128./noaudio-fft 512 256
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make clean all
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make all
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make clean
+make all
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make all
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make all
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make all
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make all
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make all
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make all
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make
+make
+make
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make all
+make all
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make all
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make all
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make all
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make
+make

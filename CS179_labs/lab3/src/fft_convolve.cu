@@ -119,32 +119,45 @@ cudaMaximumKernel(cufftComplex *out_data, float *max_abs_val,
     // Load one element from global to shared memory with each thread
     unsigned int thread_index = threadIdx.x; // thread index in current block
     unsigned int i = blockIdx.x * blockDim.x + threadIdx.x;  // global thread index
-    sdata[thread_index] = abs(out_data[i].x);   // load data and compute absolute value
-    __syncthreads(); 
+    float max_abs = 0.0;
 
     // Allow for records of varying length
-    while (thread_index < padded_length) {
-
-        // Do the reduction in shared memory per block
-        for(unsigned int s = 1; s < blockDim.x; s *= 2) {
-            if (thread_index % (2 * s) == 0) {
-                // Use the atomicMax function defined above
-                sdata[thread_index] = atomicMax(&sdata[thread_index], sdata[thread_index + s]);
-            }
-            __syncthreads();
-        }
-
-        // write the result for this to the global memory
-        // If the first index of the block
-        if (thread_index == 0) {
-            // If the previous max absolute value is less than that of this thread
-            if (*max_abs_val < sdata[0]) {
-                *max_abs_val = sdata[0]; // store the value of the new max abs val
-            }
+    while (i < padded_length) {
+        if (fabsf(out_data[i].x) > max_abs) {
+            max_abs = fabsf(out_data[i].x);
         }
 
         // update with grid stride
-        thread_index += blockDim.x * gridDim.x;
+        i += blockDim.x * gridDim.x;
+    }
+    sdata[thread_index] = max_abs;
+
+    __syncthreads(); 
+
+    // Do the reduction in shared memory per block
+    for(uint s = blockDim.x/2; s > 0; s >>= 1) {
+        if (thread_index < s) {
+            sdata[thread_index] = max(sdata[thread_index],sdata[thread_index + s]);
+        }
+        __syncthreads();
+    }
+
+    // for(unsigned int s = 1; s < blockDim.x; s *= 2) {
+        
+    //     int index = 2 * s * thread_index;
+
+    //     if (index < blockDim.x) {
+    //         // Get the max of the 
+    //         sdata[thread_index] = max(sdata[thread_index],sdata[thread_index + s]);
+    //     }
+    //     __syncthreads();
+    // }
+
+    // write the result for this to the global memory
+    // If the first index of the block
+    if (thread_index == 0) {
+        // If the previous max absolute value is less than that of this thread
+        atomicMax(max_abs_val, sdata[0]);
     }
 
 }
@@ -194,7 +207,7 @@ void cudaCallMaximumKernel(const unsigned int blocks,
 
     /* TODO 2: Call the max-finding kernel. */
 
-    cudaMaximumKernel<<<blocks, threadsPerBlock>>>(out_data, max_abs_val, padded_length);
+    cudaMaximumKernel<<<blocks, threadsPerBlock, threadsPerBlock * sizeof(float)>>>(out_data, max_abs_val, padded_length);
 }
 
 
