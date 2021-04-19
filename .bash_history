@@ -1,21 +1,3 @@
-ls -a
-ls -d
-ls
-ls
-ls -a
-mkdir tharms_assignments
-ls
-exit
-wget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgz
-ls
-tar -xzvf lab1.tgz
-ls
-make
-make
-git --version
-ls
-cd ~/lab1
-ls
 cd ..
 git apt-get update && apt-get upgrade
 apt-get update && apt-get upgrade
@@ -495,3 +477,24 @@ make all
 cuda-memcheck --leak-check full ./noaudio-fft 256 128
 make
 make
+make
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+cuda-memcheck --leak-check full ./noaudio-fft 256 128make
+make all
+ ./noaudio-fft 256 128
+make
+ ./noaudio-fft 256 128
+make
+make
+ ./noaudio-fft 256 128
+make
+ ./noaudio-fft 256 128
+make
+ ./noaudio-fft 256 128
+make
+ ./noaudio-fft 256 128
+make
+make
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make
+cuda-memcheck --leak-check full ./noaudio-fft 256 128
