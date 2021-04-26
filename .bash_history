@@ -1,42 +1,3 @@
-cd ..
-git apt-get update && apt-get upgrade
-apt-get update && apt-get upgrade
-ls
-git init
-git add -a
-git add -A
-git commit -m 'init: Initialized git for CS179 assignments.'
-git remote add origin https://github.com/TannerHarms/CS179.git
-git push -u origin main
-git branch -M main
-git push -u origin main
-make all
-make all
-make all
-make all
-nvcc --version
-make all
-git add -A
-git commit -m 'add: filled in all of the TODO: blocks.  Getting __global__ undefined error.'
-git push origin main
-make all
-make
-make all
-make all
-make all
-make all
-make all
-make all
-./noaudio-blur
-512 200
-<512> <200>
-./noaudio-blur
-<512> <200>
-./noaudio-blur
-./noaudio-blur 512 200
-make all
-./noaudio 512 200
-./noaudio-blur 512 200
 make all
 ./noaudio-blur 512 200
 make all
@@ -498,3 +459,42 @@ make
 cuda-memcheck --leak-check full ./noaudio-fft 256 128
 make
 cuda-memcheck --leak-check full ./noaudio-fft 256 128
+make clean
+cd ../..
+ls
+zip lab3_2021_submission.zip ~/CS179_labs/lab3
+ls
+zip -sf lab3_2021_submission
+rm lab3_2021_submission.zip
+ls
+zip lab3_2021_submission.zip CS179_labs/lab3
+rm lab3_2021_submission.zip
+zip lab3_2021_submission.zip /CS179_labs/lab3
+cd CS179_labs
+ls
+cd lab3
+ls
+cd ../..
+rm lab3_2021_submission.zip
+zip -r lab3_2021_submission.zip /CS179_labs/lab3
+zip -r lab3_2021_submission.zip CS179_labs/lab3
+ls
+zip -sf lab3_2021_submission.zip
+cd CS179_labs
+git add -A
+git commit -m 'lab3 sumbitted'
+git push origin main
+git add -A
+git commit -m 'lab3 sumbitted'
+git push origin main
+zip -r lab3_2021_submission.zip CS179_labs/lab3
+rm lab3_2021_submission
+ls
+cd ../..
+ls
+cd tharms
+ls
+zip -r lab3_2021_submission.zip CS179_labs/lab3
+cd ../..
+wget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.t
+wget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgzwget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgzwget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgzwget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgzwget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgz
