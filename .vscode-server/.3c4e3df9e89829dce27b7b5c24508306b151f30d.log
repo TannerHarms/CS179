@@ -7,38 +7,12 @@
 * as described in the license https://aka.ms/vscode-remote/license
 *
 
-Extension host agent listening on 40453
+Extension host agent listening on 38655
 
-[09:21:00] Extension host agent started.
-[09:21:00] [127.0.0.1][77062456][ManagementConnection] New connection established.
-[09:21:00] [127.0.0.1][232a1c6e][ExtensionHostConnection] New connection established.
+[09:28:00] Extension host agent started.
+[09:28:00] [127.0.0.1][f3bc4c76][ManagementConnection] New connection established.
+[09:28:00] [127.0.0.1][717827a2][ExtensionHostConnection] New connection established.
 bash: cannot set terminal process group (-1): Inappropriate ioctl for device
 bash: no job control in this shell
 [IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
-[09:21:00] [127.0.0.1][232a1c6e][ExtensionHostConnection] <15260> Launched Extension Host Process.
-[node.js fs] readdir with filetypes failed with error:  [Error: EACCES: permission denied, scandir '/home/afomina/'] {
-  errno: -13,
-  code: 'EACCES',
-  syscall: 'scandir',
-  path: '/home/afomina/'
-}
-[node.js fs] readdir with filetypes failed with error:  [Error: EACCES: permission denied, scandir '/home/afomina/'] {
-  errno: -13,
-  code: 'EACCES',
-  syscall: 'scandir',
-  path: '/home/afomina/'
-}
-[09:31:31] [127.0.0.1][77062456][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
-[09:31:32] [127.0.0.1][232a1c6e][ExtensionHostConnection] <15260> Extension Host Process exited with code: 0, signal: null.
-Last EH closed, waiting before shutting down
-[09:31:32] Last EH closed, waiting before shutting down
-Got delay-shutdown request while in shutdown timeout, delaying
-[09:32:23] Got delay-shutdown request while in shutdown timeout, delaying
-Cancelling previous shutdown timeout
-[09:32:23] Cancelling previous shutdown timeout
-[09:32:23] [127.0.0.1][4ed8de92][ManagementConnection] New connection established.
-[09:32:23] [127.0.0.1][0a9e36ec][ExtensionHostConnection] New connection established.
-[09:32:23] [127.0.0.1][0a9e36ec][ExtensionHostConnection] <21837> Launched Extension Host Process.
-[IPC Library: Pty Host]  INFO Listing 1 persistent terminals, 1 total terminals
-New EH opened, aborting shutdown
-[09:37:23] New EH opened, aborting shutdown
+[09:28:01] [127.0.0.1][717827a2][ExtensionHostConnection] <21074> Launched Extension Host Process.

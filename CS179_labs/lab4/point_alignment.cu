@@ -167,10 +167,10 @@ int main(int argc, char *argv[]) {
 
     // TODO: Don't forget to set the bottom row of the final transformation
     //       to [0,0,0,1] (right-most columns of the transposed matrix)
-    for (int i = 0; i < 3; i++) {
-        out_transformation[IDX2C(i,4,4)] = 0;
-    }
-    out_transformation[IDX2C(4,4,4)] = 1;
+    out_transformation[point_dim * 0 + 4] = 0;
+    out_transformation[point_dim * 1 + 4] = 0;
+    out_transformation[point_dim * 2 + 4] = 0;
+    out_transformation[point_dim * 3 + 4] = 1;
 
     // Print transformation in row order.
     for (int i = 0; i < 4; i++) {
@@ -184,24 +184,20 @@ int main(int argc, char *argv[]) {
     // Transform point and print output object file
     ///////////////////////////////////////////////////////////////////////////
     
-    std::cout << "check 1 " << point_dim << " " << num_points << std::endl;
     // TODO Allocate and Initialize data matrix
     float * dev_pt;
     CUDA_CALL(cudaMalloc((void**)&dev_pt, point_dim * num_points * sizeof(float)));        // n by 4
     CUBLAS_CALL(cublasSetMatrix(num_points, point_dim, sizeof(float), x1mat, num_points, dev_pt, num_points));
-        std::cout << "check 1" << std::endl;
 
     // TODO Allocate and Initialize transformation matrix
     float * dev_trans_mat;
     CUDA_CALL(cudaMalloc((void**)&dev_trans_mat, point_dim * point_dim * sizeof(float)));        // 4 by 4
     CUBLAS_CALL(cublasSetMatrix(point_dim, point_dim, sizeof(float), 
         out_transformation, point_dim, dev_trans_mat, point_dim));
-        std::cout << "check 1" << std::endl;
 
     // TODO Allocate and Initialize transformed points
     float * dev_trans_pt;
     CUDA_CALL(cudaMalloc((void**)&dev_trans_pt, point_dim * num_points * sizeof(float)));        // n by 4
-    std::cout << "check 1" << std::endl;
     float one_d = 1;
     float zero_d = 0;
 
@@ -210,12 +206,10 @@ int main(int argc, char *argv[]) {
     CUBLAS_CALL(cublasSgemm(handle, transOn, transOn, point_dim, num_points, point_dim,
         &one_d, dev_trans_mat, point_dim, dev_pt, num_points, &zero_d, dev_trans_pt, point_dim));
 
-    std::cout << "check 1" << std::endl;
     // So now dev_trans_pt has shape (4 x n)
     float * trans_pt = (float *)malloc(num_points * point_dim * sizeof(float)); 
     CUDA_CALL(cudaMemcpy(trans_pt, dev_trans_pt, sizeof(float) * num_points * point_dim, 
         cudaMemcpyDeviceToHost));
-    std::cout << "check 1" << std::endl;
 
     // get Object from transformed vertex matrix
     Object trans_obj = obj_from_vertex_array(trans_pt, num_points, point_dim, obj1);

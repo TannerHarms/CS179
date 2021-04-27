@@ -16,3 +16,5 @@
 [2021-04-26 09:32:25.135] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/tharms/.vscode-server/bin/3c4e3df9e89829dce27b7b5c24508306b151f30d/extensions/ms-vscode.js-debug/src/extension.js
 [2021-04-26 09:35:51.231] [exthost] [info] ExtensionService#_doActivateExtension llvm-vs-code-extensions.vscode-clangd {"startup":false,"extensionId":{"value":"llvm-vs-code-extensions.vscode-clangd","_lower":"llvm-vs-code-extensions.vscode-clangd"},"activationEvent":"onLanguage:cpp"}
 [2021-04-26 09:35:51.231] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/tharms/.vscode-server/extensions/llvm-vs-code-extensions.vscode-clangd-0.1.11/out/src/extension
+[2021-04-26 23:22:15.631] [exthost] [info] extension host terminating: received terminate message from renderer
+[2021-04-26 23:22:16.645] [exthost] [info] exiting with code 0

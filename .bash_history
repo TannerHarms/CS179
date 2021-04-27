@@ -1,102 +1,3 @@
-make all
-./noaudio-blur 512 200
-make all
-./noaudio-blur 512 200
-make all
-make all
-./noaudio-blur 512 200
-make all
-./noaudio-blur 512 200
-make all
-./noaudio-blur 512 200
-make all
-./noaudio-blur 512 200
-make all
-./noaudio-blur 512 200
-make all
-./noaudio-blur 512 200
-make all
-make all
-make all
-make
-make all
-./noaudio-blur 512 200
-./audio-blur 512 200 AUDIO_ON
-
-git add -A
-git commit -m 'lab1 is working now'
-git push origin main
-make all
-make all
-./noaudio-blur 512 200
-make all
-make all
-make all
-make all
-./noaudio-blur 512 200
-./noaudio-blur 512 300
-./noaudio-blur 512 500
-./noaudio-blur 512 100
-./noaudio-blur 1024 200
-./noaudio-blur 2048 200
-./noaudio-blur 4096 200
-make all
-./noaudio-blur 4096 200
-make all
-./noaudio-blur 4096 200
-make all
-./noaudio-blur 4096 200
-make all
-./noaudio-blur 4096 200
-make all
-./noaudio-blur 4096 200
-git pull origin main
-make all
-git pull origin main
-./noaudio-blur 4096 200
-git add -A
-git commit -m 'moved folders'
-git branch NewFileSys
-git push origin NewFileSys
-cd //
-cd ..
-cd 
-cd Cs179_labs/lab1
-cd CS179_labs/lab1
-cd .
-cd .
-cd ..
-cd ./lab1
-ls
-make all
-./noaudio-blur 512 200
-make clean
-make all
-./noaudio-blur 512 200
-make clean
-zip -r lab1_2021_submission.zip
-zip --version
-cd ..
-cd ..
-zip -r /CS179_labs/lab1/
-zip -r /CS179_labs/lab1
-zip -r lab1_2021_submissions /CS179_labs/lab1/
-zip -r lab1_2021_submissions . -i /CS179_labs/lab1/
-ls
-make all
-./noaudio-blur 4096 200
-make all
-./noaudio-blur 4096 200
-./noaudio-blur 512 200
-./noaudio-blur 2048 200
-./noaudio-blur 1024 200
-./noaudio-blur 1024 200
-make all
-./noaudio-blur 1024 200
-cd ..
-mkdir CS179_labs
-ls
-git add -A
 cd lab1
 git add -A
 git commit -m 'All working - submit this now'
@@ -498,3 +399,102 @@ zip -r lab3_2021_submission.zip CS179_labs/lab3
 cd ../..
 wget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.t
 wget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgzwget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgzwget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgzwget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgzwget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgz
+git add -A
+git commit -m 'lab4 downloaded'
+git push origin main
+make
+make
+make clean all
+make clean all
+make clean all
+make all
+make clean all
+macke clean all
+make clean all
+make clean all
+make clean all
+ make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj resources/out_bunny.obj
+make clean all
+./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj resources/out_bunny.obj
+make clean all
+./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj resources/out_bunny.obj
+make clean all
+./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj resources/out_bunny.obj
+make clean all
+./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj resources/out_bunny.obj
+make clean all
+./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj resources/out_bunny.obj
+./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
+make clean all
+./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
+make clean all
+./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
+make clean all
+./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
+make all
+./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
+make clean all
+./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
+make all
+./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
+cuda-memcheck --leak-check full./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
+cuda-memcheck --leak-check full
+cuda-memcheck --leak-check full
+cuda-memcheck --leak-check full
+cuda-memcheck --leak-check full .
+cuda-memcheck --leak-check full ./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj 
+cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
+make clean all
+cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
+make clean all
+cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
+make clean all
+cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
+make clean all
+cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
+make clean all
+cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
+make clean all
+cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
+cd ../..
+ls
+mkdir temp
+ls
+unzip lab4.zip -d temp
+cd/temp
+cd temp
+ls
+cd lab4
+ls
+rm Makefile
+rm point_alignment.cu
+cd ../..
+cd CS179_labs/lab4
+ls
+cp point_alignment.cu ../../temp/lab4
+cp Makefile ../../temp/lab4
+cd../../temp/lab4
+ls
+cd ../../temp/lab4
+ls
+make clear all
+make clean all
+cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
+git add -A
+git commit -m 'lab4 is basically working, with some unknown memory corruption error. TAs notified'
+git push origin main
+cd ../..
+wget http://courses.cms.caltech.edu/cs179/2021_labs/lab4/lab4/lab4/zip
+wget http://courses.cms.caltech.edu/cs179/2021_labs/lab4/lab4/lab4.zip
+wget http://courses.cms.caltech.edu/cs179/2021_labs/lab4/lab4.zip
+ls
+unzip lab4.zip -d ~/CS179_labs
+make clean all
+ls
+./point_alignment resources/bunny.obj resourc
+./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj
