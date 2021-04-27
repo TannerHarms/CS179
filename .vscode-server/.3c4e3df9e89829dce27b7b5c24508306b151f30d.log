@@ -40,3 +40,5 @@ Cancelling previous shutdown timeout
 [09:32:23] [127.0.0.1][0a9e36ec][ExtensionHostConnection] New connection established.
 [09:32:23] [127.0.0.1][0a9e36ec][ExtensionHostConnection] <21837> Launched Extension Host Process.
 [IPC Library: Pty Host]  INFO Listing 1 persistent terminals, 1 total terminals
+New EH opened, aborting shutdown
+[09:37:23] New EH opened, aborting shutdown
