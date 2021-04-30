@@ -1,0 +1,29 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --git-dir
+Open repository: /home/tharms
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cpp
+> git cat-file -s ee351ef44261169f0158edf6aa834568254d621b
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :CS179_labs/lab3/src/fft_convolve.cuh
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/src/fft_convolve.cuh
+> git cat-file -s d833b3150b4304b11f1c3b231e10df1c95f088e1
+> git show --textconv :CS179_labs/lab3/lab3.txt
+> git ls-files --stage -- /home/tharms/CS179_labs/lab3/lab3.txt
+> git cat-file -s 67379fa75de6eb3b53ddb53da7e835d191efc003
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin

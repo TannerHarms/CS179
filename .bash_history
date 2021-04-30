@@ -1,18 +1,3 @@
-cd lab1
-git add -A
-git commit -m 'All working - submit this now'
-git push origin main
-..
-ls
-..
-cd ..
-ls
-mvdir lab1 CS179_labs
-mv lab1/ CS179_labs/
-cd ..
-cd ..
-ls
-chmod 777 lab1_2021_submissions.zip
 zmore lab1_2021_submissions.zip
 zcat lab1_2021_submissions.zip
 zip -sf lab1_2021_submissions.zip
@@ -498,3 +483,18 @@ make clean all
 ls
 ./point_alignment resources/bunny.obj resourc
 ./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj
+cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
+../..
+cd ../..
+ls
+zip -r lab4_2021_submission.zip CS179_labs/lab4
+rm lab4_2021_submission.zip
+cd CS179_labs
+cd lab4
+make clean
+git add -A
+git commit -m ' Now things are working!!  lab4 finished and submitted.'
+git push origin main
+cd ../..
+zip -r lab4_2021_submission.zip CS179_labs/lab4
+ls
