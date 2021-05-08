@@ -1,110 +1,3 @@
-zmore lab1_2021_submissions.zip
-zcat lab1_2021_submissions.zip
-zip -sf lab1_2021_submissions.zip
-ls
-rm lab1_2021_submissions.zip
-ls
-cd CS179_labs
-ls
-cd lab1
-ls
-ls
-zip -r lab1_2021_submission.zip lab1.txt Makefile README resources src
-ls
-mv lab1_2021_submission ../../
-mv lab1_2021_submission.zip ../../
-ls
-../../
-..
-..
-/..
-cd ../../
-ls
-zip -sf lab1_2021_submission.zip
-cd ..
-cd ..
-wget http://courses.cms.caltech.edu/cs179/2021_labs/lab2/lab2.zip
-ls
-unzip lab2.zip -d /CS179_labs
-unzip lab2.zip -d /CS179_labs/lab2
-sudo unzip lab2.zip -d /CS179_labs
-unzip lab2.zip
-ls
-cd CS179_labs
-ls
-cd ..
-mv lab2 CS179_labs
-/CS179_labs
-CS179_labs
-cd CS179_labs
-ls
-cd lab2
-ls
-make all
-make
-make all
-make all
-make all
-make
-./transpose
-./transpose
-make
-./transpose
-make all
-./transpose
-make all
-./transpose
-./transpose
-./transpose
-make all
-make all
-make all
-./transpose
-make all
-./transpose
-make all
-make all
-./transpose
-./transpose
-make all
-./transpose
-./transpose
-make all
-./transpose
-./transpose
-./transpose
-./transpose
-./transpose
-make all
-./transpose
-make all
-./transpose
-make all
-./transpose
-./transpose
-make all
-./transpose
-./transpose
-make all
-./transpose
-make
-./transpose
-make
-./transpose
-./transpose
-./transpose
-make
-make
-./transpose
-./transpose
-make
-make
-./transpose
-make
-./transpose
-./transpose
-./transpose
-make
 ./transpose
 make
 ./transpose
@@ -498,3 +391,110 @@ git push origin main
 cd ../..
 zip -r lab4_2021_submission.zip CS179_labs/lab4
 ls
+cd ..
+wget http://courses.cms.caltech.edu/cs179/2021_labs/lab5/lab5.zip
+ls
+unzip lab5.zip -d CS179_labs
+cd CS179_labs
+ls
+git add -A
+git commit -m 'Lab4 complete and submitted.  Lab5 uploaded and unzipped'
+git push origin main
+make clean all
+make all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+cd lab5
+make clean all
+cd../../..
+cd ../../..
+ls
+cd ..
+ls
+cd srv
+ls
+cd../
+cd ..
+ls
+cd usr
+ls
+cd ..
+cd home
+cd tharms
+ls
+cd CS179_labs
+cd lab5
+ls ../../../../srv
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+make clean all
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+make clean all
+make clean all
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+make clean all
+cd lab5
+make clean all
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+make clean all
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+make clean all
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+cd lab5
+make clean all
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+========= Program hit cudaErrorInvalidConfiguration (error 9) due to "invalid configuration argument" on CUDA API call to cudaLaunch. 
+=========     Saved host backtrace up to driver entry point at error
+=========     Host Frame:/usr/lib/x86_64-linux-gnu/libcuda.so.1 [0x311153]
+=========     Host Frame:/usr/local/cuda/lib64/libcudart.so.9.1 (cudaLaunch + 0x192) [0x34802]
+=========     Host Frame:bin/dense-neuralnet [0x1bf3a]
+=========     Host Frame:bin/dense-neuralnet [0x1b8ea]
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+make clean all
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean
+ls ../..
+zip -r ../../lab5_2021_submission.zip ~/CS179_labs/lab5
+zip -sf ../../lab5_2021_submission.zip
+ls ../..

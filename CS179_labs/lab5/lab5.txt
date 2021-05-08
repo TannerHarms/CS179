@@ -102,3 +102,5 @@ guidelines to follow that will make your life much easier:
 3)  Refer to the lecture slides frequently! There are slides in each of lectures
     15 and 17 (for labs 5 and 6 respectively) that outline the actual algorithms
     you need to implement.
+
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
