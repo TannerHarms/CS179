@@ -104,3 +104,4 @@ guidelines to follow that will make your life much easier:
     you need to implement.
 
 cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+cuda-memcheck bin/conv-neuralnet ../../../../srv/cs179_mnist "relu"

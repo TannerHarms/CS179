@@ -1,6 +1,3 @@
-./transpose
-make
-./transpose
 make
 make
 make
@@ -498,3 +495,6 @@ ls ../..
 zip -r ../../lab5_2021_submission.zip ~/CS179_labs/lab5
 zip -sf ../../lab5_2021_submission.zip
 ls ../..
+git add -A
+git commit -m 'Lab5 turned in.  Starting lab 6'
+git push origin main

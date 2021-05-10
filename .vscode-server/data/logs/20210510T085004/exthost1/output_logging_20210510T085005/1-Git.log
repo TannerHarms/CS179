@@ -1,0 +1,299 @@
+Looking for git in: git
+Using git 2.17.1 from git
+> git rev-parse --git-dir
+Open repository: /home/tharms
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 42c36fd9b9e97e31589be0d20d7b13e31d8dc9da
+> git show --textconv :CS179_labs/lab5/src/layers.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.hpp
+> git cat-file -s 47f116de2c0051be5605484b95b78107b930e683
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 42c36fd9b9e97e31589be0d20d7b13e31d8dc9da
+> git show --textconv :CS179_labs/lab5/src/main.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/main.cpp
+> git cat-file -s ae49a5cb342cd912eb6b6ba8463ca683706d5a97
+> git show --textconv :CS179_labs/lab5/src/layers.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.hpp
+> git cat-file -s 47f116de2c0051be5605484b95b78107b930e683
+> git show --textconv :CS179_labs/lab5/src/main.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/main.cpp
+> git cat-file -s ae49a5cb342cd912eb6b6ba8463ca683706d5a97
+> git show --textconv :CS179_labs/lab5/src/model.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/model.cpp
+> git cat-file -s f458338a80be0be0cd1db761707b3fd7d4480d27
+> git show --textconv :CS179_labs/lab5/src/utils.cu
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/utils.cu
+> git cat-file -s 20e0a67636c518145bbc78f98821a04c5f5c8a42
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 42c36fd9b9e97e31589be0d20d7b13e31d8dc9da
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/lab5/src/model.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/model.cpp
+> git cat-file -s f458338a80be0be0cd1db761707b3fd7d4480d27
+> git show --textconv :CS179_labs/lab5/src/model.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/model.hpp
+> git cat-file -s e8b11f22709ca9275a6966389b503588e54144dc
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 42c36fd9b9e97e31589be0d20d7b13e31d8dc9da
+> git show --textconv :CS179_labs/lab5/src/main.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/main.cpp
+> git cat-file -s ae49a5cb342cd912eb6b6ba8463ca683706d5a97
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 42c36fd9b9e97e31589be0d20d7b13e31d8dc9da
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/lab5/src/layers.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.hpp
+> git cat-file -s 47f116de2c0051be5605484b95b78107b930e683
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 42c36fd9b9e97e31589be0d20d7b13e31d8dc9da
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/lab5/lab5.txt
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/lab5.txt
+> git cat-file -s 1b98cf8992bcc7503426b8f655b9ed3bccca7819
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 42c36fd9b9e97e31589be0d20d7b13e31d8dc9da
+> git show --textconv :CS179_labs/lab5/lab5.txt
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/lab5.txt
+> git cat-file -s 1b98cf8992bcc7503426b8f655b9ed3bccca7819
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 42c36fd9b9e97e31589be0d20d7b13e31d8dc9da
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/lab5/lab5.txt
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/lab5.txt
+> git cat-file -s 1b98cf8992bcc7503426b8f655b9ed3bccca7819
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 42c36fd9b9e97e31589be0d20d7b13e31d8dc9da
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/lab5/src/main.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/main.cpp
+> git cat-file -s ae49a5cb342cd912eb6b6ba8463ca683706d5a97
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 42c36fd9b9e97e31589be0d20d7b13e31d8dc9da
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(upstream:track)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
