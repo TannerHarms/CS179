@@ -1,0 +1,41 @@
+
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+Extension host agent listening on 35529
+
+[10:24:55] Extension host agent started.
+[10:24:55] [127.0.0.1][f4eed006][ManagementConnection] New connection established.
+[10:24:55] [127.0.0.1][c8b05839][ExtensionHostConnection] New connection established.
+[10:24:55] [127.0.0.1][c8b05839][ExtensionHostConnection] <25781> Launched Extension Host Process.
+[10:35:55] [127.0.0.1][f4eed006][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[10:35:56] [127.0.0.1][c8b05839][ExtensionHostConnection] <25781> Extension Host Process exited with code: 0, signal: null.
+Last EH closed, waiting before shutting down
+[10:35:56] Last EH closed, waiting before shutting down
+Got delay-shutdown request while in shutdown timeout, delaying
+[10:36:20] Got delay-shutdown request while in shutdown timeout, delaying
+Cancelling previous shutdown timeout
+[10:36:20] Cancelling previous shutdown timeout
+[10:36:21] [127.0.0.1][07a37c71][ManagementConnection] New connection established.
+[10:36:21] [127.0.0.1][aec7242d][ExtensionHostConnection] New connection established.
+[10:36:21] [127.0.0.1][aec7242d][ExtensionHostConnection] <25953> Launched Extension Host Process.
+[10:37:34] [127.0.0.1][07a37c71][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[10:37:35] [127.0.0.1][aec7242d][ExtensionHostConnection] <25953> Extension Host Process exited with code: 0, signal: null.
+Cancelling previous shutdown timeout
+[10:37:35] Cancelling previous shutdown timeout
+Last EH closed, waiting before shutting down
+[10:37:35] Last EH closed, waiting before shutting down
+Got delay-shutdown request while in shutdown timeout, delaying
+[10:37:41] Got delay-shutdown request while in shutdown timeout, delaying
+Cancelling previous shutdown timeout
+[10:37:41] Cancelling previous shutdown timeout
+[10:37:41] [127.0.0.1][998e2338][ManagementConnection] New connection established.
+[10:37:41] [127.0.0.1][350c5646][ExtensionHostConnection] New connection established.
+[10:37:41] [127.0.0.1][350c5646][ExtensionHostConnection] <26132> Launched Extension Host Process.
+New EH opened, aborting shutdown
+[10:42:41] New EH opened, aborting shutdown

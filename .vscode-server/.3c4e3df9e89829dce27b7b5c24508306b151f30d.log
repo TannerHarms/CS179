@@ -16,3 +16,13 @@ bash: no job control in this shell
 [08:50:04] [127.0.0.1][2ffdea64][ManagementConnection] New connection established.
 [IPC Library: Pty Host]  INFO Listing 0 persistent terminals, 0 total terminals
 [08:50:04] [127.0.0.1][9285c3c4][ExtensionHostConnection] <9621> Launched Extension Host Process.
+[22:48:02] [127.0.0.1][2ffdea64][ManagementConnection] The client has disconnected, will wait for reconnection 3h before disposing...
+Error: Unexpected SIGPIPE
+    at process.<anonymous> (/home/tharms/.vscode-server/bin/3c4e3df9e89829dce27b7b5c24508306b151f30d/out/bootstrap.js:1:370)
+    at process.emit (events.js:315:20)
+[01:47:56] [127.0.0.1][9285c3c4][ExtensionHostConnection] <9621> Extension Host Process exited with code: 0, signal: null.
+Last EH closed, waiting before shutting down
+[01:47:56] Last EH closed, waiting before shutting down
+[01:48:02] [127.0.0.1][2ffdea64][ManagementConnection] The reconnection grace time of 3h has expired, so the connection will be disposed.
+Last EH closed, shutting down
+[01:52:56] Last EH closed, shutting down

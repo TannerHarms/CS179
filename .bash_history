@@ -1,79 +1,3 @@
-make
-make
-make
-./transpose
-./transpose
-./transpose
-./transpose
-make
-./transpose
-make
-./transpose
-./transpose
-make
-./transpose
-make
-./transpose
-./transpose
-make
-make
-./transpose
-cd ..
-git add -A
-git commit -m 'Could turn it in now, but will play with 2 c a bit longer '
-git push origin main
-cd lab2
-./transpose
-./transpose
-make
-./transpose
-make all
-make all
-make all
-cd ..
-git add -A
-git commit -m 'Lab 2 first commit'
-git push origin main
-./transpose
-./transpose
-cd/lab2
-ls
-cd lab2
-./transpose
-make all
-make all
-make all
-make all
-./transpose
-make all
-make
-make 
-./transpose
-make all
-./transpose
-./transpose
-./transpose
-make clean
-make
-./transpose
-make clean
-make 
-make clean
-cd ../..
-ls
-cd tharms_assignments
-ls
-ls
-cd ..
-zip -r lab2_2021_submission.zip CS179_labs/lab2
-zip -sf lab2_2021_submission
-rm lab2_2021_submission
-rm lab2_2021_submission.zip
-sf
-ls
-zip -r lab2_2021_submission.zip CS179_labs/lab2
-zip -sf lab2_2021_submission
-git add -A
 git commit -m 'Lab2 is now turned in'
 git push origin main
 cd ../..
@@ -498,3 +422,79 @@ ls ../..
 git add -A
 git commit -m 'Lab5 turned in.  Starting lab 6'
 git push origin main
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+cuda-memcheck bin/conv-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+make clean all
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+make clean all
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
+cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"conv
+cuda-memcheck bin/conv-neuralnet ../../../../srv/cs179_mnist "relu"conv
+make clean all
+cuda-memcheck bin/conv-neuralnet ../../../../srv/cs179_mnist "relu"conv
+make clean
+git add -A
+git commint -m 'Lab 5 and 6 now working correctly.'
+git commit -m 'Lab 5 and 6 now working correctly.'
+git push origin main
+ls ../..
+zip -r ../../lab6_2021_submission.zip 
+zip -r ../../lab6_2021_submission.zip cd
+ls ../..
+zip -r ../../lab6_2021_submission.zip 
+cd ..
+cd lab5
+zip -r ~/lab6_2021_submission.zip
+zip -r lab5 ~/lab6_2021_submission.zip
+cd ../..
+zip -r lab6_2021_submission CS179_labs/lab5
+ls
+zip -sf lab6_2021_submission
+mkdir FinalProject_rSVD
+cd lab5
+make all
+cuda-memcheck bin/dense-neuralnet test test
+mkdir data
+mkdir output
+mkdir obj
+eigen -v
+dpkg -p libeigen3-dev
+pkg-config --modversion eigen3
+cd/include
+/usr/local/cuda
+make all
+make all
+make all
+make all
+make all
+make all
+make all
+make all
+make all
+make all
+make clean all
+make all
+make all
+./bin/rSVD test_directory 100 2 10
+make all
+./bin/rSVD test_directory 100 2 10
+make clean all
+./bin/rSVD test_directory 100 2 10
+./bin/rSVD test_directory 100 2
+make all
+./bin/rSVD test_directory 100 2 10
+make all
+./bin/rSVD test_directory 100 2 10
+make all
+make all
+./bin/rSVD test_directory 100 2 10
+make all
+./bin/rSVD test_directory 100 2 10
+make all
+./bin/rSVD test_directory 100 2 10
