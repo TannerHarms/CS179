@@ -74,13 +74,12 @@ public:
     void printData(void) 
     {
         cout << "data is size " << m << "-by-" << n << "\n" << endl;
-        cout << "testing" << endl;
         
-        for (int i = 0; i < n; i++) 
+        for (int i = 0; i < m; i++) 
         {
-            for (int j = 0; j < m; j++) 
+            for (int j = 0; j < n; j++) 
             {
-                std::cout << "__" << arr[i][j] << std::endl; 
+                std::cout << "\t" << arr[i][j]; 
             }
             std::cout << std::endl;
         }
@@ -134,11 +133,11 @@ data import_from_file(char *file_name) {
 
     // Convert vector array to double array
     double** arr;
-    arr = new double*[n];
-    for (int i = 0; (i < n); i++)
+    arr = new double*[m];
+    for (int i = 0; (i < m); i++)
     {
-        arr[i] = new double[m];
-        for (int j = 0; (j < m); j++)
+        arr[i] = new double[n];
+        for (int j = 0; (j < n); j++)
         {
             arr[i][j] = vec_arr[i][j];
         }

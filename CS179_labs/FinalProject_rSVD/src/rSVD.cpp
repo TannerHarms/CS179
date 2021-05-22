@@ -32,6 +32,8 @@ int main(int argc, char **argv)
     data inputData = import_from_file(data_path);
     inputData.printData();
 
+    std::cout << inputData.arr[4][3] << std::endl;
+
 #if 0
     // set up floats to store the time
     float time_SVD_cpu, time_SVD_gpu;
