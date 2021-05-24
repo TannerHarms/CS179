@@ -1167,3 +1167,318 @@ Open repository: /home/tharms
 > git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
 > git remote --verbose
 > git config --get commit.template
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git cat-file -s fa67d34ef6cdf25c312cdd24f6a77e954c37fd6b
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git cat-file -s fa67d34ef6cdf25c312cdd24f6a77e954c37fd6b
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git cat-file -s fa67d34ef6cdf25c312cdd24f6a77e954c37fd6b
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git cat-file -s 8fc1aee5b559984eaf7923fbc7be9639b5b11da2
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git cat-file -s fa67d34ef6cdf25c312cdd24f6a77e954c37fd6b
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git cat-file -s 8fc1aee5b559984eaf7923fbc7be9639b5b11da2
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.cpp
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git cat-file -s 8fc1aee5b559984eaf7923fbc7be9639b5b11da2
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show --textconv :CS179_labs/lab5/src/layers.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.hpp
+> git cat-file -s 47f116de2c0051be5605484b95b78107b930e683
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 6b7c9c494e5eec8f146d70d7fc9b1c1432d78db2
+> git show --textconv :CS179_labs/lab5/src/layers.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.hpp
+> git cat-file -s 47f116de2c0051be5605484b95b78107b930e683
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 6b7c9c494e5eec8f146d70d7fc9b1c1432d78db2
+> git show --textconv :CS179_labs/lab5/src/layers.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.hpp
+> git cat-file -s 47f116de2c0051be5605484b95b78107b930e683
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git cat-file -s 8fc1aee5b559984eaf7923fbc7be9639b5b11da2
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.cpp
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git cat-file -s 8fc1aee5b559984eaf7923fbc7be9639b5b11da2
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 6b7c9c494e5eec8f146d70d7fc9b1c1432d78db2
+> git show --textconv :CS179_labs/lab5/src/layers.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.hpp
+> git cat-file -s 47f116de2c0051be5605484b95b78107b930e683
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 6b7c9c494e5eec8f146d70d7fc9b1c1432d78db2
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.cpp
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.cpp
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n41 -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.cpp
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 6b7c9c494e5eec8f146d70d7fc9b1c1432d78db2
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git cat-file -s 8fc1aee5b559984eaf7923fbc7be9639b5b11da2
+> git check-ignore -v -z --stdin
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 6b7c9c494e5eec8f146d70d7fc9b1c1432d78db2
+> git show --textconv :CS179_labs/lab5/src/layers.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.hpp
+> git cat-file -s 47f116de2c0051be5605484b95b78107b930e683
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 6b7c9c494e5eec8f146d70d7fc9b1c1432d78db2
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git cat-file -s 8fc1aee5b559984eaf7923fbc7be9639b5b11da2
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git cat-file -s fa67d34ef6cdf25c312cdd24f6a77e954c37fd6b
+> git show --textconv :CS179_labs/FinalProject_rSVD/Makefile
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/Makefile
+> git cat-file -s f01152e52cbf0c4d681be68663919e37845c604a
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/svds.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/svds.cpp
+> git cat-file -s e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git cat-file -s fa67d34ef6cdf25c312cdd24f6a77e954c37fd6b
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git cat-file -s 8fc1aee5b559984eaf7923fbc7be9639b5b11da2
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git show --textconv :CS179_labs/lab5/src/layers.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/lab5/src/layers.cpp
+> git cat-file -s 6b7c9c494e5eec8f146d70d7fc9b1c1432d78db2
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git cat-file -s fa67d34ef6cdf25c312cdd24f6a77e954c37fd6b
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git cat-file -s 8fc1aee5b559984eaf7923fbc7be9639b5b11da2
+> git check-ignore -v -z --stdin
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/helper_cuda.h
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/helper_cuda.h
+> git cat-file -s 8d91db41e10b7dc593a0fbd8f80c543f8ccd9505
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git cat-file -s 8fc1aee5b559984eaf7923fbc7be9639b5b11da2
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git cat-file -s fa67d34ef6cdf25c312cdd24f6a77e954c37fd6b
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git cat-file -s 8fc1aee5b559984eaf7923fbc7be9639b5b11da2
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git cat-file -s fa67d34ef6cdf25c312cdd24f6a77e954c37fd6b
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/utils.hpp
+> git cat-file -s 8fc1aee5b559984eaf7923fbc7be9639b5b11da2
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/rSVD.cpp
+> git cat-file -s fa67d34ef6cdf25c312cdd24f6a77e954c37fd6b
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname)%00%(upstream:track) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/svds.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/svds.hpp
+> git cat-file -s 68108cd07fcdb905b63c622c9dd606b4b19a0e32
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/svds.cpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/svds.cpp
+> git cat-file -s e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n21 -- /home/tharms/CS179_labs/FinalProject_rSVD/src/svds.cpp
+> git log --format=%H%n%aN%n%aE%n%at%n%ct%n%P%n%B -z -n41 -- /home/tharms/CS179_labs/FinalProject_rSVD/src/svds.cpp
+> git show --textconv :CS179_labs/FinalProject_rSVD/src/svds.hpp
+> git ls-files --stage -- /home/tharms/CS179_labs/FinalProject_rSVD/src/svds.hpp
+> git cat-file -s 68108cd07fcdb905b63c622c9dd606b4b19a0e32

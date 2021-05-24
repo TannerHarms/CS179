@@ -18,6 +18,26 @@ using Eigen::VectorXd;
 using Eigen::MatrixBase;
 
 
+/********************************************************************************/
+// Timing utilities
+cudaEvent_t start;
+cudaEvent_t stop;
+
+#define START_TIMER() {                         \
+      gpuErrchk(cudaEventCreate(&start));       \
+      gpuErrchk(cudaEventCreate(&stop));        \
+      gpuErrchk(cudaEventRecord(start));        \
+    }
+
+#define STOP_RECORD_TIMER(name) {                           \
+      gpuErrchk(cudaEventRecord(stop));                     \
+      gpuErrchk(cudaEventSynchronize(stop));                \
+      gpuErrchk(cudaEventElapsedTime(&name, start, stop));  \
+      gpuErrchk(cudaEventDestroy(start));                   \
+      gpuErrchk(cudaEventDestroy(stop));                    \
+    }
+
+/********************************************************************************/
 /* Main function:
  * Inputs:
  *      input_directory: file containing the data.
@@ -40,12 +60,7 @@ int main(int argc, char **argv)
     // Read file to import matrix.  
     data inputData = import_from_file(data_path);
     inputData.printData();
-    // int input_M = inputData.getM();
-    // int input_N = inputData.getN();
-    // double* input_Array = inputData.getData();
 
-    // MatrixXd mat;
-    // mat = Eigen::Map< Eigen::Matrix <double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor> >(&input_Array[0], input_M, input_N);
     MatrixXd mat; 
     mat = inputData.getData_mXd();
     std::cout << mat << std::endl;
