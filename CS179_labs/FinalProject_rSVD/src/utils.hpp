@@ -15,7 +15,12 @@
 #include <algorithm>
 #include <cassert>
 
+#include "Eigen/Dense"
+
 using namespace std;
+using Eigen::MatrixXd;
+using Eigen::VectorXd;
+using Eigen::MatrixBase;
 
 /********************************************************************************/
 // Error Utilities
@@ -67,8 +72,40 @@ svd_params_s parse_args(int argc, char **argv) {
 // Data struct
 class data {
 public:
-    int m, n;
-    double** arr;
+    // Constructor
+    data(int M, int N, double* data) : m(), n(), arr() {
+        m = M;
+        n = N;
+        arr = data;
+        matXd = Eigen::Map<Eigen::Matrix <double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor> >(&data[0], m, n);
+    }
+
+    // Destructor
+    ~data() { delete[] arr; };
+
+    // Accessors
+    int getM() { return m; }
+    int getN() { return n; }
+    double* getData_ptr() { return arr; }
+    MatrixXd getData_mXd() { return matXd; }
+
+    // Mutators
+    void setM(int numRows) { 
+        m = numRows; 
+        return;
+    }
+    void setN(int numCols) { 
+        n = numCols; 
+        return;
+    }
+    void setData_Ptr(double *data) { 
+        arr = data;
+        return;
+    }
+    void setData_mXd(MatrixXd data) { 
+        matXd = data;
+        return;
+    }
 
     // function to print the array
     void printData(void) 
@@ -79,20 +116,21 @@ public:
         {
             for (int j = 0; j < n; j++) 
             {
-                std::cout << "\t" << arr[i][j]; 
+                std::cout << "\t" << arr[j + i * n]; 
             }
             std::cout << std::endl;
         }
     }
-};
 
+private:
+    int m, n;
+    double* arr;
+    MatrixXd matXd;
+};
 
 // Import Data from Text File
 data import_from_file(char *file_name) {
     
-    // Initialize output structure
-    data inputData;
-
     // Open the input file for reading
     fstream inputFile(file_name);
 
@@ -132,20 +170,20 @@ data import_from_file(char *file_name) {
     int m = i;
 
     // Convert vector array to double array
-    double** arr;
-    arr = new double*[m];
+    double *arr;
+    arr = new double[m*n];
     for (int i = 0; (i < m); i++)
     {
-        arr[i] = new double[n];
+        // arr[i] = new double[n];
         for (int j = 0; (j < n); j++)
         {
-            arr[i][j] = vec_arr[i][j];
+            // std::cout << vec_arr[i][j] << endl;
+            arr[j + i*n] = vec_arr[i][j];
         }
     }
 
-    inputData.m = m;
-    inputData.n = n;
-    inputData.arr = arr;
+    // Initialize output structure
+    data inputData(m, n, arr);
 
     return inputData;
 }

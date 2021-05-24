@@ -8,6 +8,15 @@
 //#include "svds.hpp"
 #include "utils.hpp"
 
+#include "Eigen/Dense"
+#include "helper_cuda.h"
+
+#include <vector>
+
+using Eigen::MatrixXd;
+using Eigen::VectorXd;
+using Eigen::MatrixBase;
+
 
 /* Main function:
  * Inputs:
@@ -31,8 +40,16 @@ int main(int argc, char **argv)
     // Read file to import matrix.  
     data inputData = import_from_file(data_path);
     inputData.printData();
+    // int input_M = inputData.getM();
+    // int input_N = inputData.getN();
+    // double* input_Array = inputData.getData();
 
-    std::cout << inputData.arr[4][3] << std::endl;
+    // MatrixXd mat;
+    // mat = Eigen::Map< Eigen::Matrix <double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor> >(&input_Array[0], input_M, input_N);
+    MatrixXd mat; 
+    mat = inputData.getData_mXd();
+    std::cout << mat << std::endl;
+
 
 #if 0
     // set up floats to store the time

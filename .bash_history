@@ -1,106 +1,3 @@
-git commit -m 'Lab2 is now turned in'
-git push origin main
-cd ../..
-ls
-cd ..
-wget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgz
-wget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgz
-wget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgtharmsz
-wget http://courses.cms.caltech.edu/cs179/2021_labs/lab3/lab3.tgz
-wget http://courses.cms.caltech.edu/cs179/2021_labs/lab3/lab3.zip
-ls
-rm lab1.tgz lab1.tgz.1 lab1.tgz.2
-ls
-unzip lab3.zip -d CS179_labs
-cd..
-cd ..
-git add -A
-git commit -m 'Lab 3 has been uploaded and read over'
-cd lab3
-make
-make
-make
-make
-make
-make
-make clean
-git add -A
-git commit -m 'lab3 routine save'
-git push origin main
-make all
-make all
-make all
-make all
-make
-make
-make
-make all
-./noaudio-fft
-./noaudio-fft 512 256
-make
-./noaudio-fft 512 256
-make
-./noaudio-fft 512 256
-make
-./noaudio-fft 512 256
-make
-make
-make
-make
-make
-./noaudio-fft 512 256
-./noaudio-fft 256 256
-make
-./noaudio-fft 256 256
-make
-make
-./noaudio-fft 256 256
-make
-make
-make
-make
-./noaudio-fft 256 256
-make
-./noaudio-fft 256 256
-./noaudio-fft 256 256
-make
-make
-./noaudio-fft 256 256
-make
-./noaudio-fft 256 256
-make all
-./noaudio-fft 256 256
-make
-./noaudio-fft 256 256
-make all
-./noaudio-fft 512 256
-make
-./noaudio-fft 512 256
-make
-./noaudio-fft 512 256
-make
-./noaudio-fft 512 256
-make
-make
-./noaudio-fft 512 256
-make
-./noaudio-fft 512 256
-make all
-./noaudio-fft 512 256
-make
-./noaudio-fft 512 256
-git add -A
-git commit -m 'Part1 is working'
-git push origin main
-make
-./noaudio-fft 512 256
-cudamemcheck cuda-memcheck --leak-check full ./noaudio-fft 256 128./noaudio-fft 512 256
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make clean all
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make all
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make clean
 make all
 cuda-memcheck --leak-check full ./noaudio-fft 256 128
 make all
@@ -498,3 +395,106 @@ make all
 ./bin/rSVD test_directory 100 2 10
 make all
 ./bin/rSVD test_directory 100 2 10
+make clean all
+rSVD 
+./bin/rSVD
+./bin/rSVD test_file 2 10 4
+python cython --version
+cython --version
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+./bin/rSVD test_matrix_01 1 3 4
+./bin/rSVD test_matrix_01.txt 1 3 4
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+make
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+git add -A
+git commit -m 'Final Project first commit.  Coming close to being able to import data'
+git push origin main
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+git add -A
+git commit -m 'Can now read text files with arrays in them'
+git push origin main
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+clean make all
+clean make all
+clear make all
+clean
+make

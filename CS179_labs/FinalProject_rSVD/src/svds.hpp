@@ -29,6 +29,29 @@ using Eigen::MatrixBase;
 
 
 /***********************************************************************************/
+/*
+    Superclass for SVDs
+ */
+
+class SVD {
+public:
+    SVD(double** inputData) 
+        : X_() {}; 
+
+    MatrixXd data() { return X_; }
+    MatrixXd matrixU() { return U_; }
+    MatrixXd matrixV() { return V_; }
+    VectorXd singularValues() { return S_; }
+
+private:
+    std::string SVDmethod;
+    MatrixXd X_, U_, V_;
+    VectorXd S_;
+
+};
+
+
+/***********************************************************************************/
 /* 
     Class for standard SVD computed using a CPU.
  */
@@ -50,7 +73,7 @@ private:
     ComputeSVD_cpu(const MatrixXd &X, ...){
 
     }
-}
+};
 
 /***********************************************************************************/
 /* 
@@ -74,7 +97,7 @@ private:
     ComputeSVD_gpu(const MatrixXd &X, ...){
 
     }
-}
+};
 
 /***********************************************************************************/
 /* 
@@ -98,7 +121,7 @@ private:
     ComputeSVD_gpu(const MatrixXd &X, ...){
 
     }
-}
+};
 
 /***********************************************************************************/
 /* 
@@ -122,7 +145,7 @@ private:
     ComputeSVD_gpu(const MatrixXd &X, ...){
 
     }
-}
+};
 
 
 /*
