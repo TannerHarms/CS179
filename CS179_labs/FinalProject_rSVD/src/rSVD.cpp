@@ -17,26 +17,6 @@ using Eigen::MatrixXd;
 using Eigen::VectorXd;
 using Eigen::MatrixBase;
 
-
-/********************************************************************************/
-// Timing utilities
-cudaEvent_t start;
-cudaEvent_t stop;
-
-#define START_TIMER() {                         \
-      gpuErrchk(cudaEventCreate(&start));       \
-      gpuErrchk(cudaEventCreate(&stop));        \
-      gpuErrchk(cudaEventRecord(start));        \
-    }
-
-#define STOP_RECORD_TIMER(name) {                           \
-      gpuErrchk(cudaEventRecord(stop));                     \
-      gpuErrchk(cudaEventSynchronize(stop));                \
-      gpuErrchk(cudaEventElapsedTime(&name, start, stop));  \
-      gpuErrchk(cudaEventDestroy(start));                   \
-      gpuErrchk(cudaEventDestroy(stop));                    \
-    }
-
 /********************************************************************************/
 /* Main function:
  * Inputs:
@@ -59,44 +39,29 @@ int main(int argc, char **argv)
 
     // Read file to import matrix.  
     data inputData = import_from_file(data_path);
-
+    
     // Get the matrix and print it to the terminal
     MatrixXd mat; 
     mat = inputData.getData_mXd();
     std::cout << mat << std::endl;
     
     // set up floats to store the time
-    float time_SVD_cpu;//, time_SVD_gpu;
+    //float time_SVD_cpu;//, time_SVD_gpu;
     // float time_rSVD_cpu, time_rSVD_gpu;
 
-    // Perform standard SVD (time it)
-    std::cout << "test 1" << std::endl;
-    START_TIMER();
-    std::cout << "test 2" << std::endl;
+    // Perform standard SVD
     SVD_cpu svd_cpu(&mat);
-    std::cout << "test 3" << std::endl;
-    STOP_RECORD_TIMER(time_SVD_cpu);
-    std::cout << "test 4" << std::endl;
+    cout << "Standard SVD Compute Time on CPU = " << svd_cpu.computeTime() << " seconds." << endl;
+
+    // Perform rSVD (time it)
+    rSVD_cpu rsvd_cpu(&mat, svd_params);
+    cout << "Randomized SVD Compute Time on CPU = " << rsvd_cpu.computeTime() << " seconds." << endl;
 
 #if 0
 
-    // Perform rSVD (time it)
-    START_TIMER();
-        // Get reconstruction error for rank r.
-        // Print error.  Print time.
-    STOP_RECORD_TIMER(time_rSVD_cpu);
-
     // Perform standard SVD on GPU (time it)
-    START_TIMER();
-        // Get reconstruction error for rank r.
-        // Print error.  Print time.
-    STOP_RECORD_TIMER(time_SVD_gpu);
 
     // Perform rSVD in GPU (time it)
-    START_TIMER();
-        // Get reconstruction error for rank r.
-        // Print error.  Print time.
-    STOP_RECORD_TIMER(time_rSVD_gpu);
 #endif
 
     return 0;

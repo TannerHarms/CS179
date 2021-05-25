@@ -48,12 +48,13 @@ protected:
     MatrixXd U_, V_;        // Left and Right Singular Vectors
     VectorXd S_;            // Singular Values
     MatrixXd R_;            // Reconstructed Matrix for verification purposes
-    double Spec_Norm;
-    double Frob_Norm;
+    double Spec_Norm;       // Spectral norm
+    double Frob_Norm;       // Frobenius norm
+    float SVD_Compute_Time; // Time to compute the SVD.  
 
 public:
     // Constructor
-    SVD(MatrixXd* Xptr);//, MatrixXd U, MatrixXd V, VectorXd S, MatrixXd R);
+    SVD(MatrixXd* Xptr);
 
     // Destructor
     virtual ~SVD();
@@ -66,7 +67,7 @@ public:
     MatrixXd reconstruction(); 
     double spectralNorm();
     double frobeniusNorm();
-
+    float computeTime();
 
     // Compute the SVD.  This is a pure virtual function
     virtual void ComputeSVD() = 0;
@@ -96,36 +97,17 @@ public:
     void ComputeSVD() override;
 };
 
-#if 0
-
-/***********************************************************************************/
-/* 
-    Class for standard SVD computed using a GPU.
- */
-class SVD_gpu 
-{
-public:
-    // Constructor
-    SVD_gpu(MatrixXd InputData);
-    
-    // Destructor
-    ~SVD_gpu();
-
-    // Compute SVD function
-    void ComputeSVD() override;
-};
-
 /***********************************************************************************/
 /* 
     Class for randomized SVD computed using a CPU.
  */
-class rSVD_cpu 
+class rSVD_cpu : public SVD
 {
 protected:
     svd_params_s rsvd_params;
 public:
     // Constructor
-    rSVD_cpu(MatrixXd InputData);
+    rSVD_cpu(MatrixXd* InputDataPtr, svd_params_s params);
     
     // Destructor
     ~rSVD_cpu();
@@ -137,8 +119,29 @@ public:
     void setParams(svd_params_s new_params);
 
     // Compute SVD function
+    MatrixXd RangeFinder(int size, int powiter);
     void ComputeSVD() override;
 };
+
+#if 0
+
+/***********************************************************************************/
+/* 
+    Class for standard SVD computed using a GPU.
+ */
+class SVD_gpu 
+{
+public:
+    // Constructor
+    SVD_gpu(MatrixXd InputDataPtr);
+    
+    // Destructor
+    ~SVD_gpu();
+
+    // Compute SVD function
+    void ComputeSVD() override;
+};
+
 
 /***********************************************************************************/
 /* 
@@ -148,9 +151,12 @@ class rSVD_gpu
 {
 protected:
     svd_params_s rsvd_params;
+
+    // Randomized Range Finder
+    MatrixXd RangeFinder();
 public:
     // Constructor
-    rSVD_gpu(MatrixXd InputData);
+    rSVD_gpu(MatrixXd InputDataPtr);
     
     // Destructor
     ~rSVD_gpu();
@@ -162,7 +168,7 @@ public:
     void setParams(svd_params_s new_params);
 
     // Compute SVD function
-    void ComputeSVD() override;
+    void ComputeSVD(svd_params_s new_params) override;
 };
 
 
