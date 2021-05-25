@@ -4,11 +4,18 @@
  * @date May 17, 2021
  */
 
-#ifdef SVD_FUNCTIONS
+#ifndef SVD_FUNCTIONS
 #define SVD_FUNCTIONS
 
 #pragma once
 
+#include <cstdlib>
+#include <algorithm>
+#include <iostream>
+#include <cassert>
+#include <string>
+#include <sstream>
+#include <random>
 #include <algorithm>
 #include <chrono>
 #include <iostream>
@@ -17,6 +24,7 @@
 #include "helper_cuda.h"
 
 #include <vector>
+
 #include <cublas_v2.h>
 #include <curand.h>
 
@@ -30,24 +38,44 @@ using Eigen::MatrixBase;
 
 /***********************************************************************************/
 /*
-    Superclass for SVDs
+    SVD Superclass
  */
 
-class SVD {
+class SVD 
+{
+protected: 
+    MatrixXd* X_;           // Pointer to input matrix
+    MatrixXd U_, V_;        // Left and Right Singular Vectors
+    VectorXd S_;            // Singular Values
+    MatrixXd R_;            // Reconstructed Matrix for verification purposes
+    double Spec_Norm;
+    double Frob_Norm;
+
 public:
-    SVD(double** inputData) 
-        : X_() {}; 
+    // Constructor
+    SVD(MatrixXd* Xptr);//, MatrixXd U, MatrixXd V, VectorXd S, MatrixXd R);
 
-    MatrixXd data() { return X_; }
-    MatrixXd matrixU() { return U_; }
-    MatrixXd matrixV() { return V_; }
-    VectorXd singularValues() { return S_; }
+    // Destructor
+    virtual ~SVD();
 
-private:
-    std::string SVDmethod;
-    MatrixXd X_, U_, V_;
-    VectorXd S_;
+    // Accessors
+    MatrixXd* inputMatrixPtr(); 
+    MatrixXd matrixU(); 
+    MatrixXd matrixV(); 
+    VectorXd singularValues(); 
+    MatrixXd reconstruction(); 
+    double spectralNorm();
+    double frobeniusNorm();
 
+
+    // Compute the SVD.  This is a pure virtual function
+    virtual void ComputeSVD() = 0;
+
+    // Evaluation Functions
+    MatrixXd Reconstruct(int rank);         // Get reconstructed data using SVD
+    double SpectralNorm(MatrixXd mat);      // Get the spectral norm
+    double FrobeniusNorm(MatrixXd mat);     // Get the frobenius norm
+    void Evaluate();   
 };
 
 
@@ -55,96 +83,86 @@ private:
 /* 
     Class for standard SVD computed using a CPU.
  */
-class SVD_cpu {
+class SVD_cpu : public SVD
+{
 public:
-    SVD_cpu(const MatrixXd &X, ...) 
-        : U_(), V_(), S_() {
-    ComputeSVD_cpu(X,...)
-    }
+    // Constructor
+    SVD_cpu(MatrixXd* InputDataPtr);
+    
+    // Destructor
+    ~SVD_cpu();
 
-    VectorXd singularValues() { return S_; }
-    MatrixXd matrixU() { return U_; }
-    MatrixXd matrixV() { return V_; }
-
-private:
-    MatrixXd U_, V_;
-    VectorXd S_;
-
-    ComputeSVD_cpu(const MatrixXd &X, ...){
-
-    }
+    // Compute SVD function
+    void ComputeSVD() override;
 };
+
+#if 0
 
 /***********************************************************************************/
 /* 
     Class for standard SVD computed using a GPU.
  */
-class SVD_gpu {
+class SVD_gpu 
+{
 public:
-    SVD_gpu(const MatrixXd &X, ...) 
-        : U_(), V_(), S_() {
-    ComputeSVD_gpu(X,...)
-    }
+    // Constructor
+    SVD_gpu(MatrixXd InputData);
+    
+    // Destructor
+    ~SVD_gpu();
 
-    VectorXd singularValues() { return S_; }
-    MatrixXd matrixU() { return U_; }
-    MatrixXd matrixV() { return V_; }
-
-private:
-    MatrixXd U_, V_;
-    VectorXd S_;
-
-    ComputeSVD_gpu(const MatrixXd &X, ...){
-
-    }
+    // Compute SVD function
+    void ComputeSVD() override;
 };
 
 /***********************************************************************************/
 /* 
     Class for randomized SVD computed using a CPU.
  */
-class SVD_gpu {
+class rSVD_cpu 
+{
+protected:
+    svd_params_s rsvd_params;
 public:
-    SVD_gpu(const MatrixXd &X, int rank, int oversamples, int powiter) 
-        : U_(), V_(), S_() {
-    ComputeSVD_gpu(X,...)
-    }
+    // Constructor
+    rSVD_cpu(MatrixXd InputData);
+    
+    // Destructor
+    ~rSVD_cpu();
 
-    VectorXd singularValues() { return S_; }
-    MatrixXd matrixU() { return U_; }
-    MatrixXd matrixV() { return V_; }
+    // Accessor
+    svd_params_s getParams();
 
-private:
-    MatrixXd U_, V_;
-    VectorXd S_;
+    // Mutator
+    void setParams(svd_params_s new_params);
 
-    ComputeSVD_gpu(const MatrixXd &X, ...){
-
-    }
+    // Compute SVD function
+    void ComputeSVD() override;
 };
 
 /***********************************************************************************/
 /* 
     Class for randomized SVD computed using a GPU.
  */
-class SVD_gpu {
+class rSVD_gpu 
+{
+protected:
+    svd_params_s rsvd_params;
 public:
-    SVD_gpu(const MatrixXd &X, ...) 
-        : U_(), V_(), S_() {
-    ComputeSVD_gpu(X,...)
-    }
+    // Constructor
+    rSVD_gpu(MatrixXd InputData);
+    
+    // Destructor
+    ~rSVD_gpu();
 
-    VectorXd singularValues() { return S_; }
-    MatrixXd matrixU() { return U_; }
-    MatrixXd matrixV() { return V_; }
+    // Accessor
+    svd_params_s getParams();
 
-private:
-    MatrixXd U_, V_;
-    VectorXd S_;
+    // Mutator
+    void setParams(svd_params_s new_params);
 
-    ComputeSVD_gpu(const MatrixXd &X, ...){
-
-    }
+    // Compute SVD function
+    void ComputeSVD() override;
 };
 
 
@@ -188,5 +206,6 @@ double diff_spectral_norm(MatrixXd A, MatrixXd U, VectorXd S, MatrixXd V, int n_
 double diff_frobenius_norm(MatrixXd A, MatrixXd U, VectorXd S, MatrixXd V) {
 
 }
+#endif
 
 #endif

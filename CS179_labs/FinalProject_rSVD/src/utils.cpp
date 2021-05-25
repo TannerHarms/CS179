@@ -33,7 +33,9 @@ data::data(int M, int N, double* data) : m(), n(), arr() {
     m = M;
     n = N;
     arr = data;
-    matXd = Eigen::Map<Eigen::Matrix <double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor> >(&data[0], m, n);
+    matXd = Eigen::Map
+        <Eigen::Matrix <double, Eigen::Dynamic, Eigen::Dynamic, Eigen::RowMajor> >
+        (&data[0], m, n);
 }
 
 // Class Destructor

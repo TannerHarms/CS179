@@ -4,7 +4,7 @@
 # Edited by George Stathopoulos, 2019
 
 # Input Names
-CPP_FILES = rSVD.cpp utils.cpp
+CPP_FILES = rSVD.cpp utils.cpp svds.cpp
 
 # Directory names
 SRCDIR = src
