@@ -17,6 +17,18 @@ using Eigen::MatrixXd;
 using Eigen::VectorXd;
 using Eigen::MatrixBase;
 
+
+void PrintResults(SVD& svd_obj)
+{
+    cout << "U is size " << svd_obj.matrixU().rows() << "-by-" << svd_obj.matrixU().cols() << endl;
+    cout << "V is size " << svd_obj.matrixV().rows() << "-by-" << svd_obj.matrixV().cols() << endl;
+    cout << "S has " << svd_obj.singularValues().size() << " elements" << endl;
+    cout << "Spectral Norm of the error: " << svd_obj.spectralNorm() << endl;
+    cout << "Frobenius Norm of the error: " << svd_obj.frobeniusNorm() << endl;
+    cout << "Randomized SVD Compute Time on CPU = " << svd_obj.computeTime() << " seconds. \n" << endl;
+    return;
+}
+
 /********************************************************************************/
 /* Main function:
  * Inputs:
@@ -43,20 +55,27 @@ int main(int argc, char **argv)
     // Get the matrix and print it to the terminal
     MatrixXd mat; 
     mat = inputData.getData_mXd();
-    std::cout << mat << std::endl;
-    
-    // set up floats to store the time
-    //float time_SVD_cpu;//, time_SVD_gpu;
-    // float time_rSVD_cpu, time_rSVD_gpu;
+    cout << "Input matrix size: " << inputData.getM() << "-by-" << inputData.getN() << "\n" << endl;
 
     // Perform standard SVD
     SVD_cpu svd_cpu(&mat);
-    cout << "Standard SVD Compute Time on CPU = " << svd_cpu.computeTime() << " seconds." << endl;
-
+    svd_cpu.Evaluate(svd_params.rank);
+    cout << "Standard SVD using the CPU." << endl;
+    cout << "Reconstruction rank = " << svd_params.rank << "." << endl;
+    PrintResults(svd_cpu);
+    
     // Perform rSVD (time it)
     rSVD_cpu rsvd_cpu(&mat, svd_params);
-    cout << "Randomized SVD Compute Time on CPU = " << rsvd_cpu.computeTime() << " seconds." << endl;
-
+    rsvd_cpu.Evaluate(svd_params.rank);
+    cout << "Randomized SVD using the CPU." << endl;
+    cout << "Reconstruction rank = " << svd_params.rank << "." << endl;
+    PrintResults(rsvd_cpu);
+    
+    // if (rsvd_cpu.reconstruction()) {
+        cout << "R_ size is " <<rsvd_cpu.reconstruction().size() << endl;
+    // } else {
+    //     cout << "R_ is something else" << endl;
+    // }
 #if 0
 
     // Perform standard SVD on GPU (time it)

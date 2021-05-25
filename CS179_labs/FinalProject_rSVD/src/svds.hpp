@@ -73,10 +73,10 @@ public:
     virtual void ComputeSVD() = 0;
 
     // Evaluation Functions
-    MatrixXd Reconstruct(int rank);         // Get reconstructed data using SVD
-    double SpectralNorm(MatrixXd mat);      // Get the spectral norm
+    void Reconstruct(int rank);             // Get reconstructed data using SVD
+    double SpectralNorm(MatrixXd mat, int n_iter);      // Get the spectral norm
     double FrobeniusNorm(MatrixXd mat);     // Get the frobenius norm
-    void Evaluate();   
+    void Evaluate(int rank);   
 };
 
 
@@ -208,8 +208,6 @@ double diff_spectral_norm(MatrixXd A, MatrixXd U, VectorXd S, MatrixXd V, int n_
 
     return sqrt(eigval);
 }
-
-double diff_frobenius_norm(MatrixXd A, MatrixXd U, VectorXd S, MatrixXd V) {
 
 }
 #endif

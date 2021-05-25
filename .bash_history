@@ -1,213 +1,3 @@
-make all
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make all
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make all
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make all
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make all
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make all
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make all
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make
-make
-make
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make all
-make all
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make all
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make all
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make all
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make
-make
-make
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-cuda-memcheck --leak-check full ./noaudio-fft 256 128make
-make all
- ./noaudio-fft 256 128
-make
- ./noaudio-fft 256 128
-make
-make
- ./noaudio-fft 256 128
-make
- ./noaudio-fft 256 128
-make
- ./noaudio-fft 256 128
-make
- ./noaudio-fft 256 128
-make
-make
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make
-cuda-memcheck --leak-check full ./noaudio-fft 256 128
-make clean
-cd ../..
-ls
-zip lab3_2021_submission.zip ~/CS179_labs/lab3
-ls
-zip -sf lab3_2021_submission
-rm lab3_2021_submission.zip
-ls
-zip lab3_2021_submission.zip CS179_labs/lab3
-rm lab3_2021_submission.zip
-zip lab3_2021_submission.zip /CS179_labs/lab3
-cd CS179_labs
-ls
-cd lab3
-ls
-cd ../..
-rm lab3_2021_submission.zip
-zip -r lab3_2021_submission.zip /CS179_labs/lab3
-zip -r lab3_2021_submission.zip CS179_labs/lab3
-ls
-zip -sf lab3_2021_submission.zip
-cd CS179_labs
-git add -A
-git commit -m 'lab3 sumbitted'
-git push origin main
-git add -A
-git commit -m 'lab3 sumbitted'
-git push origin main
-zip -r lab3_2021_submission.zip CS179_labs/lab3
-rm lab3_2021_submission
-ls
-cd ../..
-ls
-cd tharms
-ls
-zip -r lab3_2021_submission.zip CS179_labs/lab3
-cd ../..
-wget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.t
-wget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgzwget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgzwget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgzwget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgzwget http://courses.cms.caltech.edu/cs179/2021_labs/lab1/lab1.tgz
-git add -A
-git commit -m 'lab4 downloaded'
-git push origin main
-make
-make
-make clean all
-make clean all
-make clean all
-make all
-make clean all
-macke clean all
-make clean all
-make clean all
-make clean all
- make clean all
-make clean all
-make clean all
-make clean all
-make clean all
-./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj resources/out_bunny.obj
-make clean all
-./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj resources/out_bunny.obj
-make clean all
-./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj resources/out_bunny.obj
-make clean all
-./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj resources/out_bunny.obj
-make clean all
-./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj resources/out_bunny.obj
-make clean all
-./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj resources/out_bunny.obj
-./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
-make clean all
-./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
-make clean all
-./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
-make clean all
-./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
-make all
-./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
-make clean all
-./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
-make all
-./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
-cuda-memcheck --leak-check full./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj
-cuda-memcheck --leak-check full
-cuda-memcheck --leak-check full
-cuda-memcheck --leak-check full
-cuda-memcheck --leak-check full .
-cuda-memcheck --leak-check full ./point_alignment resources/bunny2.obj resources/bunny2_trans.obj resources/out_bunny.obj 
-cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
-make clean all
-cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
-make clean all
-cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
-make clean all
-cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
-make clean all
-cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
-make clean all
-cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
-make clean all
-cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
-cd ../..
-ls
-mkdir temp
-ls
-unzip lab4.zip -d temp
-cd/temp
-cd temp
-ls
-cd lab4
-ls
-rm Makefile
-rm point_alignment.cu
-cd ../..
-cd CS179_labs/lab4
-ls
-cp point_alignment.cu ../../temp/lab4
-cp Makefile ../../temp/lab4
-cd../../temp/lab4
-ls
-cd ../../temp/lab4
-ls
-make clear all
-make clean all
-cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
-git add -A
-git commit -m 'lab4 is basically working, with some unknown memory corruption error. TAs notified'
-git push origin main
-cd ../..
-wget http://courses.cms.caltech.edu/cs179/2021_labs/lab4/lab4/lab4/zip
-wget http://courses.cms.caltech.edu/cs179/2021_labs/lab4/lab4/lab4.zip
-wget http://courses.cms.caltech.edu/cs179/2021_labs/lab4/lab4.zip
-ls
-unzip lab4.zip -d ~/CS179_labs
-make clean all
-ls
-./point_alignment resources/bunny.obj resourc
-./point_alignment resources/bunny.obj resources/bunny_noisy_s2_tx1.obj
-cuda-memcheck --leak-check full ./point_alignment resources/cube.obj resources/cube2.obj resources/out_cube.obj 
-../..
-cd ../..
-ls
-zip -r lab4_2021_submission.zip CS179_labs/lab4
-rm lab4_2021_submission.zip
-cd CS179_labs
-cd lab4
-make clean
-git add -A
-git commit -m ' Now things are working!!  lab4 finished and submitted.'
-git push origin main
-cd ../..
-zip -r lab4_2021_submission.zip CS179_labs/lab4
 ls
 cd ..
 wget http://courses.cms.caltech.edu/cs179/2021_labs/lab5/lab5.zip
@@ -498,3 +288,213 @@ clean make all
 clear make all
 clean
 make
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+clean make all
+make
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+smake clean all
+make clean all
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+git add -A
+git commit -m 'Now am able to get data in pointer and MatrixXd form.  Next steps: Implement SVDs and format the code a little better. '
+git push origin main
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean
+git add -A
+git commit -m 'Updated utils to be a .hpp/.cpp pair'
+git push origin main
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+git add -A
+git add -A
+git commit -m 'SVD class stucture organized.  Standard SVD seems to be working.  '
+git push origin main
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 1 3 4
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+git add -A
+git commit -m 'Now rsvd is running on CPU.  Still not certain if the values are correct, but it is at least giving results.  '
+git push origin main
