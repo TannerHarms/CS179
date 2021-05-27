@@ -63,6 +63,15 @@ int main(int argc, char **argv)
     cout << "Standard SVD using the CPU." << endl;
     cout << "Reconstruction rank = " << svd_params.rank << "." << endl;
     PrintResults(svd_cpu);
+
+    cout << "True S:" << endl;
+    cout << svd_cpu.singularValues() << endl;
+
+    cout << "True U:" << endl;
+    cout << svd_cpu.matrixU() << endl;
+
+    cout << "True V:" << endl;
+    cout << svd_cpu.matrixV() << endl;
     
     // Perform rSVD (time it)
     rSVD_cpu rsvd_cpu(&mat, svd_params);
@@ -71,17 +80,23 @@ int main(int argc, char **argv)
     cout << "Reconstruction rank = " << svd_params.rank << "." << endl;
     PrintResults(rsvd_cpu);
     
-    // if (rsvd_cpu.reconstruction()) {
-        cout << "R_ size is " <<rsvd_cpu.reconstruction().size() << endl;
-    // } else {
-    //     cout << "R_ is something else" << endl;
-    // }
-#if 0
-
     // Perform standard SVD on GPU (time it)
+    SVD_gpu svd_gpu(&mat);
+    svd_gpu.Evaluate(svd_params.rank);
+    cout << "SVD using the GPU." << endl;
+    cout << "Reconstruction rank = " << svd_params.rank << "." << endl;
+    PrintResults(svd_gpu);
+
+    cout << "standard GPU MatrixXd S:" << endl;
+    cout << svd_gpu.singularValues() << endl;
+
+    cout << "standard GPU MatrixXd U:" << endl;
+    cout << svd_gpu.matrixU() << endl;
+
+    cout << "standard GPU MatrixXd V:" << endl;
+    cout << svd_gpu.matrixV() << endl;
 
     // Perform rSVD in GPU (time it)
-#endif
 
     return 0;
 

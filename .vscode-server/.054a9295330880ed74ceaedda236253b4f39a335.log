@@ -7,9 +7,35 @@
 * as described in the license https://aka.ms/vscode-remote/license
 *
 
-Extension host agent listening on 39497
+Extension host agent listening on 38201
 
-[09:17:51] Extension host agent started.
-[09:17:51] [127.0.0.1][d110de55][ManagementConnection] New connection established.
-[09:17:51] [127.0.0.1][d8a102ec][ExtensionHostConnection] New connection established.
-[09:17:51] [127.0.0.1][d8a102ec][ExtensionHostConnection] <18308> Launched Extension Host Process.
+[09:37:55] Extension host agent started.
+[09:37:55] [127.0.0.1][6d30e0af][ManagementConnection] New connection established.
+[09:37:55] [127.0.0.1][2d087f89][ExtensionHostConnection] New connection established.
+[09:37:55] [127.0.0.1][2d087f89][ExtensionHostConnection] <7985> Launched Extension Host Process.
+[11:55:51] [127.0.0.1][6d30e0af][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[11:55:52] [127.0.0.1][2d087f89][ExtensionHostConnection] <7985> Extension Host Process exited with code: 0, signal: null.
+Last EH closed, waiting before shutting down
+[11:55:52] Last EH closed, waiting before shutting down
+Got delay-shutdown request while in shutdown timeout, delaying
+[11:56:48] Got delay-shutdown request while in shutdown timeout, delaying
+Cancelling previous shutdown timeout
+[11:56:48] Cancelling previous shutdown timeout
+[11:56:48] [127.0.0.1][caf980aa][ManagementConnection] New connection established.
+[11:56:48] [127.0.0.1][ec8945e4][ExtensionHostConnection] New connection established.
+[11:56:48] [127.0.0.1][ec8945e4][ExtensionHostConnection] <12526> Launched Extension Host Process.
+[11:56:56] [127.0.0.1][caf980aa][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[11:56:57] [127.0.0.1][ec8945e4][ExtensionHostConnection] <12526> Extension Host Process exited with code: 0, signal: null.
+Cancelling previous shutdown timeout
+[11:56:57] Cancelling previous shutdown timeout
+Last EH closed, waiting before shutting down
+[11:56:57] Last EH closed, waiting before shutting down
+Got delay-shutdown request while in shutdown timeout, delaying
+[11:57:05] Got delay-shutdown request while in shutdown timeout, delaying
+Cancelling previous shutdown timeout
+[11:57:05] Cancelling previous shutdown timeout
+[11:57:06] [127.0.0.1][904e7d76][ManagementConnection] New connection established.
+[11:57:06] [127.0.0.1][e53a8a37][ExtensionHostConnection] New connection established.
+[11:57:06] [127.0.0.1][e53a8a37][ExtensionHostConnection] <12683> Launched Extension Host Process.
+New EH opened, aborting shutdown
+[12:02:05] New EH opened, aborting shutdown

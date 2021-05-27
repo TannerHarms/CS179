@@ -16,3 +16,11 @@
 [2021-05-25 09:17:55.061] [exthost] [info] eager extensions activated
 [2021-05-25 09:17:55.346] [exthost] [info] ExtensionService#_doActivateExtension ms-vscode.js-debug {"startup":false,"extensionId":{"value":"ms-vscode.js-debug","_lower":"ms-vscode.js-debug"},"activationEvent":"onCommand:extension.js-debug.clearAutoAttachVariables"}
 [2021-05-25 09:17:55.346] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/tharms/.vscode-server/bin/054a9295330880ed74ceaedda236253b4f39a335/extensions/ms-vscode.js-debug/src/extension.js
+[2021-05-25 14:03:17.743] [exthost] [info] ExtensionService#_doActivateExtension vscode.configuration-editing {"startup":false,"extensionId":{"value":"vscode.configuration-editing","_lower":"vscode.configuration-editing"},"activationEvent":"onLanguage:jsonc"}
+[2021-05-25 14:03:17.744] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/tharms/.vscode-server/bin/054a9295330880ed74ceaedda236253b4f39a335/extensions/configuration-editing/dist/configurationEditingMain
+[2021-05-25 14:03:17.762] [exthost] [info] ExtensionService#_doActivateExtension vscode.json-language-features {"startup":false,"extensionId":{"value":"vscode.json-language-features","_lower":"vscode.json-language-features"},"activationEvent":"onLanguage:jsonc"}
+[2021-05-25 14:03:17.762] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/tharms/.vscode-server/bin/054a9295330880ed74ceaedda236253b4f39a335/extensions/json-language-features/client/dist/node/jsonClientMain
+[2021-05-25 14:03:17.816] [exthost] [info] ExtensionService#_doActivateExtension vscode.typescript-language-features {"startup":false,"extensionId":{"value":"vscode.typescript-language-features","_lower":"vscode.typescript-language-features"},"activationEvent":"onLanguage:jsonc"}
+[2021-05-25 14:03:17.816] [exthost] [info] ExtensionService#loadCommonJSModule file:///home/tharms/.vscode-server/bin/054a9295330880ed74ceaedda236253b4f39a335/extensions/typescript-language-features/dist/extension
+[2021-05-26 01:43:17.798] [exthost] [info] extension host terminating: renderer disconnected for too long (1)
+[2021-05-26 01:43:18.818] [exthost] [info] exiting with code 0

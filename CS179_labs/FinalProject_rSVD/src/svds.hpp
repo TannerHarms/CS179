@@ -18,15 +18,10 @@
 #include <random>
 #include <algorithm>
 #include <chrono>
-#include <iostream>
 #include <cmath>
-#include "Eigen/Dense"
-#include "helper_cuda.h"
-
 #include <vector>
 
-#include <cublas_v2.h>
-#include <curand.h>
+#include "Eigen/Dense"
 
 using std::cout;
 using std::endl;
@@ -34,7 +29,6 @@ using std::min;
 using Eigen::MatrixXd;
 using Eigen::VectorXd;
 using Eigen::MatrixBase;
-
 
 /***********************************************************************************/
 /*
@@ -123,17 +117,16 @@ public:
     void ComputeSVD() override;
 };
 
-#if 0
 
 /***********************************************************************************/
 /* 
     Class for standard SVD computed using a GPU.
  */
-class SVD_gpu 
+class SVD_gpu : public SVD
 {
 public:
     // Constructor
-    SVD_gpu(MatrixXd InputDataPtr);
+    SVD_gpu(MatrixXd* InputDataPtr);
     
     // Destructor
     ~SVD_gpu();
@@ -142,12 +135,13 @@ public:
     void ComputeSVD() override;
 };
 
+#if 0
 
 /***********************************************************************************/
 /* 
     Class for randomized SVD computed using a GPU.
  */
-class rSVD_gpu 
+class rSVD_gpu : public SVD
 {
 protected:
     svd_params_s rsvd_params;
@@ -156,7 +150,7 @@ protected:
     MatrixXd RangeFinder();
 public:
     // Constructor
-    rSVD_gpu(MatrixXd InputDataPtr);
+    rSVD_gpu(MatrixXd* InputDataPtr);
     
     // Destructor
     ~rSVD_gpu();

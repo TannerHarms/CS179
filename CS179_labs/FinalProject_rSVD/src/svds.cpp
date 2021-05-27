@@ -1,7 +1,12 @@
 
-
 #include "utils.hpp"
 #include "svds.hpp"
+
+#include <cublas_v2.h>
+#include <cusolverDn.h>
+
+#include "helper_cuda.h"
+
 
 
 /********************************************************************************/
@@ -280,10 +285,171 @@ void rSVD_cpu::ComputeSVD()
 */
 
 // Constructor
+SVD_gpu::SVD_gpu(MatrixXd* InputDataPtr) 
+    : SVD(InputDataPtr) {
+    //START_TIMER();
+    ComputeSVD();
+    //STOP_RECORD_TIMER(SVD_Compute_Time);
+};
 
 // Destructor
+SVD_gpu::~SVD_gpu()
+{
+    std::cout << "SVD_gpu destroyed." << std::endl;
+    return;
+}
 
 // Computing the SVD
+void SVD_gpu::ComputeSVD()
+/* 
+  Note that I am following an example found on stack exchange for this implementation
+  https://stackoverflow.com/questions/57403017/cuda-cusolver-gesvdj-with-large-matrix
+*/
+
+{
+    //-----------------------------------------------------------------------------//
+    // Step 0:  Initialize variables to work with Cuda.
+
+    // cusolver types.
+    cusolverDnHandle_t cusolverH;   // cusolver handle
+    cudaStream_t stream;            // stream handle
+    gesvdjInfo_t gesvdj_params;     // Jacobi SVD parameters
+
+    // Input data
+    const int m = (*X_).rows(), n = (*X_).cols(), minmn = min(m,n);
+    const int ldx = m;  // leading dimension X
+    double* X = (*X_).data();    // m x n
+
+    // Allocate space for U, S, and V
+    const int ldu = m;  // leading dimension U
+    double U[ldu*minmn];    // m x m
+    const int ldv = n;  // leading dimension V
+    double V[ldv*minmn];    // n x n   
+    double S[minmn]; 
+
+    // create device variables 
+    double *d_X, *d_S, *d_U, *d_V;  // device SVD variables
+    int* d_info;                    // error info
+    int lwork, info;                // size of workspace and host copy of error info
+    double* d_work;                 // device workspace for gesvdj
+
+    // Configure gesvdj
+    const double tol = 1.e-14;
+    const int max_sweeps = 100;
+    const cusolverEigMode_t jobz = CUSOLVER_EIG_MODE_VECTOR; // compute eig vecs
+    int econ = 1;    // economy size on
+
+    
+    // cusolverStatus_t status = cusolverDnCreate(&cusolverH);
+    // assert(CUSOLVER_STATUS_SUCCESS == status);
+    // cout << "It worked!" << endl;
+
+#if 1
+    //-----------------------------------------------------------------------------//
+    // Step 1:  Create a cusolver handle and bind a stream.
+    CUSOLVER_CALL( cusolverDnCreate(&cusolverH) );
+    CUDA_CALL( cudaStreamCreateWithFlags(&stream, cudaStreamNonBlocking) );
+    CUSOLVER_CALL( cusolverDnSetStream(cusolverH, stream) );
+
+    //-----------------------------------------------------------------------------//
+    // Step 2:  Configuration of gesvdj
+    CUSOLVER_CALL( cusolverDnCreateGesvdjInfo(&gesvdj_params) );
+    CUSOLVER_CALL( cusolverDnXgesvdjSetMaxSweeps( gesvdj_params, max_sweeps) );
+    CUSOLVER_CALL( cusolverDnXgesvdjSetTolerance( gesvdj_params, tol) );
+
+    //-----------------------------------------------------------------------------//
+    // Step 3:  Allocate device memory and copy data to it
+
+    // Allocate the memory on the device
+    CUDA_CALL( cudaMalloc ((void**) &d_X, sizeof(double) * ldx * n) );
+    CUDA_CALL( cudaMalloc ((void**) &d_U, sizeof(double) * ldu * minmn) );
+    CUDA_CALL( cudaMalloc ((void**) &d_V, sizeof(double) * ldv * minmn) );
+    CUDA_CALL( cudaMalloc ((void**) &d_S, sizeof(double) * minmn) );
+    CUDA_CALL( cudaMalloc ((void**) &d_info, sizeof(int)) );
+
+    // Copy the initial array to the device.
+    CUDA_CALL( cudaMemcpy(d_X, X, sizeof(double) * ldx * n, cudaMemcpyHostToDevice) );
+
+    //-----------------------------------------------------------------------------//
+    // Step 4:  Query the workspace of SVD
+    
+    // Get the buffer size
+    CUSOLVER_CALL( cusolverDnDgesvdj_bufferSize(
+        cusolverH,
+        jobz,   // CUSOLVER_EIG_MODE_VECTOR: compute singular value and singular vectors
+        econ,   // 1 for economy size
+        m,      // num rows
+        n,      // num cols
+        d_X,    // data on device m-by-n
+        ldx,    // leading dimension of data
+        d_S,    // min(m,n) sing vals on device
+        d_U,    // m-by-min(m,n) for econ = 1
+        ldu,    // leading dimension of U
+        d_V,    // n-by-min(m,n) for 
+        ldv,    // leading dimension of V
+        &lwork,
+        gesvdj_params) );
+
+    // Allocate the workspace
+    CUDA_CALL( cudaMalloc((void**) &d_work, sizeof(double) * lwork) );
+
+    //-----------------------------------------------------------------------------//
+    // Step 5:  Compute SVD
+
+    // Do the SVD
+    CUSOLVER_CALL( cusolverDnDgesvdj(
+        cusolverH,
+        jobz,  // CUSOLVER_EIG_MODE_VECTOR: compute singular value and singular vectors 
+        econ,  // econ = 1 for economy size 
+        m,     // nubmer of rows of A, 0 <= m 
+        n,     // number of columns of A, 0 <= n  
+        d_X,   // m-by-n 
+        ldx,   // leading dimension of A 
+        d_S,   // min(m,n). The singular values in descending order 
+        d_U,   // m-by-min(m,n) if econ = 1 
+        ldu,   // leading dimension of U, ldu >= max(1,m) 
+        d_V,   // n-by-min(m,n) if econ = 1  
+        ldv,   // leading dimension of V, ldv >= max(1,n) 
+        d_work,
+        lwork,
+        d_info,
+        gesvdj_params) );
+
+    // Memcopy back to the host.
+    CUDA_CALL( cudaMemcpy(U, d_U, sizeof(double) * ldu * minmn, cudaMemcpyDeviceToHost) );
+    CUDA_CALL( cudaMemcpy(V, d_V, sizeof(double) * ldv * minmn, cudaMemcpyDeviceToHost) );
+    CUDA_CALL( cudaMemcpy(S, d_S, sizeof(double) * minmn, cudaMemcpyDeviceToHost) );
+    CUDA_CALL( cudaMemcpy(&info, d_info, sizeof(int), cudaMemcpyDeviceToHost) );
+
+    //-----------------------------------------------------------------------------//
+    // Step 6:  Convert back to MatrixXd format for additional work in the class.
+    U_ = Eigen::Map
+        <Eigen::Matrix <double, Eigen::Dynamic, Eigen::Dynamic> >
+        (&U[0], m, minmn);
+    V_ = Eigen::Map
+        <Eigen::Matrix <double, Eigen::Dynamic, Eigen::Dynamic> >
+        (&V[0], n, minmn);
+    S_ = Eigen::Map<Eigen::VectorXd>(&S[0], minmn);
+    
+    //-----------------------------------------------------------------------------//
+    // Step 7:  Free variables
+    if (d_X   ) CUDA_CALL( cudaFree(d_X) );
+    if (d_U   ) CUDA_CALL( cudaFree(d_U) );
+    if (d_V   ) CUDA_CALL( cudaFree(d_V) );
+    if (d_S   ) CUDA_CALL( cudaFree(d_S) );
+    if (d_info) CUDA_CALL( cudaFree(d_info) );
+    if (d_work) CUDA_CALL( cudaFree(d_work) );
+
+    if (cusolverH    ) CUSOLVER_CALL( cusolverDnDestroy(cusolverH) );
+    if (stream       ) CUDA_CALL( cudaStreamDestroy(stream) );
+    if (gesvdj_params) CUSOLVER_CALL( cusolverDnDestroyGesvdjInfo(gesvdj_params) );
+
+    cudaDeviceReset();
+    return;
+
+#endif
+}
+
 
 
 

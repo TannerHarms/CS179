@@ -37,7 +37,7 @@ File Structure:
 %--------------------------------------------------------------------------------------%
 Usage:
 
-To implement rSVD, the command line should be structued 
+To implement rSVD, the command line should be structured 
     ./bin/rSVD <input file> <rank> <power iterations> <oversaples> 
 
 Example: ./bin/rSVD data/test_matrix_01.txt 2 1 1

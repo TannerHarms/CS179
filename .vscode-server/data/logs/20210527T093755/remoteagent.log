@@ -1,0 +1,32 @@
+[2021-05-27 09:37:55.110] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2021-05-27 09:37:55.110] [remoteagent] [info] Extension host agent started.
+[2021-05-27 09:37:55.225] [remoteagent] [info] [127.0.0.1][6d30e0af][ManagementConnection] New connection established.
+[2021-05-27 09:37:55.259] [remoteagent] [info] [127.0.0.1][2d087f89][ExtensionHostConnection] New connection established.
+[2021-05-27 09:37:55.350] [remoteagent] [info] [127.0.0.1][2d087f89][ExtensionHostConnection] <7985> Launched Extension Host Process.
+[2021-05-27 11:55:51.564] [remoteagent] [info] [127.0.0.1][6d30e0af][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2021-05-27 11:55:52.598] [remoteagent] [info] [127.0.0.1][2d087f89][ExtensionHostConnection] <7985> Extension Host Process exited with code: 0, signal: null.
+[2021-05-27 11:55:52.599] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2021-05-27 11:56:48.511] [remoteagent] [info] Got delay-shutdown request while in shutdown timeout, delaying
+[2021-05-27 11:56:48.511] [remoteagent] [info] Cancelling previous shutdown timeout
+[2021-05-27 11:56:48.755] [remoteagent] [info] [127.0.0.1][caf980aa][ManagementConnection] New connection established.
+[2021-05-27 11:56:48.757] [remoteagent] [info] [127.0.0.1][ec8945e4][ExtensionHostConnection] New connection established.
+[2021-05-27 11:56:48.767] [remoteagent] [info] [127.0.0.1][ec8945e4][ExtensionHostConnection] <12526> Launched Extension Host Process.
+[2021-05-27 11:56:56.322] [remoteagent] [info] [127.0.0.1][caf980aa][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2021-05-27 11:56:57.351] [remoteagent] [info] [127.0.0.1][ec8945e4][ExtensionHostConnection] <12526> Extension Host Process exited with code: 0, signal: null.
+[2021-05-27 11:56:57.351] [remoteagent] [info] Cancelling previous shutdown timeout
+[2021-05-27 11:56:57.351] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2021-05-27 11:57:05.917] [remoteagent] [info] Got delay-shutdown request while in shutdown timeout, delaying
+[2021-05-27 11:57:05.917] [remoteagent] [info] Cancelling previous shutdown timeout
+[2021-05-27 11:57:06.173] [remoteagent] [info] [127.0.0.1][904e7d76][ManagementConnection] New connection established.
+[2021-05-27 11:57:06.240] [remoteagent] [info] [127.0.0.1][e53a8a37][ExtensionHostConnection] New connection established.
+[2021-05-27 11:57:06.247] [remoteagent] [info] [127.0.0.1][e53a8a37][ExtensionHostConnection] <12683> Launched Extension Host Process.
+[2021-05-27 12:02:05.918] [remoteagent] [info] New EH opened, aborting shutdown

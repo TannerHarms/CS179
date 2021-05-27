@@ -144,4 +144,13 @@ data import_from_file(char *file_name) {
 }
 
 /********************************************************************************/
-// Handling imported data.
+// Matrix printing utility for testing GPU SVD results
+void printMatrix(int m, int n, const double*A, int lda, const char* name)
+{
+    for(int row = 0 ; row < m ; row++){
+        for(int col = 0 ; col < n ; col++){
+            double Areg = A[row + col*lda];
+            printf("%s(%d,%d) = %20.16E\n", name, row+1, col+1, Areg);
+        }
+    }
+}

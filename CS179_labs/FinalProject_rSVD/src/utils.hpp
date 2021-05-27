@@ -11,9 +11,11 @@
 #include <vector>
 #include <fstream>
 #include <iostream>
-#include <cuda_runtime.h>
 #include <algorithm>
 #include <cassert>
+#include "Eigen/Dense"
+
+#include <cuda_runtime.h>
 
 #include "Eigen/Dense"
 
@@ -86,6 +88,7 @@ private:
 data import_from_file(char *file_name);
 
 /********************************************************************************/
-// Import Data from Python.
+// Matrix printing utility for testing GPU SVD results
+void printMatrix(int m, int n, const double*A, int lda, const char* name);
 
 #endif

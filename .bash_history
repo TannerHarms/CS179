@@ -1,93 +1,3 @@
-ls
-cd ..
-wget http://courses.cms.caltech.edu/cs179/2021_labs/lab5/lab5.zip
-ls
-unzip lab5.zip -d CS179_labs
-cd CS179_labs
-ls
-git add -A
-git commit -m 'Lab4 complete and submitted.  Lab5 uploaded and unzipped'
-git push origin main
-make clean all
-make all
-make clean all
-make clean all
-make clean all
-make clean all
-make clean all
-make clean all
-make clean all
-cd lab5
-make clean all
-cd../../..
-cd ../../..
-ls
-cd ..
-ls
-cd srv
-ls
-cd../
-cd ..
-ls
-cd usr
-ls
-cd ..
-cd home
-cd tharms
-ls
-cd CS179_labs
-cd lab5
-ls ../../../../srv
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-make clean all
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-make clean all
-make clean all
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-make clean all
-cd lab5
-make clean all
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-make clean all
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-make clean all
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-cd lab5
-make clean all
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-========= Program hit cudaErrorInvalidConfiguration (error 9) due to "invalid configuration argument" on CUDA API call to cudaLaunch. 
-=========     Saved host backtrace up to driver entry point at error
-=========     Host Frame:/usr/lib/x86_64-linux-gnu/libcuda.so.1 [0x311153]
-=========     Host Frame:/usr/local/cuda/lib64/libcudart.so.9.1 (cudaLaunch + 0x192) [0x34802]
-=========     Host Frame:bin/dense-neuralnet [0x1bf3a]
-=========     Host Frame:bin/dense-neuralnet [0x1b8ea]
-cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
-make clean all
-cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
 make clean all
 make clean all
 cuda-memcheck bin/dense-neuralnet ../../../../srv/cs179_mnist "relu"
@@ -498,3 +408,93 @@ make clean all
 git add -A
 git commit -m 'Now rsvd is running on CPU.  Still not certain if the values are correct, but it is at least giving results.  '
 git push origin main
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+git add -A
+git commit -m 'SVD class Evaluator functions are now working.  Verified using MATLAB.'
+git push origin main
+./rSVD
+./bin/rSVD 
+git add -A
+git commit -m 'README file created for Final Project.'
+git push origin main
+../../
+cd ../..
+zip CS179_labs/FinalProject_rSVD -r cpu_demo_2021_submission.zip
+zip -r cpu_demo_2021_submission.zip CS179_labs/FinalProject_rSVD
+ls
+cd CS179_labs/FinalProject_rSVD/
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+cd FinalProject_rSVD
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 2 1 1
+./bin/rSVD data/test_matrix_01.txt 4 1 1
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+make clean all
+./bin/rSVD data/test_matrix_01.txt 4 1 1
