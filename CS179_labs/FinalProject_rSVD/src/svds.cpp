@@ -1,9 +1,6 @@
-
+#include <sys/time.h>
 #include "utils.hpp"
 #include "svds.hpp"
-
-#include <cublas_v2.h>
-#include <cusolverDn.h>
 
 #include "helper_cuda.h"
 
@@ -11,23 +8,7 @@
 
 /********************************************************************************/
 // Timing utilities
-cudaEvent_t start;
-cudaEvent_t stop;
-
-#define START_TIMER() {                         \
-      gpuErrchk(cudaEventCreate(&start));       \
-      gpuErrchk(cudaEventCreate(&stop));        \
-      gpuErrchk(cudaEventRecord(start));        \
-    }
-
-#define STOP_RECORD_TIMER(name) {                           \
-      gpuErrchk(cudaEventRecord(stop));                     \
-      gpuErrchk(cudaEventSynchronize(stop));                \
-      gpuErrchk(cudaEventElapsedTime(&name, start, stop));  \
-      gpuErrchk(cudaEventDestroy(start));                   \
-      gpuErrchk(cudaEventDestroy(stop));                    \
-    }
-
+struct timeval t1, t2;
 
 /***********************************************************************************/
 /*
@@ -154,9 +135,10 @@ void SVD::Evaluate(int rank)
 
 // Constructor
 SVD_cpu::SVD_cpu(MatrixXd* InputDataPtr) : SVD(InputDataPtr) {
-    START_TIMER();
+    gettimeofday(&t1, 0);
     ComputeSVD();
-    STOP_RECORD_TIMER(SVD_Compute_Time);
+    gettimeofday(&t2, 0);
+    SVD_Compute_Time = (1000000.0*(t2.tv_sec-t1.tv_sec) + t2.tv_usec-t1.tv_usec)/1000000.0;
 };
 
 // Destructor
@@ -188,9 +170,10 @@ void SVD_cpu::ComputeSVD()
 rSVD_cpu::rSVD_cpu(MatrixXd* InputDataPtr, svd_params_s params) 
     : SVD(InputDataPtr), rsvd_params(params) 
 {
-    START_TIMER();
+    gettimeofday(&t1, 0);
     ComputeSVD();
-    STOP_RECORD_TIMER(SVD_Compute_Time);
+    gettimeofday(&t2, 0);
+    SVD_Compute_Time = (1000000.0*(t2.tv_sec-t1.tv_sec) + t2.tv_usec-t1.tv_usec)/1000000.0;
 };
 
 // Destructor
@@ -210,9 +193,10 @@ void rSVD_cpu::setParams(svd_params_s new_params)
   Set new parameter then recompute the RSVD.  Also times the RSVD.
 */
     rsvd_params = new_params;
-    START_TIMER();
+    gettimeofday(&t1, 0);
     ComputeSVD();
-    STOP_RECORD_TIMER(SVD_Compute_Time);
+    gettimeofday(&t2, 0);
+    SVD_Compute_Time = (1000000.0*(t2.tv_sec-t1.tv_sec) + t2.tv_usec-t1.tv_usec)/1000000.0;
     return;    
 }
 
@@ -287,9 +271,10 @@ void rSVD_cpu::ComputeSVD()
 // Constructor
 SVD_gpu::SVD_gpu(MatrixXd* InputDataPtr) 
     : SVD(InputDataPtr) {
-    //START_TIMER();
+    gettimeofday(&t1, 0);
     ComputeSVD();
-    //STOP_RECORD_TIMER(SVD_Compute_Time);
+    gettimeofday(&t2, 0);
+    SVD_Compute_Time = (1000000.0*(t2.tv_sec-t1.tv_sec) + t2.tv_usec-t1.tv_usec)/1000000.0;
 };
 
 // Destructor
@@ -303,7 +288,7 @@ SVD_gpu::~SVD_gpu()
 void SVD_gpu::ComputeSVD()
 /* 
   Note that I am following an example found on stack exchange for this implementation
-  https://stackoverflow.com/questions/57403017/cuda-cusolver-gesvdj-with-large-matrix
+  https://docs.nvidia.com/cuda/cusolver/index.html#gesvdj-example1
 */
 
 {
@@ -339,12 +324,6 @@ void SVD_gpu::ComputeSVD()
     const cusolverEigMode_t jobz = CUSOLVER_EIG_MODE_VECTOR; // compute eig vecs
     int econ = 1;    // economy size on
 
-    
-    // cusolverStatus_t status = cusolverDnCreate(&cusolverH);
-    // assert(CUSOLVER_STATUS_SUCCESS == status);
-    // cout << "It worked!" << endl;
-
-#if 1
     //-----------------------------------------------------------------------------//
     // Step 1:  Create a cusolver handle and bind a stream.
     CUSOLVER_CALL( cusolverDnCreate(&cusolverH) );
@@ -447,9 +426,7 @@ void SVD_gpu::ComputeSVD()
     cudaDeviceReset();
     return;
 
-#endif
 }
-
 
 
 
@@ -459,11 +436,575 @@ void SVD_gpu::ComputeSVD()
 */
 
 // Constructor
+rSVD_gpu::rSVD_gpu(MatrixXd* InputDataPtr, svd_params_s params) 
+    : SVD(InputDataPtr), rsvd_params(params) 
+{
+    gettimeofday(&t1, 0);
+    ComputeSVD();
+    gettimeofday(&t2, 0);
+    SVD_Compute_Time = (1000000.0*(t2.tv_sec-t1.tv_sec) + t2.tv_usec-t1.tv_usec)/1000000.0;
+};
 
 // Destructor
+rSVD_gpu::~rSVD_gpu()
+{
+    std::cout << "rSVD_gpu destroyed." << std::endl;
+    return;
+}
 
 // Accessors
+svd_params_s rSVD_gpu::getParams() { return rsvd_params; }
 
 // Mutators
+void rSVD_gpu::setParams(svd_params_s new_params) 
+{
+/* 
+  Set new parameter then recompute the RSVD.  Also times the RSVD.
+*/
+    rsvd_params = new_params;
+    gettimeofday(&t1, 0);
+    ComputeSVD();
+    gettimeofday(&t2, 0);
+    SVD_Compute_Time = (1000000.0*(t2.tv_sec-t1.tv_sec) + t2.tv_usec-t1.tv_usec)/1000000.0;
+    return;    
+}
+
+#if 0
+// Fill a matrix with random variables using curand
+void rSVD_gpu::TestMatrix(double* A, int nr_rows_A, int nr_cols_A)
+{
+    size_t numelA = (size_t) nr_rows_A * nr_cols_A;
+    double mn = 0.0, std = 1.0;
+    
+    // Create a pseudo-random number generator
+    curandGenerator_t prng;
+    CURAND_CALL( curandCreateGenerator(&prng, CURAND_RNG_PSEUDO_DEFAULT) );
+
+    // Set the seed for the random number generator using the system clock
+    CURAND_CALL( curandSetPseudoRandomGeneratorSeed(prng, (unsigned long long) clock()) );
+
+    // Fill the array with random numbers on the device
+    CURAND_CALL( curandGenerateNormalDouble(prng, A, numelA, mn, std) );
+    return;
+}
+#endif
 
 // Computing the SVD
+void rSVD_gpu::ComputeSVD()
+/* 
+  Implement the same algorithm as above, only using GPU accelerated commands from cuBLAS and
+  cuSOLVER.
+*/
+{
+    //-----------------------------------------------------------------------------//
+    // Step 0:  Initialize variables to work with Cuda.
+
+    // Handles:
+    cusolverDnHandle_t cusolverH;           // cusolver handle
+    cublasHandle_t cublasH;                 // cublas handle
+    cudaStream_t stream;                    // stream handle
+    
+    // Initializing handles.
+    CUSOLVER_CALL( cusolverDnCreate(&cusolverH) );
+    CUBLAS_CALL( cublasCreate(&cublasH) );
+    CUDA_CALL( cudaStreamCreateWithFlags(&stream, cudaStreamNonBlocking) );
+    CUSOLVER_CALL( cusolverDnSetStream(cusolverH, stream) );
+    CUBLAS_CALL( cublasSetStream(cublasH, stream) );
+
+    // cuBLAS identifiers
+    cublasOperation_t transOn  = CUBLAS_OP_T;   // transpose
+    cublasOperation_t transOff = CUBLAS_OP_N;   // no transpose
+
+    // Input data
+    const int m = (*X_).rows(), n = (*X_).cols(), minmn = min(m,n);
+    const int ldx = m;  // leading dimension X
+    double* X = (*X_).data();    // m x n
+
+    // parsing the rsvd parameters
+    int rank = rsvd_params.rank;
+    int powiter = rsvd_params.powiter;
+    int oversamples = rsvd_params.oversamples;
+
+    // Check if matrix is too small for desired rank/oversamples
+    if((rank + oversamples) > min((*X_).rows(), (*X_).cols())) {
+      rank = min((*X_).rows(), (*X_).cols());
+      oversamples = 0;
+    }
+
+    // Copy data to device
+    double *d_X;
+    CUDA_CALL( cudaMalloc ((void**) &d_X, sizeof(double) * ldx * n) );
+    CUBLAS_CALL( cublasSetMatrix(ldx, n, sizeof(double), X, ldx, d_X, ldx) );
+
+
+    //-----------------------------------------------------------------------------//
+    // Step 1:  Set then randomized test matrix.
+
+    // allocate the test matrix
+    const int ldp = n;
+    // double P[ldp * (rank + oversamples)];
+    
+    // Allocate P on the device.  
+    double *d_P;
+    CUDA_CALL( cudaMalloc ((void**) &d_P, sizeof(double) * ldp * (rank + oversamples)) );
+
+    // Since curand isnt working, I am just doing a quick random generator here.
+    size_t numelP = (size_t) ldp * (rank + oversamples);
+    double mn = 0.0, std = 1.0;
+
+    std::default_random_engine generator;
+    std::normal_distribution<double> distribution(mn, std);
+    double P[numelP];
+    for(int i = 0; i < (int) numelP; i++) 
+    {
+        P[i] = distribution(generator);
+    }
+    CUBLAS_CALL( cublasSetMatrix(ldp, rank + oversamples, sizeof(double), P, ldp, d_P, ldp) );
+        
+    // // Use another function to set the values to normally distributed random.
+    // TestMatrix(d_P, ldp, rank + oversamples);
+
+
+    //-----------------------------------------------------------------------------//
+    // Step 2:  Implement Power Iterations.
+
+    double one = 1.0, zero = 0.0;
+
+    // Z = X*P
+    const int ldz = m;
+    // double Z[ldz * (rank + oversamples)];
+    double *d_Z;
+    CUDA_CALL( cudaMalloc ((void**) &d_Z, sizeof(double) * ldz * (rank + oversamples)) );
+    CUDA_CALL( cublasDgemm(cublasH, transOff, transOff, 
+        m, rank + oversamples, n, &one, 
+        d_X, ldx, 
+        d_P, ldp, 
+        &zero, d_Z, ldz) );
+    CUDA_CALL( cudaDeviceSynchronize() );
+
+    // for k=1:q -> Z = X*(X'*Z) -> end
+    int ldtemp = n;
+    // double temp_array[ldtemp * (rank + oversamples)];
+    double *d_temp_array;
+    CUDA_CALL( cudaMalloc ((void**) &d_temp_array, sizeof(double) * ldtemp * (rank + oversamples)) );
+    for (int i = 0; i < powiter; i++)  // powiter will never be very large, so just keep this 
+                                   // in the cpp format.  
+    {
+        // first get temp = X'*Z
+        CUDA_CALL( cublasDgemm(cublasH, transOn, transOff, 
+            n, rank + oversamples, m, &one, 
+            d_X, ldx, 
+            d_Z, ldz, 
+            &zero, d_temp_array, ldtemp) );
+        CUDA_CALL( cudaDeviceSynchronize() );
+        
+        // Then Z = X * temp
+        CUDA_CALL( cublasDgemm(cublasH, transOff, transOff, 
+            m, rank + oversamples, n, &one, 
+            d_X, ldx, 
+            d_temp_array, ldtemp, 
+            &zero, d_Z, ldz) );
+        CUDA_CALL( cudaDeviceSynchronize() );
+    }
+
+
+    //-----------------------------------------------------------------------------//
+    // Step 3:  Find Rank Revealing Q matrix [Q,R] = qr(Z,0). Z is m-by-(r+p)
+    //  To do this, you need to use cuSOLVER functions geqrf and orgqr.  
+    //  Following an example from nvidia docs
+    //  https://docs.nvidia.com/cuda/cusolver/index.html#ormqr-example1
+
+    // Setting up the important variables
+    double *d_tau;      // scaling factor for qr decomposition.
+    
+    int *d_info;        // gpu info to assert successful qr.
+    int h_info;         // host copy
+    
+    int lwork_geqrf;    // size of working array for geqrf.
+    int lwork_orgqr;    // size of working array for orgqr.
+    int lwork;          // size of working array.  max of the above 2.
+    double *d_work;     // working space.  array of size lwork_geqrf
+
+    CUDA_CALL( cudaMalloc((void**)&d_tau, sizeof(double) * (rank + oversamples)) );
+    CUDA_CALL( cudaMalloc((void**)&d_info, sizeof(int)) );
+
+    // query the workspace size for both functions
+    CUSOLVER_CALL( cusolverDnDgeqrf_bufferSize(
+        cusolverH,
+        m,                  // first dim
+        rank + oversamples, // second dim
+        d_Z,
+        ldz,
+        &lwork_geqrf) );
+
+    CUSOLVER_CALL( cusolverDnDorgqr_bufferSize(
+        cusolverH,
+        m,                  // first dimension
+        rank + oversamples, // second dimension
+        rank + oversamples, // elementary reflections defining the matrix Q
+        d_Z,
+        ldz,
+        d_tau,
+        &lwork_orgqr) );
+    
+    // max of the above two.
+    lwork = (lwork_geqrf > lwork_orgqr) ? lwork_geqrf : lwork_orgqr;
+
+    // Allocate workspace size.
+    CUDA_CALL( cudaMalloc((void**)&d_work, sizeof(double) * lwork) );
+
+    // Compute the qr decomposition using geqrf. 
+    CUSOLVER_CALL( cusolverDnDgeqrf(
+        cusolverH, 
+        m,                  // first dimension
+        rank + oversamples, // second dimension
+        d_Z,                // array being used (overwritten)
+        ldz,                // leading dimension
+        d_tau,              // scaling factor
+        d_work,             // workspace
+        lwork,              // workspace size
+        d_info) );          // info
+    CUDA_CALL( cudaDeviceSynchronize() );
+    
+    // Check for successful qr factorization.
+    CUDA_CALL( cudaMemcpy(&h_info, d_info, sizeof(int), cudaMemcpyDeviceToHost) );
+    assert(0 == h_info);
+
+    // Get Q from the result of geqrf using ormqr
+    CUSOLVER_CALL( cusolverDnDorgqr(
+        cusolverH,
+        m,                  // first dim
+        rank + oversamples, // second dim
+        rank + oversamples, // elementary reflections
+        d_Z,                // array that will become Q
+        ldz,                // leading dimension of Q
+        d_tau,              // scaling factors
+        d_work,             // working space    
+        lwork,              // working space size
+        d_info) );          // info
+    CUDA_CALL( cudaDeviceSynchronize() );
+
+    // Check for successful qr factorization.
+    CUDA_CALL( cudaMemcpy(&h_info, d_info, sizeof(int), cudaMemcpyDeviceToHost) );
+    assert(0 == h_info);
+
+    // Y = Q'*X
+    const int ldy = rank + oversamples;
+    // double Y[ldy * n];
+    double *d_Y;
+    CUDA_CALL( cudaMalloc ((void**) &d_Y, sizeof(double) * ldy * n) );
+    CUDA_CALL( cublasDgemm(cublasH, transOn, transOff, 
+        rank + oversamples, n, m, &one, 
+        d_Z, ldz, 
+        d_X, ldx, 
+        &zero, d_Y, ldy) );
+    CUDA_CALL( cudaDeviceSynchronize() );
+
+
+    //-----------------------------------------------------------------------------//
+    // Step 4:  Compute the SVD of the much smaller matrix Y
+
+    gesvdjInfo_t gesvdj_params;             // Jacobi SVD parameters
+
+    // Allocate space for Uy, S, and V
+    const int lduy = rank + oversamples;
+    const int ldv = n;
+    const int minsz = min(rank + oversamples, n);
+    // double Uy[lduy * minsz];        // Uy: (r+p)-by-min((r+p),n)
+    double V[ldv * minsz];          // V: n-by-min((r+p),n)
+    double S[minsz];                // S: min((r+p),n)
+    double  *d_Uy, *d_V, *d_S;  
+    CUDA_CALL( cudaMalloc ((void**) &d_Uy, sizeof(double) * lduy * minsz) );
+    CUDA_CALL( cudaMalloc ((void**) &d_V, sizeof(double) * ldv * minsz) );
+    CUDA_CALL( cudaMalloc ((void**) &d_S, sizeof(double) * minsz) );
+
+    // Configure gesvdj ( jacobian SVD )
+    const double tol = 1.e-14;
+    const int max_sweeps = 100;
+    const cusolverEigMode_t jobz = CUSOLVER_EIG_MODE_VECTOR; // compute eig vecs
+    int econ = 1;    // economy size on
+    
+    // Configure gesvdj
+    CUSOLVER_CALL( cusolverDnCreateGesvdjInfo(&gesvdj_params) );
+    CUSOLVER_CALL( cusolverDnXgesvdjSetMaxSweeps( gesvdj_params, max_sweeps) );
+    CUSOLVER_CALL( cusolverDnXgesvdjSetTolerance( gesvdj_params, tol) );
+
+    // Get the buffer size
+    CUSOLVER_CALL( cusolverDnDgesvdj_bufferSize(
+        cusolverH,
+        jobz,   // CUSOLVER_EIG_MODE_VECTOR: compute singular value and singular vectors
+        econ,   // 1 for economy size
+        rank + oversamples,      // num rows
+        n,      // num cols
+        d_Y,    // data on device (r+p)-by-n
+        ldy,    // leading dimension of data
+        d_S,    // min((r+p),n) sing vals on device
+        d_Uy,   // (r+p)-by-min((r+p),n) for econ = 1
+        lduy,   // leading dimension of U
+        d_V,    // n-by-min((r+p),n) for 
+        ldv,    // leading dimension of V
+        &lwork,
+        gesvdj_params) );
+
+    // Allocate the workspace
+    CUDA_CALL( cudaMalloc((void**) &d_work, sizeof(double) * lwork) );
+
+    // Do the SVD: [Uy, S, V] = svd(Y,'econ');
+    CUSOLVER_CALL( cusolverDnDgesvdj(
+        cusolverH,
+        jobz,   // CUSOLVER_EIG_MODE_VECTOR: compute singular value and singular vectors
+        econ,   // 1 for economy size
+        rank + oversamples,      // num rows
+        n,      // num cols
+        d_Y,    // data on device (r+p)-by-n
+        ldy,    // leading dimension of data
+        d_S,    // min((r+p),n) sing vals on device
+        d_Uy,   // (r+p)-by-min((r+p),n) for econ = 1
+        lduy,   // leading dimension of U
+        d_V,    // n-by-min((r+p),n) for 
+        ldv,    // leading dimension of V 
+        d_work,
+        lwork,
+        d_info,
+        gesvdj_params) );
+    
+    // Check for successful qr factorization.
+    CUDA_CALL( cudaMemcpy(&h_info, d_info, sizeof(int), cudaMemcpyDeviceToHost) );
+    assert(0 == h_info);
+
+    // Synchronize to be safe
+    CUDA_CALL( cudaDeviceSynchronize() );
+
+    
+    //-----------------------------------------------------------------------------//
+    // Step 5:  Get U by projecting Uy onto Q.  U = Q*Uy
+
+    // Allocate space for U
+    const int ldu = m;
+    double U[ldu * minsz];
+    double *d_U;
+    CUDA_CALL( cudaMalloc ((void**) &d_U, sizeof(double) * ldu * minsz) );
+
+    // Q*Uy
+    CUDA_CALL( cublasDgemm(cublasH, transOff, transOff, 
+        m, minsz, rank + oversamples, &one, 
+        d_Z, ldz, // Q
+        d_Uy, lduy, 
+        &zero, d_U, ldu) );
+
+    CUDA_CALL( cudaMemcpy(U, d_U, sizeof(double) * ldu * minmn, cudaMemcpyDeviceToHost) );
+    CUDA_CALL( cudaMemcpy(V, d_V, sizeof(double) * ldv * minmn, cudaMemcpyDeviceToHost) );
+    CUDA_CALL( cudaMemcpy(S, d_S, sizeof(double) * minmn, cudaMemcpyDeviceToHost) );
+
+    //-----------------------------------------------------------------------------//
+    // Step 6:  Convert back to MatrixXd format for additional work in the class.
+    U_ = Eigen::Map
+        <Eigen::Matrix <double, Eigen::Dynamic, Eigen::Dynamic> >
+        (&U[0], m, minsz).block(0, 0, (*X_).rows(), rank);
+    V_ = Eigen::Map
+        <Eigen::Matrix <double, Eigen::Dynamic, Eigen::Dynamic> >
+        (&V[0], n, minsz).block(0, 0, (*X_).cols(), rank);
+    S_ = Eigen::Map<Eigen::VectorXd>(&S[0], minsz).head(rank);
+
+    
+    //-----------------------------------------------------------------------------//
+    // Step 7:  Free variables
+    if (d_X         ) CUDA_CALL( cudaFree(d_X) );
+    if (d_U         ) CUDA_CALL( cudaFree(d_U) );
+    if (d_Uy        ) CUDA_CALL( cudaFree(d_Uy) );
+    if (d_Z         ) CUDA_CALL( cudaFree(d_Z) );
+    if (d_V         ) CUDA_CALL( cudaFree(d_V) );
+    if (d_S         ) CUDA_CALL( cudaFree(d_S) );
+    if (d_P         ) CUDA_CALL( cudaFree(d_P) );
+    if (d_Y         ) CUDA_CALL( cudaFree(d_Y) );
+    if (d_tau       ) CUDA_CALL( cudaFree(d_tau) );
+    if (d_info      ) CUDA_CALL( cudaFree(d_info) );
+    if (d_work      ) CUDA_CALL( cudaFree(d_work) );
+    if (d_temp_array) CUDA_CALL( cudaFree(d_temp_array) );
+
+    if (cusolverH    ) CUSOLVER_CALL( cusolverDnDestroy(cusolverH) );
+    if (cublasH      ) CUBLAS_CALL( cublasDestroy(cublasH) );
+    if (stream       ) CUDA_CALL( cudaStreamDestroy(stream) );
+    if (gesvdj_params) CUSOLVER_CALL( cusolverDnDestroyGesvdjInfo(gesvdj_params) );
+
+    cudaDeviceReset();
+    return;
+
+}
+
+#if 0 
+/* 
+  cuSOLVER from version 11.3 (perhaps a little earlier) contains an implementation of rSVD
+  which I have implemented here.  Since the version of cuda on the machine is 9.1, I cannot
+  run it for this application.  However, it should work otherwise.
+*/ 
+
+// Computing the SVD
+void rSVD_gpu::ComputeSVD()
+/* 
+  Note that I am following an example found on stack exchange for this implementation
+  https://docs.nvidia.com/cuda/cusolver/index.html#gesvdj-example1
+*/
+{
+    //-----------------------------------------------------------------------------//
+    // Step 0:  Initialize variables to work with Cuda.
+
+    // cusolver types.
+    cusolverDnHandle_t cusolverH;           // cusolver handle
+    cudaStream_t stream;                    // stream handle
+    cusolverDnParams_t params_gesvdr;       // Randomized SVD parameters
+
+    // Input data
+    const int64_t m = (*X_).rows(), n = (*X_).cols(), minmn = min(m,n);
+    const int64_t ldx = m;  // leading dimension X
+    const int64_t rank = (int64_t) rsvd_params.rank;
+    double* X = (*X_).data();    // m x n
+
+    // Allocate space for U, S, and V
+    const int64_t ldu = m;  // leading dimension U
+    double U[ldu*rank];    // m x m
+    const int64_t ldv = n;  // leading dimension V
+    double V[ldv*rank];    // n x n   
+    double S[rank]; 
+
+    // create device variables 
+    void *d_X, *d_S, *d_U, *d_V;  // device SVD variables
+    int* d_info;                    // error info
+    int lwork, h_info;                // size of workspace and host copy of error info
+    double* d_work_gesvdr;                 // device workspace for gesvdr
+    double* h_work_gesvdr;                 // device workspace for gesvdr
+    size_t workspaceInBytesOnDevice_gesvdr;
+    size_t workspaceInBytesOnHost_gesvdr;
+
+    // Configure gesvdr
+    signed char jobu = 'S';     // compute left singular vectors
+    signed char jobv = 'S';     // compute right singular vectors
+    const int64_t iters = (int64_t) rsvd_params.powiter;
+    const int64_t p = (int64_t) rsvd_params.oversamples;
+
+    //-----------------------------------------------------------------------------//
+    // Step 1:  Create a cusolver handle and bind a stream.
+    CUSOLVER_CALL( cusolverDnCreate(&cusolverH) );
+    CUDA_CALL( cudaStreamCreateWithFlags(&stream, cudaStreamNonBlocking) );
+    CUSOLVER_CALL( cusolverDnSetStream(cusolverH, stream) );
+
+    //-----------------------------------------------------------------------------//
+    // Step 2:  Configuration of gesvdr
+    CUSOLVER_CALL( cusolverDnCreateParams(&params_gesvdr) );
+
+    //-----------------------------------------------------------------------------//
+    // Step 3:  Allocate device memory and copy data to it
+
+    // Allocate the memory on the device
+    CUDA_CALL( cudaMalloc ((void**) &d_X, sizeof(double) * ldx * n) );
+    CUDA_CALL( cudaMalloc ((void**) &d_U, sizeof(double) * ldu * rank) );
+    CUDA_CALL( cudaMalloc ((void**) &d_V, sizeof(double) * ldv * n) );
+    CUDA_CALL( cudaMalloc ((void**) &d_S, sizeof(double) * rank) );
+    CUDA_CALL( cudaMalloc ((void**) &d_info, sizeof(int)) );
+
+    // Copy the initial array to the device.
+    CUDA_CALL( cudaMemcpy(d_X, X, sizeof(double) * ldx * n, cudaMemcpyHostToDevice) );
+
+    //-----------------------------------------------------------------------------//
+    // Step 4:  Query the workspace of SVD
+    
+    // Get the buffer size
+    CUSOLVER_CALL( cusolverDnXgesvdr_bufferSize(
+        cusolverH,      // cusolver Handle
+        params_gesvdr,  // cusolver Parameters structure
+        jobu,           // 'S' returns leakding rank-r left sing vecs
+        jobv,           // 'S' returns leakding rank-r right sing vecs
+        m,              // rows of data
+        n,              // columns
+        rank,           // rank of the decomposition
+        p,              // oversampling parameter
+        iters,          // power iterations
+        CUDA_R_64F,     // data type of data
+        d_X,            // Array X: ldx-by-n
+        ldx,            // leading dimension of X
+        CUDA_R_64F,     // data type of singular values
+        d_S,            // Array S: rank
+        CUDA_R_64F,     // data type of left singular vectors
+        d_U,            // Array U: ldu-by-rank
+        ldu,            // leading dimension of U
+        CUDA_R_64F,     // data type of right singular vectors
+        d_V,            // Array V: ldv(rank)-by-n
+        ldv,            // leading dimension of V
+        CUDA_R_64F,     // data type of computation
+        &workspaceInBytesOnDevice_gesvdr,       // device buffer
+        &workspaceInBytesOnHost_gesvdr ) );    // host buffer
+
+    // Allocate the workspace
+    h_work_gesvdr = (double*) malloc( workspaceInBytesOnHost_gesvdr );
+    assert( h_work_gesvdr != NULL );
+
+    CUDA_CALL( cudaMalloc((void**) &d_work_gesvdr, workspaceInBytesOnDevice_gesvdr) );
+    CUDA_CALL( cudaDeviceSynchronize() );
+
+    //-----------------------------------------------------------------------------//
+    // Step 5:  Compute SVD
+
+    // Do the SVD
+    CUSOLVER_CALL( cusolverDnXgesvdr_bufferSize(
+        cusolverH,      // cusolver Handle
+        params_gesvdr,  // cusolver Parameters structure
+        jobu,           // 'S' returns leakding rank-r left sing vecs
+        jobv,           // 'S' returns leakding rank-r right sing vecs
+        m,              // rows of data
+        n,              // columns
+        rank,           // rank of the decomposition
+        p,              // oversampling parameter
+        iters,          // power iterations
+        CUDA_R_64F,     // data type of data (real double precision)
+        d_X,            // Array X: ldx-by-n
+        ldx,            // leading dimension of X
+        CUDA_R_64F,     // data type of singular values
+        d_S,            // Array S: rank
+        CUDA_R_64F,     // data type of left singular vectors
+        d_U,            // Array U: ldu-by-rank
+        ldu,            // leading dimension of U
+        CUDA_R_64F,     // data type of right singular vectors
+        d_V,            // Array V: ldv-by-rank
+        ldv,            // leading dimension of V
+        CUDA_R_64F,     // data type of computation
+        d_work_gesvdr,  // device workspace
+        workspaceInBytesOnDevice_gesvdr,       // device buffer
+        h_work_gesvdr,  // host workspace
+        workspaceInBytesOnHost_gesvdr ) );     // host buffer );
+
+    // Memcopy back to the host.
+    CUDA_CALL( cudaMemcpy(U, d_U, sizeof(double) * ldu * rank, cudaMemcpyDeviceToHost) );
+    CUDA_CALL( cudaMemcpy(V, d_V, sizeof(double) * ldv * rank, cudaMemcpyDeviceToHost) );
+    CUDA_CALL( cudaMemcpy(S, d_S, sizeof(double) * rank, cudaMemcpyDeviceToHost) );
+    CUDA_CALL( cudaMemcpy(&info, d_info, sizeof(int), cudaMemcpyDeviceToHost) );
+
+    //-----------------------------------------------------------------------------//
+    // Step 6:  Convert back to MatrixXd format for additional work in the class.
+    U_ = Eigen::Map
+        <Eigen::Matrix <double, Eigen::Dynamic, Eigen::Dynamic> >
+        (&U[0], m, minmn);
+    V_ = Eigen::Map
+        <Eigen::Matrix <double, Eigen::Dynamic, Eigen::Dynamic> >
+        (&V[0], n, minmn);
+    S_ = Eigen::Map<Eigen::VectorXd>(&S[0], minmn);
+    
+    //-----------------------------------------------------------------------------//
+    // Step 7:  Free variables
+    if (d_X   ) CUDA_CALL( cudaFree(d_X) );
+    if (d_U   ) CUDA_CALL( cudaFree(d_U) );
+    if (d_V   ) CUDA_CALL( cudaFree(d_V) );
+    if (d_S   ) CUDA_CALL( cudaFree(d_S) );
+    if (d_info) CUDA_CALL( cudaFree(d_info) );
+    if (d_work) CUDA_CALL( cudaFree(d_work_gesvdr) );
+
+    if ( h_work_gesvdr ) free( h_work_gesvdr );
+
+    if (cusolverH    ) CUSOLVER_CALL( cusolverDnDestroy(cusolverH) );
+    if (stream       ) CUDA_CALL( cudaStreamDestroy(stream) );
+    if (gesvdj_params) CUSOLVER_CALL( cusolverDnDestroyParams(params_gesvdr) );
+
+    CUDA_CALL( cudaDeviceReset() );
+    return;
+
+}
+#endif

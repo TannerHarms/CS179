@@ -52,6 +52,16 @@ int main(int argc, char **argv)
     // Read file to import matrix.  
     data inputData = import_from_file(data_path);
     
+    // Make sure that the parameters are appropriate.
+    if (svd_params.rank + svd_params.oversamples > min(inputData.getM(),inputData.getN())) {
+        std::cerr << "Invalid rSVD parameters: rank + oversamples > dimensionality." << endl;
+        exit(EXIT_FAILURE);
+    } else if (svd_params.rank > min(inputData.getM(),inputData.getN())) {
+        std::cerr << "Invalid rSVD parameters: rank > dimensionality." << endl;
+        exit(EXIT_FAILURE);
+    } 
+
+
     // Get the matrix and print it to the terminal
     MatrixXd mat; 
     mat = inputData.getData_mXd();
@@ -64,15 +74,6 @@ int main(int argc, char **argv)
     cout << "Reconstruction rank = " << svd_params.rank << "." << endl;
     PrintResults(svd_cpu);
 
-    cout << "True S:" << endl;
-    cout << svd_cpu.singularValues() << endl;
-
-    cout << "True U:" << endl;
-    cout << svd_cpu.matrixU() << endl;
-
-    cout << "True V:" << endl;
-    cout << svd_cpu.matrixV() << endl;
-    
     // Perform rSVD (time it)
     rSVD_cpu rsvd_cpu(&mat, svd_params);
     rsvd_cpu.Evaluate(svd_params.rank);
@@ -87,16 +88,37 @@ int main(int argc, char **argv)
     cout << "Reconstruction rank = " << svd_params.rank << "." << endl;
     PrintResults(svd_gpu);
 
-    cout << "standard GPU MatrixXd S:" << endl;
-    cout << svd_gpu.singularValues() << endl;
+    // cout << "standard GPU MatrixXd S:" << endl;
+    // cout << svd_gpu.singularValues() << endl;
 
-    cout << "standard GPU MatrixXd U:" << endl;
-    cout << svd_gpu.matrixU() << endl;
+    // cout << "standard GPU MatrixXd U:" << endl;
+    // cout << svd_gpu.matrixU() << endl;
 
-    cout << "standard GPU MatrixXd V:" << endl;
-    cout << svd_gpu.matrixV() << endl;
+    // cout << "standard GPU MatrixXd V:" << endl;
+    // cout << svd_gpu.matrixV() << endl;
 
     // Perform rSVD in GPU (time it)
+    rSVD_gpu rsvd_gpu(&mat, svd_params);
+    rsvd_gpu.Evaluate(svd_params.rank);
+    cout << "SVD using the GPU." << endl;
+    cout << "Reconstruction rank = " << svd_params.rank << "." << endl;
+    PrintResults(rsvd_gpu);
+
+   
+    cout << "True S:" << endl;
+    cout << svd_cpu.singularValues() << endl;
+    cout << "randomized GPU MatrixXd S:" << endl;
+    cout << rsvd_gpu.singularValues() << endl;
+
+    cout << "True U:" << endl;
+    cout << svd_cpu.matrixU() << endl;
+    cout << "randomized GPU MatrixXd U:" << endl;
+    cout << rsvd_gpu.matrixU() << endl;
+
+    cout << "True V:" << endl;
+    cout << svd_cpu.matrixV() << endl;
+    cout << "randomized GPU MatrixXd V:" << endl;
+    cout << rsvd_gpu.matrixV() << endl;
 
     return 0;
 
